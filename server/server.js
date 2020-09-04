@@ -27,8 +27,11 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(logger("dev"));
+
+// * 路由
 app.use("/user", userRoute);
 
+// * 啟動server
 app.listen(port, () => {
-	console.log(`Example app listening at http://localhost:${port}`);
+	console.log(`Server is running on port: ${port}`);
 });
