@@ -24,9 +24,14 @@ export default function CustomAppBar({ toggle_drawer }) {
 	const classes = useStyles();
 	const history = useHistory();
 
+	const toggle_home = () => {
+		history.push("/home");
+	};
+
 	const toggle_login = () => {
 		history.push("/login");
 	};
+
 
 	return (
 		<div className={classes.root}>
@@ -41,7 +46,7 @@ export default function CustomAppBar({ toggle_drawer }) {
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" className={classes.title}>
+					<Typography variant="h6" className={classes.title} onClick={toggle_home}>
 						{"區塊鏈整合平台"}
 					</Typography>
 					<Button color="inherit" onClick={toggle_login}>

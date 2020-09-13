@@ -10,6 +10,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AirplanemodeActiveRoundedIcon from "@material-ui/icons/AirplanemodeActiveRounded";
 import DriveEtaRoundedIcon from "@material-ui/icons/DriveEtaRounded";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
 	list: {
@@ -22,12 +23,17 @@ const useStyles = makeStyles({
 
 export default function CustomDrawer({ open, toggle_drawer }) {
 	const classes = useStyles();
+	const history = useHistory();
 	const [state, setState] = React.useState(false);
 
 	React.useEffect(() => {
 		setState(open);
 	}, [open]);
 
+	const toggle_Announce = () => {
+		history.push("/Announce");
+	};
+	
 	const list = (anchor) => (
 		<div
 			className={clsx(classes.list, {
@@ -46,7 +52,7 @@ export default function CustomDrawer({ open, toggle_drawer }) {
 				</ListItem>
 			</List>
 			<List>
-				<ListItem button key={1}>
+				<ListItem button onClick={toggle_Announce}>
 					<ListItemIcon>
 						<DriveEtaRoundedIcon />
 					</ListItemIcon>
