@@ -4,15 +4,18 @@ import Paper from "@material-ui/core/Paper";
 import { InputGroup, FormControl, Button, Dropdown, DropdownButton } from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance } from "../utils/getContract";
-import Auth_Contract from "../contracts/Auth.json";
+import Auth from "../contracts/Auth.json";
+import UserManager from "../contracts/UserManager.json";
+import { string_to_bytes32 } from "../utils/tools";
 
 export function Login({}) {
-	const [name, set_name] = React.useState("");
+	const [uid, set_uid] = React.useState("");
 	const [password, set_password] = React.useState("");
 	const [select_account, set_select_account] = React.useState(null);
 	const [web3, set_web3] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
 	const [auth_contract, set_auth_contract] = React.useState(null);
+	const [userManager_contract, set_userManager_contract] = React.useState(null);
 	const [payload, set_payload] = React.useState(null);
 
 	//初始載入web3
@@ -41,8 +44,10 @@ export function Login({}) {
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3) {
-				let contract = await getContractInstance(web3, Auth_Contract);
-				set_auth_contract(contract);
+				let contract1 = await getContractInstance(web3, Auth);
+				let contract2 = await getContractInstance(web3, UserManager);
+				set_auth_contract(contract1);
+				set_userManager_contract(contract2);
 			}
 		};
 		load();
@@ -54,8 +59,8 @@ export function Login({}) {
 			case "account":
 				set_select_account(value);
 				break;
-			case "name":
-				set_name(value);
+			case "uid":
+				set_uid(value);
 				break;
 			case "password":
 				set_password(value);
@@ -69,7 +74,7 @@ export function Login({}) {
 	const check_user = async () => {
 		try {
 			// * 執行智能合約
-			let result = await auth_contract.methods.get_user(select_account).call({
+			let result = await userManager_contract.methods.get_user(select_account).call({
 				from: select_account,
 				gas: 6000000,
 			});
@@ -99,28 +104,20 @@ export function Login({}) {
 			alert("請輸入密碼!");
 			return;
 		}
-		if (!name) {
-			alert("請輸入用戶名稱!");
+		if (!uid) {
+			alert("請輸入帳戶!");
 			return;
 		}
 		try {
-			//轉型(因智能合約參數使用bytes32)
-			let _bytes_name = web3.utils.utf8ToHex(name);
-			let bytes_name = web3.utils.padRight(_bytes_name, 64);
-			let _bytes_password = web3.utils.utf8ToHex(password);
-			let bytes_password = web3.utils.padRight(_bytes_password, 64);
+			// ? 轉型(因智能合約參數使用bytes32)
+			let bytes_uid = string_to_bytes32(uid);
+			let bytes_password = string_to_bytes32(password);
 
-			// * 執行智能合約
-			let result = await auth_contract.methods
-				.create_user(
-					select_account, //用第一個帳戶
-					bytes_name,
-					bytes_password
-				)
-				.send({
-					from: select_account,
-					gas: 6000000,
-				});
+			// * 呼叫智能合約新增帳戶
+			let result = await auth_contract.methods.create_user(bytes_uid, bytes_password).send({
+				from: select_account,
+				gas: 6000000,
+			});
 
 			set_payload(JSON.stringify(result));
 
@@ -156,8 +153,7 @@ export function Login({}) {
 
 		if (user) {
 			try {
-				let _bytes_password = web3.utils.utf8ToHex(password);
-				let bytes_password = web3.utils.padRight(_bytes_password, 64);
+				let bytes_password = string_to_bytes32(password);
 				// * 執行智能合約
 				let result = await auth_contract.methods.verify(bytes_password).call({
 					from: select_account,
@@ -187,10 +183,11 @@ export function Login({}) {
 						<Dropdown.Toggle variant="success" className="w-100">
 							{select_account || "選擇帳戶"}
 						</Dropdown.Toggle>
-						<Dropdown.Menu>
+						<Dropdown.Menu className="w-100">
 							{accounts.map((item, i) => {
 								return (
 									<Dropdown.Item
+										className="text-center"
 										key={i}
 										onClick={() => onChange("account", item)}
 									>
@@ -202,11 +199,11 @@ export function Login({}) {
 					</Dropdown>
 					<InputGroup className="mb-3">
 						<InputGroup.Prepend>
-							<InputGroup.Text>{"用戶名稱"}</InputGroup.Text>
+							<InputGroup.Text>{"用戶帳號"}</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
-							placeholder="請輸入用戶名稱"
-							onChange={(e) => onChange("name", e.target.value)}
+							placeholder="請輸入帳號"
+							onChange={(e) => onChange("uid", e.target.value)}
 						/>
 					</InputGroup>
 					<InputGroup className="mb-3">
