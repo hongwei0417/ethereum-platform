@@ -1,7 +1,7 @@
 pragma solidity >=0.4.22 <0.8.0;
 
-contract User {
-    address public owner;
+contract Ownable {
+    // address public owner;
     bytes32 private name;
     bytes32 private dates;
     bytes32 private destination;
@@ -9,13 +9,13 @@ contract User {
     bytes32 private people;
     bytes32 private money;
 
-    modifier onlyOwner() {
-        require(msg.sender == owner);
-        _;
-    }
+    // modifier onlyOwner() {
+    //     require(msg.sender == owner);
+    //     _;
+    // }
 
     constructor(
-        address _owner,
+        // address _owner,
         bytes32 _name,
         bytes32 _dates,
         bytes32 _destination,
@@ -23,15 +23,15 @@ contract User {
         bytes32 _people,
         bytes32 _money
     ) public {
-        require(_owner != address(0x0), "Need owner");
+        // require(_owner != address(0x0), "Need owner");
         require(_name.length != 0, "Need name");
         require(_dates.length != 0, "Need dates");
         require(_destination.length != 0, "Need destination");
         require(_traffic.length != 0, "Need traffic");
         require(_people.length != 0, "Need people");
-        require(_money.length != 0, "Need money");
+        // require(_money.length != 0, "Need money");
 
-        owner = _owner;
+        // owner = _owner;
         name = _name;
         dates = _dates;
         destination = _destination;

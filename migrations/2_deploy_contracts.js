@@ -4,13 +4,7 @@ const LeaseManager = artifacts.require("LeaseManager");
 const TransactionManager = artifacts.require("TransactionManager");
 const Global = artifacts.require("Global");
 const Auth = artifacts.require("Auth");
-const Announce = artifacts.require("Announce");
 
-<<<<<<< HEAD
-module.exports = function (deployer) {
-	deployer.deploy(Auth);
-	deployer.deploy(Announce);
-=======
 var fs = require("fs");
 var file_path = `${__dirname}/../client/src/eth_contract.json`;
 var eth_contract = require(file_path);
@@ -57,5 +51,4 @@ module.exports = function (deployer, network, accounts) {
 				console.log("writing to " + file_path);
 			});
 		});
->>>>>>> master
 };

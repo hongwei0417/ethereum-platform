@@ -4,7 +4,8 @@ import Paper from "@material-ui/core/Paper";
 import { InputGroup, FormControl, Button, Dropdown, DropdownButton } from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance } from "../utils/getContract";
-import Announce_Contract from "../contracts/Auth.json";
+import Announce_Contract from "../contracts/Announce.json";
+import eth_addr from '../eth_contract.json'
 
 export function Announce({}) {
 	const [name, set_name] = React.useState("");
@@ -17,6 +18,7 @@ export function Announce({}) {
 	const [web3, set_web3] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
 	const [announce_contract, set_announce_contract] = React.useState(null);
+	const [payload, set_payload] = React.useState(null);
 
 	//初始載入web3
 	React.useEffect(() => {
@@ -45,6 +47,7 @@ export function Announce({}) {
 		const load = async () => {
 			if (web3) {
 				let contract = await getContractInstance(web3, Announce_Contract);
+				console.log(contract)
 				set_announce_contract(contract);
 			}
 		};
@@ -119,8 +122,57 @@ export function Announce({}) {
 			alert("請輸入價錢/人!");
 			return;
 		}
-	};
+		try {
+			let _bytes_name = web3.utils.utf8ToHex(name);
+			let bytes_name = web3.utils.padRight(_bytes_name, 64);
+			let _bytes_dates = web3.utils.utf8ToHex(dates);
+			let bytes_dates = web3.utils.padRight(_bytes_dates, 64);
+			let _bytes_destination = web3.utils.utf8ToHex(destination);
+			let bytes_destination = web3.utils.padRight(_bytes_destination, 64);
+			let _bytes_traffic = web3.utils.utf8ToHex(traffic);
+			let bytes_traffic = web3.utils.padRight(_bytes_traffic, 64);
+		    let _bytes_people = web3.utils.utf8ToHex(people);
+			let bytes_people = web3.utils.padRight(_bytes_people, 64);
+			let _bytes_money = web3.utils.utf8ToHex(money);
+			let bytes_money = web3.utils.padRight(_bytes_money, 64);
+			
+			// * 執行智能合約
+			// let result = await announce_contract.methods.verify(bytes_name,bytes_dates,bytes_destination,bytes_traffic,bytes_people,bytes_money).call({
+			// 	from: select_account,
+			// 	gas: 6000000,
+			// });
 
+			// get network ID and the deployed address
+			const deployedAddress = eth_addr.Announce
+
+			// create the instance
+			const instance = new web3.eth.Contract(Announce_Contract.abi, deployedAddress);
+			let result = await instance.methods
+			.create_user(
+				"0x6b6576696e000000000000000000000000000000000000000000000000000000", //用第一個帳戶
+				bytes_name,
+				bytes_dates,
+				bytes_destination,
+				bytes_traffic,
+				bytes_people,
+				bytes_money
+			)
+			.send({
+				from: select_account,
+				gas: 6000000,
+			});
+
+			set_payload(JSON.stringify(result));
+
+			alert("發布成功");
+			console.log(result);
+
+		} catch (error) {
+			alert("發生錯誤");
+			console.log(error);
+		}
+	};
+	
 	if (web3) {
 		return (
 			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
@@ -198,7 +250,7 @@ export function Announce({}) {
 							onChange={(e) => onChange("money", e.target.value)}
 						/>
 					</InputGroup>
-				
+					<p className="text-center overflow-auto">{payload || "無資料"}</p>
 					<Button
 						variant="primary"
 						size="lg"
