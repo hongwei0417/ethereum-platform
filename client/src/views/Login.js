@@ -7,6 +7,7 @@ import { getContractInstance } from "../utils/getContract";
 import Auth from "../contracts/Auth.json";
 import UserManager from "../contracts/UserManager.json";
 import { string_to_bytes32 } from "../utils/tools";
+import eth_addr from '../eth_contract.json';
 
 export function Login({}) {
 	const [uid, set_uid] = React.useState("");
@@ -44,8 +45,8 @@ export function Login({}) {
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3) {
-				let contract1 = await getContractInstance(web3, Auth);
-				let contract2 = await getContractInstance(web3, UserManager);
+				let contract1 = await getContractInstance(web3, Auth, eth_addr.Auth);
+				let contract2 = await getContractInstance(web3, UserManager, eth_addr.UserManager);
 				set_auth_contract(contract1);
 				set_userManager_contract(contract2);
 			}
@@ -73,8 +74,9 @@ export function Login({}) {
 	//檢查是否有這個帳戶
 	const check_user = async () => {
 		try {
+			let bytes_uid = string_to_bytes32(uid);
 			// * 執行智能合約
-			let result = await userManager_contract.methods.get_user(select_account).call({
+			let result = await userManager_contract.methods.get_user(bytes_uid).call({
 				from: select_account,
 				gas: 6000000,
 			});
@@ -109,7 +111,7 @@ export function Login({}) {
 			return;
 		}
 		try {
-			// ? 轉型(因智能合約參數使用bytes32)
+			// * 轉型(因智能合約參數使用bytes32)
 			let bytes_uid = string_to_bytes32(uid);
 			let bytes_password = string_to_bytes32(password);
 
@@ -153,9 +155,10 @@ export function Login({}) {
 
 		if (user) {
 			try {
+				let bytes_uid = string_to_bytes32(uid);
 				let bytes_password = string_to_bytes32(password);
 				// * 執行智能合約
-				let result = await auth_contract.methods.verify(bytes_password).call({
+				let result = await auth_contract.methods.verify(bytes_uid, bytes_password).call({
 					from: select_account,
 					gas: 6000000,
 				});
