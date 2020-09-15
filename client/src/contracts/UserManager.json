@@ -69,6 +69,7 @@
       "constant": true
     }
   ],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"add_user\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"}],\"name\":\"get_user\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"get_user_list\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"},{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/User/Desktop/ethereum-platform/contracts/UserManager.sol\":\"UserManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/User/Desktop/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0x2908cce17d8b4e80ac30e90f0fdf72ade0911214dadd3950ea4a3bc543fc747f\",\"urls\":[\"bzz-raw://0d36bdc6cf0135f1ca301a3d15116f1c90bd528bde703b6592d0eaf43eaaf616\",\"dweb:/ipfs/QmZCN7at8VMUsfKb2ZemhZ5X1itWpH3MX8KZz3hfrMKyFN\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0x7c73ebefce98db5170df090aaf74c78aaf4bfd04e17a5f97e3f672fe25936732\",\"urls\":[\"bzz-raw://2fbdd91d7d6a26b330e978d9ad7918d172b748fb659671e466233078d6c7331a\",\"dweb:/ipfs/QmQGw2A3Etnp3Ao7N3Exaxg6sYG7u8RTRc1LNshXrv9Uc8\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0x0323e703b1b5e9cce7c0a1a4263fbbc24d4c7e5210d6be024a9d43d99aa00c3b\",\"urls\":[\"bzz-raw://b2df9ecb63ad7df04593e6f3b68c5cc44fa6dd0ad42b79a4e7c9941dacf923da\",\"dweb:/ipfs/QmR8g3RFGP53E5GhpkXtWv1cj7cVFpLCvATgyigvWrWTrW\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0xf7968bf3241572729179eaf93b3f02caeb081e23426fbce3233a1f4ce910736a\",\"urls\":[\"bzz-raw://973da74eb09ef790b3bfa63c03704e8e48bd645c839fe60dff3b65f72c1cc709\",\"dweb:/ipfs/QmcVJ97uDhfCBnEE7VNRRnWUDL68n9M5dmWGntq1scjp8V\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0x4e0668d1ce0a48d47c008d47f472fd10e39ba05352ddf1bd8da96198576faee0\",\"urls\":[\"bzz-raw://d6f569cd00676c45513b8dd242d1147c602ebb7a394eaffae1d88852ee2d76c2\",\"dweb:/ipfs/QmZZucxKXZmqo4MNd3C6HZjAnhHV29EgmQTfH2i9muCqZo\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0x0b33a31734626f3043ce59fbdc3fc050b95e51d6a1d4655731e85293dd0f4bcc\",\"urls\":[\"bzz-raw://cfcfd8df1b098366c00f765c9a73e83acfe0799b73b8c51b61b524c69208bdcf\",\"dweb:/ipfs/QmZaoANathTGEfhSpKsjpiFdzHK4q53sbWREpz2aGb4BpZ\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0x8631d44fe2808326dcd5bc06b0776c028b8b15eba772b00c3ceb14526c1361a4\",\"urls\":[\"bzz-raw://6075a58cbeb2ec7eafb8c4edc35ed4d6c1439e391719a101a069674569e8f956\",\"dweb:/ipfs/Qmcpmkdg15GBauxA1w4J6fpaMbCRgsUjPnUk3dF7mU3Vab\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0x852346f0150274e01acb83a55cc10c970c10479bab6e3d8cae942f8b2ceea016\",\"urls\":[\"bzz-raw://f03712a0f52e0492a5541ce2aa35dcf815ac2658aa69c5523b5e0c546c138091\",\"dweb:/ipfs/QmZCnr1ZXdScbFtdKC13y1TBCF5gtJy8o7EJCygYgGSPb9\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0x8b4eb958b553c3172d42c877f459fb6bcb4afdc911f6a048b0779edb5012259c\",\"urls\":[\"bzz-raw://946a11dbdcf155b51d4bb1c7817c2c6421066e4959149c59ca23b4517dbb0b35\",\"dweb:/ipfs/QmU4VDC11Q7vk2JDmp9CCLJ4GSQiHWyMUhgQsM8eCDZ9dB\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x244ccf075004e5c30480581a151becf1e5564a633d30d0ddb71f0f2e1ca3c414\",\"urls\":[\"bzz-raw://e6a3558bc774a4647f10bc09dde9beeb93ef8727a17a8f89925c8c65bb384368\",\"dweb:/ipfs/QmcWVf2NibSBDDUdjfhFbLTQU2YwWrKG43ggzS81Xs7zo9\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b50610622806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80631101bfcf1461004657806360368e9f146100ed578063747fa91b14610169575b600080fd5b61004e6101b7565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561009557808201518184015260208101905061007a565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156100d75780820151818401526020810190506100bc565b5050505090500194505050505060405180910390f35b6101196004803603602081101561010357600080fd5b81019080803590602001909291905050506103f9565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101b56004803603604081101561017f57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056e565b005b606080606060018054905067ffffffffffffffff811180156101d857600080fd5b506040519080825280602002602001820160405280156102075781602001602082028036833780820191505090505b509050606060018054905067ffffffffffffffff8111801561022857600080fd5b506040519080825280602002602001820160405280156102575781602001602082028036833780820191505090505b50905060008090505b6001805490508110156103ec576000806001838154811061027d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168382815181106102c357fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250506000806001838154811061030d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c0fbc7c56040518163ffffffff1660e01b815260040160206040518083038186803b15801561038c57600080fd5b505afa1580156103a0573d6000803e3d6000fd5b505050506040513d60208110156103b657600080fd5b81019080805190602001909291905050508282815181106103d357fe5b6020026020010181815250508080600101915050610260565b5080829350935050509091565b60008060008060008086815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156104d7576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600a8152602001807f6e6f74206578697374730000000000000000000000000000000000000000000081525060200191505060405180910390fd5b60008173ffffffffffffffffffffffffffffffffffffffff16633d5eb15f6040518163ffffffff1660e01b815260040160206040518083038186803b15801561051f57600080fd5b505afa158015610533573d6000803e3d6000fd5b505050506040513d602081101561054957600080fd5b8101908080519060200190929190505050905081868294509450945050509193909250565b8060008084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001829080600181540180825580915050600190039060005260206000200160009091909190915055505056fea2646970667358221220152bc564f7ff829f1538d2f662d37ffa8d616f32dbd72c17b07bc2d68ceaaf2164736f6c63430006060033",
   "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80631101bfcf1461004657806360368e9f146100ed578063747fa91b14610169575b600080fd5b61004e6101b7565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561009557808201518184015260208101905061007a565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156100d75780820151818401526020810190506100bc565b5050505090500194505050505060405180910390f35b6101196004803603602081101561010357600080fd5b81019080803590602001909291905050506103f9565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101b56004803603604081101561017f57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056e565b005b606080606060018054905067ffffffffffffffff811180156101d857600080fd5b506040519080825280602002602001820160405280156102075781602001602082028036833780820191505090505b509050606060018054905067ffffffffffffffff8111801561022857600080fd5b506040519080825280602002602001820160405280156102575781602001602082028036833780820191505090505b50905060008090505b6001805490508110156103ec576000806001838154811061027d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168382815181106102c357fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250506000806001838154811061030d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c0fbc7c56040518163ffffffff1660e01b815260040160206040518083038186803b15801561038c57600080fd5b505afa1580156103a0573d6000803e3d6000fd5b505050506040513d60208110156103b657600080fd5b81019080805190602001909291905050508282815181106103d357fe5b6020026020010181815250508080600101915050610260565b5080829350935050509091565b60008060008060008086815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156104d7576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600a8152602001807f6e6f74206578697374730000000000000000000000000000000000000000000081525060200191505060405180910390fd5b60008173ffffffffffffffffffffffffffffffffffffffff16633d5eb15f6040518163ffffffff1660e01b815260040160206040518083038186803b15801561051f57600080fd5b505afa158015610533573d6000803e3d6000fd5b505050506040513d602081101561054957600080fd5b8101908080519060200190929190505050905081868294509450945050509193909250565b8060008084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001829080600181540180825580915050600190039060005260206000200160009091909190915055505056fea2646970667358221220152bc564f7ff829f1538d2f662d37ffa8d616f32dbd72c17b07bc2d68ceaaf2164736f6c63430006060033",
@@ -79,6 +80,17 @@
   "sourcePath": "C:\\Users\\User\\Desktop\\ethereum-platform\\contracts\\UserManager.sol",
   "ast": {
     "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/UserManager.sol",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"user\",\"type\":\"address\"}],\"name\":\"add_user\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"}],\"name\":\"get_user\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"get_user_list\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"},{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol\":\"UserManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0xb718042991c4dbd6adc2da46d9a7aca64bf93dcd093934426fc31ef58d30826e\",\"urls\":[\"bzz-raw://6af3b591b2d05011797f1eb6f714035595ee5daa743c3e702759932c471779ee\",\"dweb:/ipfs/QmRr9WnymUgNs3guYcZxBjF6Q5YGNZs3xLHmdLc9w31t7g\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0xfaef74cbc58d095c0b37ab16ca79559be57be6fa9fc30f02ffab255dd13dc1a3\",\"urls\":[\"bzz-raw://974b0fe8ac053d9e413c7e6e2b683534309654ad869f65190643b8dc3c3a438a\",\"dweb:/ipfs/QmSBBmKGj5aHaQsRbYtv6xyraxhGd1UTUZVrj82b9LiCkc\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0x96ffcf01d18907f3a47c19275fcafc5a9ada723e79e466d19b2fed52b472d5dd\",\"urls\":[\"bzz-raw://7ea459e075f0a460998a95c3f34f70c32a3b8b212085b0ef2298eb6534f9a9e4\",\"dweb:/ipfs/QmUMkNAFD4tLzwDiZMqX4KNsgMrhL71bfYHooAJVkck1KV\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0xc85dddd94c39555e283e3e7c24f258f20322c1c74b903064a6fb8f6f6321422f\",\"urls\":[\"bzz-raw://b4ba393b5856cbf165d578a5aece0f8426a27ce3ee03160379df02bf332b33bb\",\"dweb:/ipfs/QmbBWqyRUGS1H4WNMgpS2gSDN9LoRrZadnAe32bM7qQrn2\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0xb3e1c86bcb747ff99afc8e79258694b17651eaef806ec2ceec40059e1b7538c1\",\"urls\":[\"bzz-raw://06f79cd47d890edbda3c9191b6fe67e43da86ff33fe8ec42ad23956db59d9fb0\",\"dweb:/ipfs/QmRKBTqCM8hxe8KnHHf2aWrBHhotHEJFwTrhDC892mLYYE\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0xe3a52ce8c4a5ad3ad0f0ef10ba8cd8c5fc0dfcd22c39fec762525eb5101c40bc\",\"urls\":[\"bzz-raw://a27da5543fd8925f87575c32bc2d1b46e24c4837b59f2b6a0bd9ae9d3a7328e3\",\"dweb:/ipfs/QmWChEJJ2qxwbpi4STSiLc9bvM67mHrgfgNQ4K8rsY6kvj\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0x13b0f0deb3fc32188720a4a45f7ebe34da97dd6fc24ed0789fed7993df816e11\",\"urls\":[\"bzz-raw://3c3333b68051cff4a14d6977255df40c923844ac1427264cee9ffbd54b964e22\",\"dweb:/ipfs/QmW2YPvy1zvc2TokHzp9n6v97eudYQXkgRZ5vaQSTwCmX1\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0x58e4fa4122677d8041faa1ad31705c234aeedebfab99c4a0b23da56ffb0a7312\",\"urls\":[\"bzz-raw://cbd02786fb73fb575514a299a01cc8db6e9bca206e28fee594f62482b63f8cbf\",\"dweb:/ipfs/QmRwXTyb8wXUAP5J61hgMeQvyKZwiCEJNiD1DHU5zAixxr\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0x8b40dddeb98bed04d7c4f4834a33845444621b1d3285dc8adf66a0471edf033f\",\"urls\":[\"bzz-raw://84ee37c1dbf5d80c988501fc99eeccd34f3d94da486c96ab53b86d1dc54b064a\",\"dweb:/ipfs/QmTQ3tHD7ZkNMgdGxnRrhyRLYYqFVRkZkWepwxyMyEPj4A\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x14bdabe6f85215276fe853223cb2f41d46fd9fdc21efa0a81a2682c7c4b688a2\",\"urls\":[\"bzz-raw://1548128aa1f3379f1486a940b28f27eb25dce1a31e82e85e7dad57415e1e76ff\",\"dweb:/ipfs/QmZYcW3SeSeMbBGADysj44BvweLgYBmUsyPpTjxqYr5gQc\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610622806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80631101bfcf1461004657806360368e9f146100ed578063747fa91b14610169575b600080fd5b61004e6101b7565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561009557808201518184015260208101905061007a565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156100d75780820151818401526020810190506100bc565b5050505090500194505050505060405180910390f35b6101196004803603602081101561010357600080fd5b81019080803590602001909291905050506103f9565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101b56004803603604081101561017f57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056e565b005b606080606060018054905067ffffffffffffffff811180156101d857600080fd5b506040519080825280602002602001820160405280156102075781602001602082028036833780820191505090505b509050606060018054905067ffffffffffffffff8111801561022857600080fd5b506040519080825280602002602001820160405280156102575781602001602082028036833780820191505090505b50905060008090505b6001805490508110156103ec576000806001838154811061027d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168382815181106102c357fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250506000806001838154811061030d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c0fbc7c56040518163ffffffff1660e01b815260040160206040518083038186803b15801561038c57600080fd5b505afa1580156103a0573d6000803e3d6000fd5b505050506040513d60208110156103b657600080fd5b81019080805190602001909291905050508282815181106103d357fe5b6020026020010181815250508080600101915050610260565b5080829350935050509091565b60008060008060008086815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156104d7576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600a8152602001807f6e6f74206578697374730000000000000000000000000000000000000000000081525060200191505060405180910390fd5b60008173ffffffffffffffffffffffffffffffffffffffff16633d5eb15f6040518163ffffffff1660e01b815260040160206040518083038186803b15801561051f57600080fd5b505afa158015610533573d6000803e3d6000fd5b505050506040513d602081101561054957600080fd5b8101908080519060200190929190505050905081868294509450945050509193909250565b8060008084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001829080600181540180825580915050600190039060005260206000200160009091909190915055505056fea264697066735822122004ed5d45930c86242e2f39bdb472d0583bb1078c03e42dfff8000bd41f1210b864736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80631101bfcf1461004657806360368e9f146100ed578063747fa91b14610169575b600080fd5b61004e6101b7565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561009557808201518184015260208101905061007a565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156100d75780820151818401526020810190506100bc565b5050505090500194505050505060405180910390f35b6101196004803603602081101561010357600080fd5b81019080803590602001909291905050506103f9565b604051808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001838152602001828152602001935050505060405180910390f35b6101b56004803603604081101561017f57600080fd5b8101908080359060200190929190803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061056e565b005b606080606060018054905067ffffffffffffffff811180156101d857600080fd5b506040519080825280602002602001820160405280156102075781602001602082028036833780820191505090505b509050606060018054905067ffffffffffffffff8111801561022857600080fd5b506040519080825280602002602001820160405280156102575781602001602082028036833780820191505090505b50905060008090505b6001805490508110156103ec576000806001838154811061027d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168382815181106102c357fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250506000806001838154811061030d57fe5b9060005260206000200154815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663c0fbc7c56040518163ffffffff1660e01b815260040160206040518083038186803b15801561038c57600080fd5b505afa1580156103a0573d6000803e3d6000fd5b505050506040513d60208110156103b657600080fd5b81019080805190602001909291905050508282815181106103d357fe5b6020026020010181815250508080600101915050610260565b5080829350935050509091565b60008060008060008086815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff169050600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff1614156104d7576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040180806020018281038252600a8152602001807f6e6f74206578697374730000000000000000000000000000000000000000000081525060200191505060405180910390fd5b60008173ffffffffffffffffffffffffffffffffffffffff16633d5eb15f6040518163ffffffff1660e01b815260040160206040518083038186803b15801561051f57600080fd5b505afa158015610533573d6000803e3d6000fd5b505050506040513d602081101561054957600080fd5b8101908080519060200190929190505050905081868294509450945050509193909250565b8060008084815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506001829080600181540180825580915050600190039060005260206000200160009091909190915055505056fea264697066735822122004ed5d45930c86242e2f39bdb472d0583bb1078c03e42dfff8000bd41f1210b864736f6c63430006060033",
+  "sourceMap": "55:1106:11:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;55:1106:11;;;;;;;",
+  "deployedSourceMap": "55:1106:11:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;55:1106:11;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;223:467:11;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;223:467:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;223:467:11;;;;;;;;;;;;;;;;;;;823:336;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;823:336:11;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;696:121;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;696:121:11;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;223:467;293:16;311;343:27;387:9;:16;;;;373:31;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;373:31:11;;;;;;;;;;;;;;;;;;;;;;;29:2:-1;21:6;17:15;125:4;109:14;101:6;88:42;156:4;148:6;144:17;134:27;;0:165;373:31:11;;;;343:61;;414:21;452:9;:16;;;;438:31;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;438:31:11;;;;;;;;;;;;;;;;;;;;;;;29:2:-1;21:6;17:15;125:4;109:14;101:6;88:42;156:4;148:6;144:17;134:27;;0:165;438:31:11;;;;414:55;;485:9;497:1;485:13;;480:169;504:9;:16;;;;500:1;:20;480:169;;;565:5;:19;571:9;581:1;571:12;;;;;;;;;;;;;;;;565:19;;;;;;;;;;;;;;;;;;;;;541:10;552:1;541:13;;;;;;;;;;;;;:44;;;;;;;;;;;609:5;:19;615:9;625:1;615:12;;;;;;;;;;;;;;;;609:19;;;;;;;;;;;;;;;;;;;;;:27;;;:29;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;609:29:11;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;609:29:11;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;609:29:11;;;;;;;;;;;;;;;;599:4;604:1;599:7;;;;;;;;;;;;;:39;;;;;522:3;;;;;;;480:169;;;;666:4;672:10;658:25;;;;;;223:467;;:::o;823:336::-;912:7;933;954;986:9;998:5;:10;1004:3;998:10;;;;;;;;;;;;;;;;;;;;;986:22;;1039:1;1026:15;;:4;:15;;;;1018:38;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1066:16;1085:4;:17;;;:19;;;;;;;;;;;;;;;;;;;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;1085:19:11;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;1085:19:11;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;1085:19:11;;;;;;;;;;;;;;;;1066:38;;1131:4;1138:3;1143:8;1115:37;;;;;;;;823:336;;;;;:::o;696:121::-;776:4;758:5;:10;764:3;758:10;;;;;;;;;;;;:23;;;;;;;;;;;;;;;;;;791:9;806:3;791:19;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;791:19:11;;;;;;;;;;;;;;;;;;;696:121;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.8.0;\nimport \"./User.sol\";\n\ncontract UserManager {\n    mapping(bytes32 => User) private users; //使用者名稱對應使用者位址\n    bytes32[] private user_list; //使用者名稱集合\n\n    function get_user_list()\n        public\n        view\n        returns (bytes32[] memory, address[] memory)\n    {\n        address[] memory user_addrs = new address[](user_list.length);\n        bytes32[] memory uids = new bytes32[](user_list.length);\n\n        for (uint256 i = 0; i < user_list.length; i++) {\n            user_addrs[i] = address(users[user_list[i]]);\n            uids[i] = users[user_list[i]].get_uid();\n        }\n        return (uids, user_addrs);\n    }\n\n    function add_user(bytes32 uid, address user) public {\n        users[uid] = User(user);\n        user_list.push(uid);\n    }\n\n    function get_user(bytes32 uid)\n        public\n        view\n        returns (\n            address,\n            bytes32,\n            bytes32\n        )\n    {\n        User user = users[uid];\n        require(user != User(0), \"not exists\");\n        bytes32 password = user.get_password();\n\n        return (address(user), uid, password);\n    }\n}\n",
+  "sourcePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol",
+  "ast": {
+    "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol",
+>>>>>>> master
     "exportedSymbols": {
       "UserManager": [
         1946
@@ -102,13 +114,23 @@
         "src": "0:32:13"
       },
       {
+<<<<<<< HEAD
         "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/User.sol",
+=======
+        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/User.sol",
+>>>>>>> master
         "file": "./User.sol",
         "id": 1799,
         "nodeType": "ImportDirective",
+<<<<<<< HEAD
         "scope": 1947,
         "sourceUnit": 1689,
         "src": "34:20:13",
+=======
+        "scope": 1632,
+        "sourceUnit": 1374,
+        "src": "33:20:11",
+>>>>>>> master
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -133,8 +155,13 @@
             "name": "users",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 1946,
             "src": "86:38:13",
+=======
+            "scope": 1631,
+            "src": "82:38:11",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -147,14 +174,22 @@
                 "id": 1800,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "94:7:13",
+=======
+                "src": "90:7:11",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
+<<<<<<< HEAD
               "src": "86:24:13",
+=======
+              "src": "82:24:11",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                 "typeString": "mapping(bytes32 => contract User)"
@@ -164,8 +199,13 @@
                 "id": 1801,
                 "name": "User",
                 "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                 "referencedDeclaration": 1688,
                 "src": "105:4:13",
+=======
+                "referencedDeclaration": 1373,
+                "src": "101:4:11",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_contract$_User_$1688",
                   "typeString": "contract User"
@@ -182,8 +222,13 @@
             "name": "user_list",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 1946,
             "src": "170:27:13",
+=======
+            "scope": 1631,
+            "src": "165:27:11",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -195,7 +240,11 @@
                 "id": 1804,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "170:7:13",
+=======
+                "src": "165:7:11",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
@@ -204,7 +253,11 @@
               "id": 1805,
               "length": null,
               "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
               "src": "170:9:13",
+=======
+              "src": "165:9:11",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                 "typeString": "bytes32[]"
@@ -217,7 +270,11 @@
             "body": {
               "id": 1881,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "344:366:13",
+=======
+              "src": "333:357:11",
+>>>>>>> master
               "statements": [
                 {
                   "assignments": [
@@ -231,8 +288,13 @@
                       "name": "user_addrs",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1881,
                       "src": "355:27:13",
+=======
+                      "scope": 1566,
+                      "src": "343:27:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -244,7 +306,11 @@
                           "id": 1817,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "355:7:13",
+=======
+                          "src": "343:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -253,7 +319,11 @@
                         "id": 1818,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "355:9:13",
+=======
+                        "src": "343:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -275,8 +345,13 @@
                           "name": "user_list",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1806,
                           "src": "399:9:13",
+=======
+                          "referencedDeclaration": 1491,
+                          "src": "387:9:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                             "typeString": "bytes32[] storage ref"
@@ -290,7 +365,11 @@
                         "memberName": "length",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
+<<<<<<< HEAD
                         "src": "399:16:13",
+=======
+                        "src": "387:16:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -310,7 +389,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
+<<<<<<< HEAD
                       "src": "385:13:13",
+=======
+                      "src": "373:13:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
                         "typeString": "function (uint256) pure returns (address[] memory)"
@@ -320,7 +403,11 @@
                           "id": 1820,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "389:7:13",
+=======
+                          "src": "377:7:11",
+>>>>>>> master
                           "stateMutability": "nonpayable",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -330,7 +417,11 @@
                         "id": 1821,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "389:9:13",
+=======
+                        "src": "377:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -345,7 +436,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "385:31:13",
+=======
+                    "src": "373:31:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -353,7 +448,11 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "355:61:13"
+=======
+                  "src": "343:61:11"
+>>>>>>> master
                 },
                 {
                   "assignments": [
@@ -367,8 +466,13 @@
                       "name": "uids",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1881,
                       "src": "427:21:13",
+=======
+                      "scope": 1566,
+                      "src": "414:21:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -380,7 +484,11 @@
                           "id": 1829,
                           "name": "bytes32",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "427:7:13",
+=======
+                          "src": "414:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -389,7 +497,11 @@
                         "id": 1830,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "427:9:13",
+=======
+                        "src": "414:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                           "typeString": "bytes32[]"
@@ -411,8 +523,13 @@
                           "name": "user_list",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1806,
                           "src": "465:9:13",
+=======
+                          "referencedDeclaration": 1491,
+                          "src": "452:9:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                             "typeString": "bytes32[] storage ref"
@@ -426,7 +543,11 @@
                         "memberName": "length",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
+<<<<<<< HEAD
                         "src": "465:16:13",
+=======
+                        "src": "452:16:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -446,7 +567,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
+<<<<<<< HEAD
                       "src": "451:13:13",
+=======
+                      "src": "438:13:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_bytes32_$dyn_memory_ptr_$",
                         "typeString": "function (uint256) pure returns (bytes32[] memory)"
@@ -456,7 +581,11 @@
                           "id": 1832,
                           "name": "bytes32",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "455:7:13",
+=======
+                          "src": "442:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -465,7 +594,11 @@
                         "id": 1833,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "455:9:13",
+=======
+                        "src": "442:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                           "typeString": "bytes32[]"
@@ -480,7 +613,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "451:31:13",
+=======
+                    "src": "438:31:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
@@ -488,13 +625,21 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "427:55:13"
+=======
+                  "src": "414:55:11"
+>>>>>>> master
                 },
                 {
                   "body": {
                     "id": 1875,
                     "nodeType": "Block",
+<<<<<<< HEAD
                     "src": "542:125:13",
+=======
+                    "src": "527:122:11",
+>>>>>>> master
                     "statements": [
                       {
                         "expression": {
@@ -512,8 +657,13 @@
                               "name": "user_addrs",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1819,
                               "src": "557:10:13",
+=======
+                              "referencedDeclaration": 1504,
+                              "src": "541:10:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                 "typeString": "address[] memory"
@@ -526,8 +676,13 @@
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1840,
                               "src": "568:1:13",
+=======
+                              "referencedDeclaration": 1525,
+                              "src": "552:1:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -538,7 +693,11 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
+<<<<<<< HEAD
                             "src": "557:13:13",
+=======
+                            "src": "541:13:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -557,8 +716,13 @@
                                   "name": "users",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 1803,
                                   "src": "581:5:13",
+=======
+                                  "referencedDeclaration": 1488,
+                                  "src": "565:5:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                                     "typeString": "mapping(bytes32 => contract User)"
@@ -573,8 +737,13 @@
                                     "name": "user_list",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1806,
                                     "src": "587:9:13",
+=======
+                                    "referencedDeclaration": 1491,
+                                    "src": "571:9:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                                       "typeString": "bytes32[] storage ref"
@@ -587,8 +756,13 @@
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1840,
                                     "src": "597:1:13",
+=======
+                                    "referencedDeclaration": 1525,
+                                    "src": "581:1:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -599,7 +773,11 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                   "src": "587:12:13",
+=======
+                                  "src": "571:12:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -610,7 +788,11 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                 "src": "581:19:13",
+=======
+                                "src": "565:19:11",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_User_$1688",
                                   "typeString": "contract User"
@@ -630,7 +812,11 @@
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                               "src": "573:7:13",
+=======
+                              "src": "557:7:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_address_$",
                                 "typeString": "type(address)"
@@ -639,7 +825,11 @@
                                 "id": 1853,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                                 "src": "573:7:13",
+=======
+                                "src": "557:7:11",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": null,
                                   "typeString": null
@@ -654,14 +844,22 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
+<<<<<<< HEAD
                             "src": "573:28:13",
+=======
+                            "src": "557:28:11",
+>>>>>>> master
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
+<<<<<<< HEAD
                           "src": "557:44:13",
+=======
+                          "src": "541:44:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -669,7 +867,11 @@
                         },
                         "id": 1862,
                         "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                         "src": "557:44:13"
+=======
+                        "src": "541:44:11"
+>>>>>>> master
                       },
                       {
                         "expression": {
@@ -687,8 +889,13 @@
                               "name": "uids",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1831,
                               "src": "616:4:13",
+=======
+                              "referencedDeclaration": 1516,
+                              "src": "599:4:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                                 "typeString": "bytes32[] memory"
@@ -701,8 +908,13 @@
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1840,
                               "src": "621:1:13",
+=======
+                              "referencedDeclaration": 1525,
+                              "src": "604:1:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -713,7 +925,11 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
+<<<<<<< HEAD
                             "src": "616:7:13",
+=======
+                            "src": "599:7:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -734,8 +950,13 @@
                                   "name": "users",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 1803,
                                   "src": "626:5:13",
+=======
+                                  "referencedDeclaration": 1488,
+                                  "src": "609:5:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                                     "typeString": "mapping(bytes32 => contract User)"
@@ -750,8 +971,13 @@
                                     "name": "user_list",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1806,
                                     "src": "632:9:13",
+=======
+                                    "referencedDeclaration": 1491,
+                                    "src": "615:9:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                                       "typeString": "bytes32[] storage ref"
@@ -764,8 +990,13 @@
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1840,
                                     "src": "642:1:13",
+=======
+                                    "referencedDeclaration": 1525,
+                                    "src": "625:1:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -776,7 +1007,11 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                   "src": "632:12:13",
+=======
+                                  "src": "615:12:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -787,7 +1022,11 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                 "src": "626:19:13",
+=======
+                                "src": "609:19:11",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_User_$1688",
                                   "typeString": "contract User"
@@ -800,8 +1039,13 @@
                               "lValueRequested": false,
                               "memberName": "get_uid",
                               "nodeType": "MemberAccess",
+<<<<<<< HEAD
                               "referencedDeclaration": 1548,
                               "src": "626:27:13",
+=======
+                              "referencedDeclaration": 1233,
+                              "src": "609:27:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_view$__$returns$_t_bytes32_$",
                                 "typeString": "function () view external returns (bytes32)"
@@ -815,14 +1059,22 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
+<<<<<<< HEAD
                             "src": "626:29:13",
+=======
+                            "src": "609:29:11",
+>>>>>>> master
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
                             }
                           },
+<<<<<<< HEAD
                           "src": "616:39:13",
+=======
+                          "src": "599:39:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -830,7 +1082,11 @@
                         },
                         "id": 1874,
                         "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                         "src": "616:39:13"
+=======
+                        "src": "599:39:11"
+>>>>>>> master
                       }
                     ]
                   },
@@ -851,8 +1107,13 @@
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 1840,
                       "src": "515:1:13",
+=======
+                      "referencedDeclaration": 1525,
+                      "src": "500:1:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -868,8 +1129,13 @@
                         "name": "user_list",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1806,
                         "src": "519:9:13",
+=======
+                        "referencedDeclaration": 1491,
+                        "src": "504:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -883,13 +1149,21 @@
                       "memberName": "length",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "519:16:13",
+=======
+                      "src": "504:16:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
+<<<<<<< HEAD
                     "src": "515:20:13",
+=======
+                    "src": "500:20:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -908,8 +1182,13 @@
                         "name": "i",
                         "nodeType": "VariableDeclaration",
                         "overrides": null,
+<<<<<<< HEAD
                         "scope": 1876,
                         "src": "500:9:13",
+=======
+                        "scope": 1561,
+                        "src": "485:9:11",
+>>>>>>> master
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -920,7 +1199,11 @@
                           "id": 1839,
                           "name": "uint256",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "500:7:13",
+=======
+                          "src": "485:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -941,7 +1224,11 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
+<<<<<<< HEAD
                       "src": "512:1:13",
+=======
+                      "src": "497:1:11",
+>>>>>>> master
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
@@ -950,7 +1237,11 @@
                       "value": "0"
                     },
                     "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                     "src": "500:13:13"
+=======
+                    "src": "485:13:11"
+>>>>>>> master
                   },
                   "loopExpression": {
                     "expression": {
@@ -963,15 +1254,24 @@
                       "nodeType": "UnaryOperation",
                       "operator": "++",
                       "prefix": false,
+<<<<<<< HEAD
                       "src": "537:3:13",
+=======
+                      "src": "522:3:11",
+>>>>>>> master
                       "subExpression": {
                         "argumentTypes": null,
                         "id": 1847,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1840,
                         "src": "537:1:13",
+=======
+                        "referencedDeclaration": 1525,
+                        "src": "522:1:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -984,10 +1284,17 @@
                     },
                     "id": 1849,
                     "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                     "src": "537:3:13"
                   },
                   "nodeType": "ForStatement",
                   "src": "495:172:13"
+=======
+                    "src": "522:3:11"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "480:169:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -999,8 +1306,13 @@
                         "name": "uids",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1831,
                         "src": "685:4:13",
+=======
+                        "referencedDeclaration": 1516,
+                        "src": "666:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -1012,8 +1324,13 @@
                         "name": "user_addrs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1819,
                         "src": "691:10:13",
+=======
+                        "referencedDeclaration": 1504,
+                        "src": "672:10:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                           "typeString": "address[] memory"
@@ -1027,7 +1344,11 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
+<<<<<<< HEAD
                     "src": "684:18:13",
+=======
+                    "src": "665:18:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_array$_t_bytes32_$dyn_memory_ptr_$_t_array$_t_address_$dyn_memory_ptr_$",
                       "typeString": "tuple(bytes32[] memory,address[] memory)"
@@ -1036,7 +1357,11 @@
                   "functionReturnParameters": 1814,
                   "id": 1880,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "677:25:13"
+=======
+                  "src": "658:25:11"
+>>>>>>> master
                 }
               ]
             },
@@ -1053,7 +1378,11 @@
               "id": 1807,
               "nodeType": "ParameterList",
               "parameters": [],
+<<<<<<< HEAD
               "src": "252:2:13"
+=======
+              "src": "245:2:11"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 1814,
@@ -1066,8 +1395,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1882,
                   "src": "303:16:13",
+=======
+                  "scope": 1567,
+                  "src": "293:16:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1079,7 +1413,11 @@
                       "id": 1808,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "303:7:13",
+=======
+                      "src": "293:7:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -1088,7 +1426,11 @@
                     "id": 1809,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "303:9:13",
+=======
+                    "src": "293:9:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
@@ -1104,8 +1446,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1882,
                   "src": "321:16:13",
+=======
+                  "scope": 1567,
+                  "src": "311:16:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1117,7 +1464,11 @@
                       "id": 1811,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "321:7:13",
+=======
+                      "src": "311:7:11",
+>>>>>>> master
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1127,7 +1478,11 @@
                     "id": 1812,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "321:9:13",
+=======
+                    "src": "311:9:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1137,10 +1492,17 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "302:36:13"
             },
             "scope": 1946,
             "src": "230:480:13",
+=======
+              "src": "292:36:11"
+            },
+            "scope": 1631,
+            "src": "223:467:11",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -1149,7 +1511,11 @@
             "body": {
               "id": 1903,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "770:72:13",
+=======
+              "src": "748:69:11",
+>>>>>>> master
               "statements": [
                 {
                   "expression": {
@@ -1167,8 +1533,13 @@
                         "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1803,
                         "src": "781:5:13",
+=======
+                        "referencedDeclaration": 1488,
+                        "src": "758:5:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                           "typeString": "mapping(bytes32 => contract User)"
@@ -1181,8 +1552,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1884,
                         "src": "787:3:13",
+=======
+                        "referencedDeclaration": 1569,
+                        "src": "764:3:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1193,7 +1569,11 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
+<<<<<<< HEAD
                       "src": "781:10:13",
+=======
+                      "src": "758:10:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_User_$1688",
                         "typeString": "contract User"
@@ -1210,8 +1590,13 @@
                           "name": "user",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1886,
                           "src": "799:4:13",
+=======
+                          "referencedDeclaration": 1571,
+                          "src": "776:4:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -1229,8 +1614,13 @@
                         "name": "User",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1688,
                         "src": "794:4:13",
+=======
+                        "referencedDeclaration": 1373,
+                        "src": "771:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_contract$_User_$1688_$",
                           "typeString": "type(contract User)"
@@ -1244,14 +1634,22 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
+<<<<<<< HEAD
                       "src": "794:10:13",
+=======
+                      "src": "771:10:11",
+>>>>>>> master
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_User_$1688",
                         "typeString": "contract User"
                       }
                     },
+<<<<<<< HEAD
                     "src": "781:23:13",
+=======
+                    "src": "758:23:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_User_$1688",
                       "typeString": "contract User"
@@ -1259,7 +1657,11 @@
                   },
                   "id": 1896,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "781:23:13"
+=======
+                  "src": "758:23:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -1271,8 +1673,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1884,
                         "src": "830:3:13",
+=======
+                        "referencedDeclaration": 1569,
+                        "src": "806:3:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1292,8 +1699,13 @@
                         "name": "user_list",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1806,
                         "src": "815:9:13",
+=======
+                        "referencedDeclaration": 1491,
+                        "src": "791:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -1307,7 +1719,11 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "815:14:13",
+=======
+                      "src": "791:14:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -1321,7 +1737,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "815:19:13",
+=======
+                    "src": "791:19:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1330,7 +1750,11 @@
                   },
                   "id": 1902,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "815:19:13"
+=======
+                  "src": "791:19:11"
+>>>>>>> master
                 }
               ]
             },
@@ -1354,8 +1778,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1904,
                   "src": "736:11:13",
+=======
+                  "scope": 1589,
+                  "src": "714:11:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1366,7 +1795,11 @@
                     "id": 1883,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "736:7:13",
+=======
+                    "src": "714:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1382,8 +1815,13 @@
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1904,
                   "src": "749:12:13",
+=======
+                  "scope": 1589,
+                  "src": "727:12:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1394,7 +1832,11 @@
                     "id": 1885,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "749:7:13",
+=======
+                    "src": "727:7:11",
+>>>>>>> master
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1405,16 +1847,27 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "735:27:13"
+=======
+              "src": "713:27:11"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 1888,
               "nodeType": "ParameterList",
               "parameters": [],
+<<<<<<< HEAD
               "src": "770:0:13"
             },
             "scope": 1946,
             "src": "718:124:13",
+=======
+              "src": "748:0:11"
+            },
+            "scope": 1631,
+            "src": "696:121:11",
+>>>>>>> master
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -1423,7 +1876,11 @@
             "body": {
               "id": 1944,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "1011:189:13",
+=======
+              "src": "976:183:11",
+>>>>>>> master
               "statements": [
                 {
                   "assignments": [
@@ -1437,8 +1894,13 @@
                       "name": "user",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1944,
                       "src": "1022:9:13",
+=======
+                      "scope": 1629,
+                      "src": "986:9:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1450,8 +1912,13 @@
                         "id": 1915,
                         "name": "User",
                         "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                         "referencedDeclaration": 1688,
                         "src": "1022:4:13",
+=======
+                        "referencedDeclaration": 1373,
+                        "src": "986:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_User_$1688",
                           "typeString": "contract User"
@@ -1470,8 +1937,13 @@
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 1803,
                       "src": "1034:5:13",
+=======
+                      "referencedDeclaration": 1488,
+                      "src": "998:5:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                         "typeString": "mapping(bytes32 => contract User)"
@@ -1484,8 +1956,13 @@
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 1906,
                       "src": "1040:3:13",
+=======
+                      "referencedDeclaration": 1591,
+                      "src": "1004:3:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -1496,14 +1973,22 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
+<<<<<<< HEAD
                     "src": "1034:10:13",
+=======
+                    "src": "998:10:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_User_$1688",
                       "typeString": "contract User"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "1022:22:13"
+=======
+                  "src": "986:22:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -1526,8 +2011,13 @@
                           "name": "user",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1916,
                           "src": "1063:4:13",
+=======
+                          "referencedDeclaration": 1601,
+                          "src": "1026:4:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_User_$1688",
                             "typeString": "contract User"
@@ -1548,7 +2038,11 @@
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
+<<<<<<< HEAD
                               "src": "1076:1:13",
+=======
+                              "src": "1039:1:11",
+>>>>>>> master
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -1568,8 +2062,13 @@
                             "name": "User",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 1688,
                             "src": "1071:4:13",
+=======
+                            "referencedDeclaration": 1373,
+                            "src": "1034:4:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_contract$_User_$1688_$",
                               "typeString": "type(contract User)"
@@ -1583,14 +2082,22 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
+<<<<<<< HEAD
                           "src": "1071:7:13",
+=======
+                          "src": "1034:7:11",
+>>>>>>> master
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_User_$1688",
                             "typeString": "contract User"
                           }
                         },
+<<<<<<< HEAD
                         "src": "1063:15:13",
+=======
+                        "src": "1026:15:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -1606,7 +2113,11 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
+<<<<<<< HEAD
                         "src": "1080:12:13",
+=======
+                        "src": "1043:12:11",
+>>>>>>> master
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_7837f335264bd360641b4416fff1ee6c3f2797a341254bb9c2f747eb27a03233",
@@ -1634,7 +2145,11 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
+<<<<<<< HEAD
                       "src": "1055:7:13",
+=======
+                      "src": "1018:7:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -1648,7 +2163,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1055:38:13",
+=======
+                    "src": "1018:38:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1657,7 +2176,11 @@
                   },
                   "id": 1929,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1055:38:13"
+=======
+                  "src": "1018:38:11"
+>>>>>>> master
                 },
                 {
                   "assignments": [
@@ -1671,8 +2194,13 @@
                       "name": "password",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1944,
                       "src": "1104:16:13",
+=======
+                      "scope": 1629,
+                      "src": "1066:16:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -1683,7 +2211,11 @@
                         "id": 1930,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                         "src": "1104:7:13",
+=======
+                        "src": "1066:7:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1705,8 +2237,13 @@
                         "name": "user",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1916,
                         "src": "1123:4:13",
+=======
+                        "referencedDeclaration": 1601,
+                        "src": "1085:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_User_$1688",
                           "typeString": "contract User"
@@ -1719,8 +2256,13 @@
                       "lValueRequested": false,
                       "memberName": "get_password",
                       "nodeType": "MemberAccess",
+<<<<<<< HEAD
                       "referencedDeclaration": 1556,
                       "src": "1123:17:13",
+=======
+                      "referencedDeclaration": 1241,
+                      "src": "1085:17:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$__$returns$_t_bytes32_$",
                         "typeString": "function () view external returns (bytes32)"
@@ -1734,7 +2276,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1123:19:13",
+=======
+                    "src": "1085:19:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -1742,7 +2288,11 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "1104:38:13"
+=======
+                  "src": "1066:38:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -1757,8 +2307,13 @@
                             "name": "user",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 1916,
                             "src": "1171:4:13",
+=======
+                            "referencedDeclaration": 1601,
+                            "src": "1131:4:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_User_$1688",
                               "typeString": "contract User"
@@ -1778,7 +2333,11 @@
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                           "src": "1163:7:13",
+=======
+                          "src": "1123:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
@@ -1787,7 +2346,11 @@
                             "id": 1936,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                             "src": "1163:7:13",
+=======
+                            "src": "1123:7:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": null,
                               "typeString": null
@@ -1802,7 +2365,11 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
+<<<<<<< HEAD
                         "src": "1163:13:13",
+=======
+                        "src": "1123:13:11",
+>>>>>>> master
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -1815,8 +2382,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1906,
                         "src": "1178:3:13",
+=======
+                        "referencedDeclaration": 1591,
+                        "src": "1138:3:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1828,8 +2400,13 @@
                         "name": "password",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1931,
                         "src": "1183:8:13",
+=======
+                        "referencedDeclaration": 1616,
+                        "src": "1143:8:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1843,7 +2420,11 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
+<<<<<<< HEAD
                     "src": "1162:30:13",
+=======
+                    "src": "1122:30:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_address_$_t_bytes32_$_t_bytes32_$",
                       "typeString": "tuple(address,bytes32,bytes32)"
@@ -1852,7 +2433,11 @@
                   "functionReturnParameters": 1914,
                   "id": 1943,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "1155:37:13"
+=======
+                  "src": "1115:37:11"
+>>>>>>> master
                 }
               ]
             },
@@ -1876,8 +2461,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "868:11:13",
+=======
+                  "scope": 1630,
+                  "src": "841:11:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1888,7 +2478,11 @@
                     "id": 1905,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "868:7:13",
+=======
+                    "src": "841:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1898,7 +2492,11 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "867:13:13"
+=======
+              "src": "840:13:11"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 1914,
@@ -1911,8 +2509,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "943:7:13",
+=======
+                  "scope": 1630,
+                  "src": "912:7:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1923,7 +2526,11 @@
                     "id": 1908,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "943:7:13",
+=======
+                    "src": "912:7:11",
+>>>>>>> master
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1940,8 +2547,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "965:7:13",
+=======
+                  "scope": 1630,
+                  "src": "933:7:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1952,7 +2564,11 @@
                     "id": 1910,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "965:7:13",
+=======
+                    "src": "933:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1968,8 +2584,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "987:7:13",
+=======
+                  "scope": 1630,
+                  "src": "954:7:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1980,7 +2601,11 @@
                     "id": 1912,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "987:7:13",
+=======
+                    "src": "954:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1990,15 +2615,23 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "928:77:13"
             },
             "scope": 1946,
             "src": "850:350:13",
+=======
+              "src": "898:73:11"
+            },
+            "scope": 1631,
+            "src": "823:336:11",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
+<<<<<<< HEAD
         "scope": 1947,
         "src": "58:1145:13"
       }
@@ -2007,6 +2640,16 @@
   },
   "legacyAST": {
     "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/UserManager.sol",
+=======
+        "scope": 1632,
+        "src": "55:1106:11"
+      }
+    ],
+    "src": "0:1162:11"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol",
+>>>>>>> master
     "exportedSymbols": {
       "UserManager": [
         1946
@@ -2030,13 +2673,23 @@
         "src": "0:32:13"
       },
       {
+<<<<<<< HEAD
         "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/User.sol",
+=======
+        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/User.sol",
+>>>>>>> master
         "file": "./User.sol",
         "id": 1799,
         "nodeType": "ImportDirective",
+<<<<<<< HEAD
         "scope": 1947,
         "sourceUnit": 1689,
         "src": "34:20:13",
+=======
+        "scope": 1632,
+        "sourceUnit": 1374,
+        "src": "33:20:11",
+>>>>>>> master
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -2061,8 +2714,13 @@
             "name": "users",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 1946,
             "src": "86:38:13",
+=======
+            "scope": 1631,
+            "src": "82:38:11",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2075,14 +2733,22 @@
                 "id": 1800,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "94:7:13",
+=======
+                "src": "90:7:11",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
+<<<<<<< HEAD
               "src": "86:24:13",
+=======
+              "src": "82:24:11",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                 "typeString": "mapping(bytes32 => contract User)"
@@ -2092,8 +2758,13 @@
                 "id": 1801,
                 "name": "User",
                 "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                 "referencedDeclaration": 1688,
                 "src": "105:4:13",
+=======
+                "referencedDeclaration": 1373,
+                "src": "101:4:11",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_contract$_User_$1688",
                   "typeString": "contract User"
@@ -2110,8 +2781,13 @@
             "name": "user_list",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 1946,
             "src": "170:27:13",
+=======
+            "scope": 1631,
+            "src": "165:27:11",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -2123,7 +2799,11 @@
                 "id": 1804,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "170:7:13",
+=======
+                "src": "165:7:11",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
@@ -2132,7 +2812,11 @@
               "id": 1805,
               "length": null,
               "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
               "src": "170:9:13",
+=======
+              "src": "165:9:11",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                 "typeString": "bytes32[]"
@@ -2145,7 +2829,11 @@
             "body": {
               "id": 1881,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "344:366:13",
+=======
+              "src": "333:357:11",
+>>>>>>> master
               "statements": [
                 {
                   "assignments": [
@@ -2159,8 +2847,13 @@
                       "name": "user_addrs",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1881,
                       "src": "355:27:13",
+=======
+                      "scope": 1566,
+                      "src": "343:27:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -2172,7 +2865,11 @@
                           "id": 1817,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "355:7:13",
+=======
+                          "src": "343:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2181,7 +2878,11 @@
                         "id": 1818,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "355:9:13",
+=======
+                        "src": "343:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -2203,8 +2904,13 @@
                           "name": "user_list",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1806,
                           "src": "399:9:13",
+=======
+                          "referencedDeclaration": 1491,
+                          "src": "387:9:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                             "typeString": "bytes32[] storage ref"
@@ -2218,7 +2924,11 @@
                         "memberName": "length",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
+<<<<<<< HEAD
                         "src": "399:16:13",
+=======
+                        "src": "387:16:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2238,7 +2948,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
+<<<<<<< HEAD
                       "src": "385:13:13",
+=======
+                      "src": "373:13:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
                         "typeString": "function (uint256) pure returns (address[] memory)"
@@ -2248,7 +2962,11 @@
                           "id": 1820,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "389:7:13",
+=======
+                          "src": "377:7:11",
+>>>>>>> master
                           "stateMutability": "nonpayable",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2258,7 +2976,11 @@
                         "id": 1821,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "389:9:13",
+=======
+                        "src": "377:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -2273,7 +2995,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "385:31:13",
+=======
+                    "src": "373:31:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -2281,7 +3007,11 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "355:61:13"
+=======
+                  "src": "343:61:11"
+>>>>>>> master
                 },
                 {
                   "assignments": [
@@ -2295,8 +3025,13 @@
                       "name": "uids",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1881,
                       "src": "427:21:13",
+=======
+                      "scope": 1566,
+                      "src": "414:21:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -2308,7 +3043,11 @@
                           "id": 1829,
                           "name": "bytes32",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "427:7:13",
+=======
+                          "src": "414:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -2317,7 +3056,11 @@
                         "id": 1830,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "427:9:13",
+=======
+                        "src": "414:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                           "typeString": "bytes32[]"
@@ -2339,8 +3082,13 @@
                           "name": "user_list",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1806,
                           "src": "465:9:13",
+=======
+                          "referencedDeclaration": 1491,
+                          "src": "452:9:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                             "typeString": "bytes32[] storage ref"
@@ -2354,7 +3102,11 @@
                         "memberName": "length",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
+<<<<<<< HEAD
                         "src": "465:16:13",
+=======
+                        "src": "452:16:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2374,7 +3126,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
+<<<<<<< HEAD
                       "src": "451:13:13",
+=======
+                      "src": "438:13:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_bytes32_$dyn_memory_ptr_$",
                         "typeString": "function (uint256) pure returns (bytes32[] memory)"
@@ -2384,7 +3140,11 @@
                           "id": 1832,
                           "name": "bytes32",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "455:7:13",
+=======
+                          "src": "442:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -2393,7 +3153,11 @@
                         "id": 1833,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "455:9:13",
+=======
+                        "src": "442:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                           "typeString": "bytes32[]"
@@ -2408,7 +3172,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "451:31:13",
+=======
+                    "src": "438:31:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
@@ -2416,13 +3184,21 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "427:55:13"
+=======
+                  "src": "414:55:11"
+>>>>>>> master
                 },
                 {
                   "body": {
                     "id": 1875,
                     "nodeType": "Block",
+<<<<<<< HEAD
                     "src": "542:125:13",
+=======
+                    "src": "527:122:11",
+>>>>>>> master
                     "statements": [
                       {
                         "expression": {
@@ -2440,8 +3216,13 @@
                               "name": "user_addrs",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1819,
                               "src": "557:10:13",
+=======
+                              "referencedDeclaration": 1504,
+                              "src": "541:10:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                 "typeString": "address[] memory"
@@ -2454,8 +3235,13 @@
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1840,
                               "src": "568:1:13",
+=======
+                              "referencedDeclaration": 1525,
+                              "src": "552:1:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2466,7 +3252,11 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
+<<<<<<< HEAD
                             "src": "557:13:13",
+=======
+                            "src": "541:13:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2485,8 +3275,13 @@
                                   "name": "users",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 1803,
                                   "src": "581:5:13",
+=======
+                                  "referencedDeclaration": 1488,
+                                  "src": "565:5:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                                     "typeString": "mapping(bytes32 => contract User)"
@@ -2501,8 +3296,13 @@
                                     "name": "user_list",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1806,
                                     "src": "587:9:13",
+=======
+                                    "referencedDeclaration": 1491,
+                                    "src": "571:9:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                                       "typeString": "bytes32[] storage ref"
@@ -2515,8 +3315,13 @@
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1840,
                                     "src": "597:1:13",
+=======
+                                    "referencedDeclaration": 1525,
+                                    "src": "581:1:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -2527,7 +3332,11 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                   "src": "587:12:13",
+=======
+                                  "src": "571:12:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -2538,7 +3347,11 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                 "src": "581:19:13",
+=======
+                                "src": "565:19:11",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_User_$1688",
                                   "typeString": "contract User"
@@ -2558,7 +3371,11 @@
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                               "src": "573:7:13",
+=======
+                              "src": "557:7:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_address_$",
                                 "typeString": "type(address)"
@@ -2567,7 +3384,11 @@
                                 "id": 1853,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                                 "src": "573:7:13",
+=======
+                                "src": "557:7:11",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": null,
                                   "typeString": null
@@ -2582,14 +3403,22 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
+<<<<<<< HEAD
                             "src": "573:28:13",
+=======
+                            "src": "557:28:11",
+>>>>>>> master
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
+<<<<<<< HEAD
                           "src": "557:44:13",
+=======
+                          "src": "541:44:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2597,7 +3426,11 @@
                         },
                         "id": 1862,
                         "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                         "src": "557:44:13"
+=======
+                        "src": "541:44:11"
+>>>>>>> master
                       },
                       {
                         "expression": {
@@ -2615,8 +3448,13 @@
                               "name": "uids",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1831,
                               "src": "616:4:13",
+=======
+                              "referencedDeclaration": 1516,
+                              "src": "599:4:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                                 "typeString": "bytes32[] memory"
@@ -2629,8 +3467,13 @@
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 1840,
                               "src": "621:1:13",
+=======
+                              "referencedDeclaration": 1525,
+                              "src": "604:1:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2641,7 +3484,11 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
+<<<<<<< HEAD
                             "src": "616:7:13",
+=======
+                            "src": "599:7:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -2662,8 +3509,13 @@
                                   "name": "users",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 1803,
                                   "src": "626:5:13",
+=======
+                                  "referencedDeclaration": 1488,
+                                  "src": "609:5:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                                     "typeString": "mapping(bytes32 => contract User)"
@@ -2678,8 +3530,13 @@
                                     "name": "user_list",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1806,
                                     "src": "632:9:13",
+=======
+                                    "referencedDeclaration": 1491,
+                                    "src": "615:9:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                                       "typeString": "bytes32[] storage ref"
@@ -2692,8 +3549,13 @@
                                     "name": "i",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 1840,
                                     "src": "642:1:13",
+=======
+                                    "referencedDeclaration": 1525,
+                                    "src": "625:1:11",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
                                       "typeString": "uint256"
@@ -2704,7 +3566,11 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                   "src": "632:12:13",
+=======
+                                  "src": "615:12:11",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -2715,7 +3581,11 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                 "src": "626:19:13",
+=======
+                                "src": "609:19:11",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_User_$1688",
                                   "typeString": "contract User"
@@ -2728,8 +3598,13 @@
                               "lValueRequested": false,
                               "memberName": "get_uid",
                               "nodeType": "MemberAccess",
+<<<<<<< HEAD
                               "referencedDeclaration": 1548,
                               "src": "626:27:13",
+=======
+                              "referencedDeclaration": 1233,
+                              "src": "609:27:11",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_function_external_view$__$returns$_t_bytes32_$",
                                 "typeString": "function () view external returns (bytes32)"
@@ -2743,14 +3618,22 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
+<<<<<<< HEAD
                             "src": "626:29:13",
+=======
+                            "src": "609:29:11",
+>>>>>>> master
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
                             }
                           },
+<<<<<<< HEAD
                           "src": "616:39:13",
+=======
+                          "src": "599:39:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -2758,7 +3641,11 @@
                         },
                         "id": 1874,
                         "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                         "src": "616:39:13"
+=======
+                        "src": "599:39:11"
+>>>>>>> master
                       }
                     ]
                   },
@@ -2779,8 +3666,13 @@
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 1840,
                       "src": "515:1:13",
+=======
+                      "referencedDeclaration": 1525,
+                      "src": "500:1:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2796,8 +3688,13 @@
                         "name": "user_list",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1806,
                         "src": "519:9:13",
+=======
+                        "referencedDeclaration": 1491,
+                        "src": "504:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -2811,13 +3708,21 @@
                       "memberName": "length",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "519:16:13",
+=======
+                      "src": "504:16:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
+<<<<<<< HEAD
                     "src": "515:20:13",
+=======
+                    "src": "500:20:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2836,8 +3741,13 @@
                         "name": "i",
                         "nodeType": "VariableDeclaration",
                         "overrides": null,
+<<<<<<< HEAD
                         "scope": 1876,
                         "src": "500:9:13",
+=======
+                        "scope": 1561,
+                        "src": "485:9:11",
+>>>>>>> master
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2848,7 +3758,11 @@
                           "id": 1839,
                           "name": "uint256",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "500:7:13",
+=======
+                          "src": "485:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2869,7 +3783,11 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
+<<<<<<< HEAD
                       "src": "512:1:13",
+=======
+                      "src": "497:1:11",
+>>>>>>> master
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
@@ -2878,7 +3796,11 @@
                       "value": "0"
                     },
                     "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                     "src": "500:13:13"
+=======
+                    "src": "485:13:11"
+>>>>>>> master
                   },
                   "loopExpression": {
                     "expression": {
@@ -2891,15 +3813,24 @@
                       "nodeType": "UnaryOperation",
                       "operator": "++",
                       "prefix": false,
+<<<<<<< HEAD
                       "src": "537:3:13",
+=======
+                      "src": "522:3:11",
+>>>>>>> master
                       "subExpression": {
                         "argumentTypes": null,
                         "id": 1847,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1840,
                         "src": "537:1:13",
+=======
+                        "referencedDeclaration": 1525,
+                        "src": "522:1:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2912,10 +3843,17 @@
                     },
                     "id": 1849,
                     "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                     "src": "537:3:13"
                   },
                   "nodeType": "ForStatement",
                   "src": "495:172:13"
+=======
+                    "src": "522:3:11"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "480:169:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -2927,8 +3865,13 @@
                         "name": "uids",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1831,
                         "src": "685:4:13",
+=======
+                        "referencedDeclaration": 1516,
+                        "src": "666:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -2940,8 +3883,13 @@
                         "name": "user_addrs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1819,
                         "src": "691:10:13",
+=======
+                        "referencedDeclaration": 1504,
+                        "src": "672:10:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                           "typeString": "address[] memory"
@@ -2955,7 +3903,11 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
+<<<<<<< HEAD
                     "src": "684:18:13",
+=======
+                    "src": "665:18:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_array$_t_bytes32_$dyn_memory_ptr_$_t_array$_t_address_$dyn_memory_ptr_$",
                       "typeString": "tuple(bytes32[] memory,address[] memory)"
@@ -2964,7 +3916,11 @@
                   "functionReturnParameters": 1814,
                   "id": 1880,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "677:25:13"
+=======
+                  "src": "658:25:11"
+>>>>>>> master
                 }
               ]
             },
@@ -2981,7 +3937,11 @@
               "id": 1807,
               "nodeType": "ParameterList",
               "parameters": [],
+<<<<<<< HEAD
               "src": "252:2:13"
+=======
+              "src": "245:2:11"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 1814,
@@ -2994,8 +3954,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1882,
                   "src": "303:16:13",
+=======
+                  "scope": 1567,
+                  "src": "293:16:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3007,7 +3972,11 @@
                       "id": 1808,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "303:7:13",
+=======
+                      "src": "293:7:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -3016,7 +3985,11 @@
                     "id": 1809,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "303:9:13",
+=======
+                    "src": "293:9:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
@@ -3032,8 +4005,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1882,
                   "src": "321:16:13",
+=======
+                  "scope": 1567,
+                  "src": "311:16:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -3045,7 +4023,11 @@
                       "id": 1811,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "321:7:13",
+=======
+                      "src": "311:7:11",
+>>>>>>> master
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -3055,7 +4037,11 @@
                     "id": 1812,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "321:9:13",
+=======
+                    "src": "311:9:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -3065,10 +4051,17 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "302:36:13"
             },
             "scope": 1946,
             "src": "230:480:13",
+=======
+              "src": "292:36:11"
+            },
+            "scope": 1631,
+            "src": "223:467:11",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -3077,7 +4070,11 @@
             "body": {
               "id": 1903,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "770:72:13",
+=======
+              "src": "748:69:11",
+>>>>>>> master
               "statements": [
                 {
                   "expression": {
@@ -3095,8 +4092,13 @@
                         "name": "users",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1803,
                         "src": "781:5:13",
+=======
+                        "referencedDeclaration": 1488,
+                        "src": "758:5:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                           "typeString": "mapping(bytes32 => contract User)"
@@ -3109,8 +4111,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1884,
                         "src": "787:3:13",
+=======
+                        "referencedDeclaration": 1569,
+                        "src": "764:3:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3121,7 +4128,11 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
+<<<<<<< HEAD
                       "src": "781:10:13",
+=======
+                      "src": "758:10:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_User_$1688",
                         "typeString": "contract User"
@@ -3138,8 +4149,13 @@
                           "name": "user",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1886,
                           "src": "799:4:13",
+=======
+                          "referencedDeclaration": 1571,
+                          "src": "776:4:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -3157,8 +4173,13 @@
                         "name": "User",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1688,
                         "src": "794:4:13",
+=======
+                        "referencedDeclaration": 1373,
+                        "src": "771:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_type$_t_contract$_User_$1688_$",
                           "typeString": "type(contract User)"
@@ -3172,14 +4193,22 @@
                       "lValueRequested": false,
                       "names": [],
                       "nodeType": "FunctionCall",
+<<<<<<< HEAD
                       "src": "794:10:13",
+=======
+                      "src": "771:10:11",
+>>>>>>> master
                       "tryCall": false,
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_User_$1688",
                         "typeString": "contract User"
                       }
                     },
+<<<<<<< HEAD
                     "src": "781:23:13",
+=======
+                    "src": "758:23:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_User_$1688",
                       "typeString": "contract User"
@@ -3187,7 +4216,11 @@
                   },
                   "id": 1896,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "781:23:13"
+=======
+                  "src": "758:23:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -3199,8 +4232,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1884,
                         "src": "830:3:13",
+=======
+                        "referencedDeclaration": 1569,
+                        "src": "806:3:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3220,8 +4258,13 @@
                         "name": "user_list",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1806,
                         "src": "815:9:13",
+=======
+                        "referencedDeclaration": 1491,
+                        "src": "791:9:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -3235,7 +4278,11 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "815:14:13",
+=======
+                      "src": "791:14:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -3249,7 +4296,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "815:19:13",
+=======
+                    "src": "791:19:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -3258,7 +4309,11 @@
                   },
                   "id": 1902,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "815:19:13"
+=======
+                  "src": "791:19:11"
+>>>>>>> master
                 }
               ]
             },
@@ -3282,8 +4337,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1904,
                   "src": "736:11:13",
+=======
+                  "scope": 1589,
+                  "src": "714:11:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3294,7 +4354,11 @@
                     "id": 1883,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "736:7:13",
+=======
+                    "src": "714:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3310,8 +4374,13 @@
                   "name": "user",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1904,
                   "src": "749:12:13",
+=======
+                  "scope": 1589,
+                  "src": "727:12:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3322,7 +4391,11 @@
                     "id": 1885,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "749:7:13",
+=======
+                    "src": "727:7:11",
+>>>>>>> master
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3333,16 +4406,27 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "735:27:13"
+=======
+              "src": "713:27:11"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 1888,
               "nodeType": "ParameterList",
               "parameters": [],
+<<<<<<< HEAD
               "src": "770:0:13"
             },
             "scope": 1946,
             "src": "718:124:13",
+=======
+              "src": "748:0:11"
+            },
+            "scope": 1631,
+            "src": "696:121:11",
+>>>>>>> master
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
@@ -3351,7 +4435,11 @@
             "body": {
               "id": 1944,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "1011:189:13",
+=======
+              "src": "976:183:11",
+>>>>>>> master
               "statements": [
                 {
                   "assignments": [
@@ -3365,8 +4453,13 @@
                       "name": "user",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1944,
                       "src": "1022:9:13",
+=======
+                      "scope": 1629,
+                      "src": "986:9:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3378,8 +4471,13 @@
                         "id": 1915,
                         "name": "User",
                         "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                         "referencedDeclaration": 1688,
                         "src": "1022:4:13",
+=======
+                        "referencedDeclaration": 1373,
+                        "src": "986:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_User_$1688",
                           "typeString": "contract User"
@@ -3398,8 +4496,13 @@
                       "name": "users",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 1803,
                       "src": "1034:5:13",
+=======
+                      "referencedDeclaration": 1488,
+                      "src": "998:5:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_User_$1688_$",
                         "typeString": "mapping(bytes32 => contract User)"
@@ -3412,8 +4515,13 @@
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 1906,
                       "src": "1040:3:13",
+=======
+                      "referencedDeclaration": 1591,
+                      "src": "1004:3:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -3424,14 +4532,22 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
+<<<<<<< HEAD
                     "src": "1034:10:13",
+=======
+                    "src": "998:10:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_User_$1688",
                       "typeString": "contract User"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "1022:22:13"
+=======
+                  "src": "986:22:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -3454,8 +4570,13 @@
                           "name": "user",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 1916,
                           "src": "1063:4:13",
+=======
+                          "referencedDeclaration": 1601,
+                          "src": "1026:4:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_User_$1688",
                             "typeString": "contract User"
@@ -3476,7 +4597,11 @@
                               "kind": "number",
                               "lValueRequested": false,
                               "nodeType": "Literal",
+<<<<<<< HEAD
                               "src": "1076:1:13",
+=======
+                              "src": "1039:1:11",
+>>>>>>> master
                               "subdenomination": null,
                               "typeDescriptions": {
                                 "typeIdentifier": "t_rational_0_by_1",
@@ -3496,8 +4621,13 @@
                             "name": "User",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 1688,
                             "src": "1071:4:13",
+=======
+                            "referencedDeclaration": 1373,
+                            "src": "1034:4:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_type$_t_contract$_User_$1688_$",
                               "typeString": "type(contract User)"
@@ -3511,14 +4641,22 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
+<<<<<<< HEAD
                           "src": "1071:7:13",
+=======
+                          "src": "1034:7:11",
+>>>>>>> master
                           "tryCall": false,
                           "typeDescriptions": {
                             "typeIdentifier": "t_contract$_User_$1688",
                             "typeString": "contract User"
                           }
                         },
+<<<<<<< HEAD
                         "src": "1063:15:13",
+=======
+                        "src": "1026:15:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bool",
                           "typeString": "bool"
@@ -3534,7 +4672,11 @@
                         "kind": "string",
                         "lValueRequested": false,
                         "nodeType": "Literal",
+<<<<<<< HEAD
                         "src": "1080:12:13",
+=======
+                        "src": "1043:12:11",
+>>>>>>> master
                         "subdenomination": null,
                         "typeDescriptions": {
                           "typeIdentifier": "t_stringliteral_7837f335264bd360641b4416fff1ee6c3f2797a341254bb9c2f747eb27a03233",
@@ -3562,7 +4704,11 @@
                         -18
                       ],
                       "referencedDeclaration": -18,
+<<<<<<< HEAD
                       "src": "1055:7:13",
+=======
+                      "src": "1018:7:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
                         "typeString": "function (bool,string memory) pure"
@@ -3576,7 +4722,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1055:38:13",
+=======
+                    "src": "1018:38:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -3585,7 +4735,11 @@
                   },
                   "id": 1929,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1055:38:13"
+=======
+                  "src": "1018:38:11"
+>>>>>>> master
                 },
                 {
                   "assignments": [
@@ -3599,8 +4753,13 @@
                       "name": "password",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 1944,
                       "src": "1104:16:13",
+=======
+                      "scope": 1629,
+                      "src": "1066:16:11",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "default",
                       "typeDescriptions": {
@@ -3611,7 +4770,11 @@
                         "id": 1930,
                         "name": "bytes32",
                         "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                         "src": "1104:7:13",
+=======
+                        "src": "1066:7:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3633,8 +4796,13 @@
                         "name": "user",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1916,
                         "src": "1123:4:13",
+=======
+                        "referencedDeclaration": 1601,
+                        "src": "1085:4:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_User_$1688",
                           "typeString": "contract User"
@@ -3647,8 +4815,13 @@
                       "lValueRequested": false,
                       "memberName": "get_password",
                       "nodeType": "MemberAccess",
+<<<<<<< HEAD
                       "referencedDeclaration": 1556,
                       "src": "1123:17:13",
+=======
+                      "referencedDeclaration": 1241,
+                      "src": "1085:17:11",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$__$returns$_t_bytes32_$",
                         "typeString": "function () view external returns (bytes32)"
@@ -3662,7 +4835,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1123:19:13",
+=======
+                    "src": "1085:19:11",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
@@ -3670,7 +4847,11 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "1104:38:13"
+=======
+                  "src": "1066:38:11"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -3685,8 +4866,13 @@
                             "name": "user",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 1916,
                             "src": "1171:4:13",
+=======
+                            "referencedDeclaration": 1601,
+                            "src": "1131:4:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_contract$_User_$1688",
                               "typeString": "contract User"
@@ -3706,7 +4892,11 @@
                           "isPure": true,
                           "lValueRequested": false,
                           "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                           "src": "1163:7:13",
+=======
+                          "src": "1123:7:11",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_type$_t_address_$",
                             "typeString": "type(address)"
@@ -3715,7 +4905,11 @@
                             "id": 1936,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                             "src": "1163:7:13",
+=======
+                            "src": "1123:7:11",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": null,
                               "typeString": null
@@ -3730,7 +4924,11 @@
                         "lValueRequested": false,
                         "names": [],
                         "nodeType": "FunctionCall",
+<<<<<<< HEAD
                         "src": "1163:13:13",
+=======
+                        "src": "1123:13:11",
+>>>>>>> master
                         "tryCall": false,
                         "typeDescriptions": {
                           "typeIdentifier": "t_address",
@@ -3743,8 +4941,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1906,
                         "src": "1178:3:13",
+=======
+                        "referencedDeclaration": 1591,
+                        "src": "1138:3:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3756,8 +4959,13 @@
                         "name": "password",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 1931,
                         "src": "1183:8:13",
+=======
+                        "referencedDeclaration": 1616,
+                        "src": "1143:8:11",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3771,7 +4979,11 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
+<<<<<<< HEAD
                     "src": "1162:30:13",
+=======
+                    "src": "1122:30:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_address_$_t_bytes32_$_t_bytes32_$",
                       "typeString": "tuple(address,bytes32,bytes32)"
@@ -3780,7 +4992,11 @@
                   "functionReturnParameters": 1914,
                   "id": 1943,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "1155:37:13"
+=======
+                  "src": "1115:37:11"
+>>>>>>> master
                 }
               ]
             },
@@ -3804,8 +5020,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "868:11:13",
+=======
+                  "scope": 1630,
+                  "src": "841:11:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3816,7 +5037,11 @@
                     "id": 1905,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "868:7:13",
+=======
+                    "src": "841:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3826,7 +5051,11 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "867:13:13"
+=======
+              "src": "840:13:11"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 1914,
@@ -3839,8 +5068,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "943:7:13",
+=======
+                  "scope": 1630,
+                  "src": "912:7:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3851,7 +5085,11 @@
                     "id": 1908,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "943:7:13",
+=======
+                    "src": "912:7:11",
+>>>>>>> master
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3868,8 +5106,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "965:7:13",
+=======
+                  "scope": 1630,
+                  "src": "933:7:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3880,7 +5123,11 @@
                     "id": 1910,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "965:7:13",
+=======
+                    "src": "933:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3896,8 +5143,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 1945,
                   "src": "987:7:13",
+=======
+                  "scope": 1630,
+                  "src": "954:7:11",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3908,7 +5160,11 @@
                     "id": 1912,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "987:7:13",
+=======
+                    "src": "954:7:11",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3918,20 +5174,35 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "928:77:13"
             },
             "scope": 1946,
             "src": "850:350:13",
+=======
+              "src": "898:73:11"
+            },
+            "scope": 1631,
+            "src": "823:336:11",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
           }
         ],
+<<<<<<< HEAD
         "scope": 1947,
         "src": "58:1145:13"
       }
     ],
     "src": "0:1205:13"
+=======
+        "scope": 1632,
+        "src": "55:1106:11"
+      }
+    ],
+    "src": "0:1162:11"
+>>>>>>> master
   },
   "compiler": {
     "name": "solc",
@@ -3941,12 +5212,21 @@
     "5777": {
       "events": {},
       "links": {},
+<<<<<<< HEAD
       "address": "0x32cb70fE41b0D3BCE189Cf98C427C6a29aeB278E",
       "transactionHash": "0xfcd67addd4d3bd3187d62198063b0c08d6a7e791a1ebc8919daeb5cedf92ede3"
     }
   },
   "schemaVersion": "3.2.4",
   "updatedAt": "2020-09-15T08:26:20.867Z",
+=======
+      "address": "0x03A5eA23DEde6feEd326c2d523b95A6B9241eFb8",
+      "transactionHash": "0xb01d6996b04cc34152a4d71e10d1ba3de9b214ee1589e1fd3aa74ebf94d111a0"
+    }
+  },
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-09-15T09:11:53.673Z",
+>>>>>>> master
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

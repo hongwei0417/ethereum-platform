@@ -75,6 +75,7 @@
       "type": "function"
     }
   ],
+<<<<<<< HEAD
   "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Lease\",\"name\":\"l\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"lid\",\"type\":\"bytes32\"}],\"name\":\"add_user_lease\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"}],\"name\":\"get_user_all_leases\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"},{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"lid\",\"type\":\"bytes32\"}],\"name\":\"get_user_lease\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseManager.sol\":\"LeaseManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/User/Desktop/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0x2908cce17d8b4e80ac30e90f0fdf72ade0911214dadd3950ea4a3bc543fc747f\",\"urls\":[\"bzz-raw://0d36bdc6cf0135f1ca301a3d15116f1c90bd528bde703b6592d0eaf43eaaf616\",\"dweb:/ipfs/QmZCN7at8VMUsfKb2ZemhZ5X1itWpH3MX8KZz3hfrMKyFN\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0x7c73ebefce98db5170df090aaf74c78aaf4bfd04e17a5f97e3f672fe25936732\",\"urls\":[\"bzz-raw://2fbdd91d7d6a26b330e978d9ad7918d172b748fb659671e466233078d6c7331a\",\"dweb:/ipfs/QmQGw2A3Etnp3Ao7N3Exaxg6sYG7u8RTRc1LNshXrv9Uc8\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0x0323e703b1b5e9cce7c0a1a4263fbbc24d4c7e5210d6be024a9d43d99aa00c3b\",\"urls\":[\"bzz-raw://b2df9ecb63ad7df04593e6f3b68c5cc44fa6dd0ad42b79a4e7c9941dacf923da\",\"dweb:/ipfs/QmR8g3RFGP53E5GhpkXtWv1cj7cVFpLCvATgyigvWrWTrW\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0xf7968bf3241572729179eaf93b3f02caeb081e23426fbce3233a1f4ce910736a\",\"urls\":[\"bzz-raw://973da74eb09ef790b3bfa63c03704e8e48bd645c839fe60dff3b65f72c1cc709\",\"dweb:/ipfs/QmcVJ97uDhfCBnEE7VNRRnWUDL68n9M5dmWGntq1scjp8V\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0x4e0668d1ce0a48d47c008d47f472fd10e39ba05352ddf1bd8da96198576faee0\",\"urls\":[\"bzz-raw://d6f569cd00676c45513b8dd242d1147c602ebb7a394eaffae1d88852ee2d76c2\",\"dweb:/ipfs/QmZZucxKXZmqo4MNd3C6HZjAnhHV29EgmQTfH2i9muCqZo\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0x0b33a31734626f3043ce59fbdc3fc050b95e51d6a1d4655731e85293dd0f4bcc\",\"urls\":[\"bzz-raw://cfcfd8df1b098366c00f765c9a73e83acfe0799b73b8c51b61b524c69208bdcf\",\"dweb:/ipfs/QmZaoANathTGEfhSpKsjpiFdzHK4q53sbWREpz2aGb4BpZ\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0x8631d44fe2808326dcd5bc06b0776c028b8b15eba772b00c3ceb14526c1361a4\",\"urls\":[\"bzz-raw://6075a58cbeb2ec7eafb8c4edc35ed4d6c1439e391719a101a069674569e8f956\",\"dweb:/ipfs/Qmcpmkdg15GBauxA1w4J6fpaMbCRgsUjPnUk3dF7mU3Vab\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0x852346f0150274e01acb83a55cc10c970c10479bab6e3d8cae942f8b2ceea016\",\"urls\":[\"bzz-raw://f03712a0f52e0492a5541ce2aa35dcf815ac2658aa69c5523b5e0c546c138091\",\"dweb:/ipfs/QmZCnr1ZXdScbFtdKC13y1TBCF5gtJy8o7EJCygYgGSPb9\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0x8b4eb958b553c3172d42c877f459fb6bcb4afdc911f6a048b0779edb5012259c\",\"urls\":[\"bzz-raw://946a11dbdcf155b51d4bb1c7817c2c6421066e4959149c59ca23b4517dbb0b35\",\"dweb:/ipfs/QmU4VDC11Q7vk2JDmp9CCLJ4GSQiHWyMUhgQsM8eCDZ9dB\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x244ccf075004e5c30480581a151becf1e5564a633d30d0ddb71f0f2e1ca3c414\",\"urls\":[\"bzz-raw://e6a3558bc774a4647f10bc09dde9beeb93ef8727a17a8f89925c8c65bb384368\",\"dweb:/ipfs/QmcWVf2NibSBDDUdjfhFbLTQU2YwWrKG43ggzS81Xs7zo9\"]}},\"version\":1}",
   "bytecode": "0x608060405234801561001057600080fd5b506104b1806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80630655243514610046578063754a80e11461009e578063aa25aa8a14610116575b600080fd5b61009c6004803603606081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101e1565b005b6100d4600480360360408110156100b457600080fd5b8101908080359060200190929190803590602001909291905050506102ab565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101426004803603602081101561012c57600080fd5b81019080803590602001909291905050506102f9565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561018957808201518184015260208101905061016e565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156101cb5780820151818401526020810190506101b0565b5050505090500194505050505060405180910390f35b60028290806001815401808255809150506001900390600052602060002001600090919091909150556001600083815260200190815260200160002081908060018154018082558091505060019003906000526020600020016000909190919091505582600080848152602001908152602001600020600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b6000806000848152602001908152602001600020600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905092915050565b60608060606001600085815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561035b57602002820191906000526020600020905b815481526020019060010190808311610347575b505050505090506060815167ffffffffffffffff8111801561037c57600080fd5b506040519080825280602002602001820160405280156103ab5781602001602082028036833780820191505090505b50905060008090505b825181101561046d5760008382815181106103cb57fe5b60200260200101519050600080888152602001908152602001600020600082815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1683838151811061042557fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250505080806001019150506103b4565b50818193509350505091509156fea2646970667358221220966096c9d11d902dccde43c1dcaa6d1278d93db20f1553bb0d671be238f63fb664736f6c63430006060033",
   "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80630655243514610046578063754a80e11461009e578063aa25aa8a14610116575b600080fd5b61009c6004803603606081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101e1565b005b6100d4600480360360408110156100b457600080fd5b8101908080359060200190929190803590602001909291905050506102ab565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101426004803603602081101561012c57600080fd5b81019080803590602001909291905050506102f9565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561018957808201518184015260208101905061016e565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156101cb5780820151818401526020810190506101b0565b5050505090500194505050505060405180910390f35b60028290806001815401808255809150506001900390600052602060002001600090919091909150556001600083815260200190815260200160002081908060018154018082558091505060019003906000526020600020016000909190919091505582600080848152602001908152602001600020600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b6000806000848152602001908152602001600020600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905092915050565b60608060606001600085815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561035b57602002820191906000526020600020905b815481526020019060010190808311610347575b505050505090506060815167ffffffffffffffff8111801561037c57600080fd5b506040519080825280602002602001820160405280156103ab5781602001602082028036833780820191505090505b50905060008090505b825181101561046d5760008382815181106103cb57fe5b60200260200101519050600080888152602001908152602001600020600082815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1683838151811061042557fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250505080806001019150506103b4565b50818193509350505091509156fea2646970667358221220966096c9d11d902dccde43c1dcaa6d1278d93db20f1553bb0d671be238f63fb664736f6c63430006060033",
@@ -85,6 +86,17 @@
   "sourcePath": "C:\\Users\\User\\Desktop\\ethereum-platform\\contracts\\LeaseManager.sol",
   "ast": {
     "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/LeaseManager.sol",
+=======
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Lease\",\"name\":\"l\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"lid\",\"type\":\"bytes32\"}],\"name\":\"add_user_lease\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"}],\"name\":\"get_user_all_leases\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"\",\"type\":\"bytes32[]\"},{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"uid\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"lid\",\"type\":\"bytes32\"}],\"name\":\"get_user_lease\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol\":\"LeaseManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0xb718042991c4dbd6adc2da46d9a7aca64bf93dcd093934426fc31ef58d30826e\",\"urls\":[\"bzz-raw://6af3b591b2d05011797f1eb6f714035595ee5daa743c3e702759932c471779ee\",\"dweb:/ipfs/QmRr9WnymUgNs3guYcZxBjF6Q5YGNZs3xLHmdLc9w31t7g\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0xfaef74cbc58d095c0b37ab16ca79559be57be6fa9fc30f02ffab255dd13dc1a3\",\"urls\":[\"bzz-raw://974b0fe8ac053d9e413c7e6e2b683534309654ad869f65190643b8dc3c3a438a\",\"dweb:/ipfs/QmSBBmKGj5aHaQsRbYtv6xyraxhGd1UTUZVrj82b9LiCkc\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0x96ffcf01d18907f3a47c19275fcafc5a9ada723e79e466d19b2fed52b472d5dd\",\"urls\":[\"bzz-raw://7ea459e075f0a460998a95c3f34f70c32a3b8b212085b0ef2298eb6534f9a9e4\",\"dweb:/ipfs/QmUMkNAFD4tLzwDiZMqX4KNsgMrhL71bfYHooAJVkck1KV\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0xc85dddd94c39555e283e3e7c24f258f20322c1c74b903064a6fb8f6f6321422f\",\"urls\":[\"bzz-raw://b4ba393b5856cbf165d578a5aece0f8426a27ce3ee03160379df02bf332b33bb\",\"dweb:/ipfs/QmbBWqyRUGS1H4WNMgpS2gSDN9LoRrZadnAe32bM7qQrn2\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0xb3e1c86bcb747ff99afc8e79258694b17651eaef806ec2ceec40059e1b7538c1\",\"urls\":[\"bzz-raw://06f79cd47d890edbda3c9191b6fe67e43da86ff33fe8ec42ad23956db59d9fb0\",\"dweb:/ipfs/QmRKBTqCM8hxe8KnHHf2aWrBHhotHEJFwTrhDC892mLYYE\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0xe3a52ce8c4a5ad3ad0f0ef10ba8cd8c5fc0dfcd22c39fec762525eb5101c40bc\",\"urls\":[\"bzz-raw://a27da5543fd8925f87575c32bc2d1b46e24c4837b59f2b6a0bd9ae9d3a7328e3\",\"dweb:/ipfs/QmWChEJJ2qxwbpi4STSiLc9bvM67mHrgfgNQ4K8rsY6kvj\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0x13b0f0deb3fc32188720a4a45f7ebe34da97dd6fc24ed0789fed7993df816e11\",\"urls\":[\"bzz-raw://3c3333b68051cff4a14d6977255df40c923844ac1427264cee9ffbd54b964e22\",\"dweb:/ipfs/QmW2YPvy1zvc2TokHzp9n6v97eudYQXkgRZ5vaQSTwCmX1\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0x58e4fa4122677d8041faa1ad31705c234aeedebfab99c4a0b23da56ffb0a7312\",\"urls\":[\"bzz-raw://cbd02786fb73fb575514a299a01cc8db6e9bca206e28fee594f62482b63f8cbf\",\"dweb:/ipfs/QmRwXTyb8wXUAP5J61hgMeQvyKZwiCEJNiD1DHU5zAixxr\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0x8b40dddeb98bed04d7c4f4834a33845444621b1d3285dc8adf66a0471edf033f\",\"urls\":[\"bzz-raw://84ee37c1dbf5d80c988501fc99eeccd34f3d94da486c96ab53b86d1dc54b064a\",\"dweb:/ipfs/QmTQ3tHD7ZkNMgdGxnRrhyRLYYqFVRkZkWepwxyMyEPj4A\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x14bdabe6f85215276fe853223cb2f41d46fd9fdc21efa0a81a2682c7c4b688a2\",\"urls\":[\"bzz-raw://1548128aa1f3379f1486a940b28f27eb25dce1a31e82e85e7dad57415e1e76ff\",\"dweb:/ipfs/QmZYcW3SeSeMbBGADysj44BvweLgYBmUsyPpTjxqYr5gQc\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506104b1806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c80630655243514610046578063754a80e11461009e578063aa25aa8a14610116575b600080fd5b61009c6004803603606081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101e1565b005b6100d4600480360360408110156100b457600080fd5b8101908080359060200190929190803590602001909291905050506102ab565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101426004803603602081101561012c57600080fd5b81019080803590602001909291905050506102f9565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561018957808201518184015260208101905061016e565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156101cb5780820151818401526020810190506101b0565b5050505090500194505050505060405180910390f35b60028290806001815401808255809150506001900390600052602060002001600090919091909150556001600083815260200190815260200160002081908060018154018082558091505060019003906000526020600020016000909190919091505582600080848152602001908152602001600020600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b6000806000848152602001908152602001600020600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905092915050565b60608060606001600085815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561035b57602002820191906000526020600020905b815481526020019060010190808311610347575b505050505090506060815167ffffffffffffffff8111801561037c57600080fd5b506040519080825280602002602001820160405280156103ab5781602001602082028036833780820191505090505b50905060008090505b825181101561046d5760008382815181106103cb57fe5b60200260200101519050600080888152602001908152602001600020600082815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1683838151811061042557fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250505080806001019150506103b4565b50818193509350505091509156fea26469706673582212202820b471de54be2e295453f2310c922cd406ba09fe141e04a29698824fc6dcbc64736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c80630655243514610046578063754a80e11461009e578063aa25aa8a14610116575b600080fd5b61009c6004803603606081101561005c57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919080359060200190929190803590602001909291905050506101e1565b005b6100d4600480360360408110156100b457600080fd5b8101908080359060200190929190803590602001909291905050506102ab565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101426004803603602081101561012c57600080fd5b81019080803590602001909291905050506102f9565b604051808060200180602001838103835285818151815260200191508051906020019060200280838360005b8381101561018957808201518184015260208101905061016e565b50505050905001838103825284818151815260200191508051906020019060200280838360005b838110156101cb5780820151818401526020810190506101b0565b5050505090500194505050505060405180910390f35b60028290806001815401808255809150506001900390600052602060002001600090919091909150556001600083815260200190815260200160002081908060018154018082558091505060019003906000526020600020016000909190919091505582600080848152602001908152602001600020600083815260200190815260200160002060006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505050565b6000806000848152602001908152602001600020600083815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905092915050565b60608060606001600085815260200190815260200160002080548060200260200160405190810160405280929190818152602001828054801561035b57602002820191906000526020600020905b815481526020019060010190808311610347575b505050505090506060815167ffffffffffffffff8111801561037c57600080fd5b506040519080825280602002602001820160405280156103ab5781602001602082028036833780820191505090505b50905060008090505b825181101561046d5760008382815181106103cb57fe5b60200260200101519050600080888152602001908152602001600020600082815260200190815260200160002060009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1683838151811061042557fe5b602002602001019073ffffffffffffffffffffffffffffffffffffffff16908173ffffffffffffffffffffffffffffffffffffffff16815250505080806001019150506103b4565b50818193509350505091509156fea26469706673582212202820b471de54be2e295453f2310c922cd406ba09fe141e04a29698824fc6dcbc64736f6c63430006060033",
+  "sourceMap": "56:1124:4:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;56:1124:4;;;;;;;",
+  "deployedSourceMap": "56:1124:4:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;56:1124:4;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;971:207:4;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;971:207:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;803:162;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;803:162:4;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;323:474;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;323:474:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;323:474:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;323:474:4;;;;;;;;;;;;;;;;;;;971:207;1077:9;1092:3;1077:19;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1077:19:4;;;;;;;;;;;;;;;;;;;1106:15;:20;1122:3;1106:20;;;;;;;;;;;1132:3;1106:30;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;1106:30:4;;;;;;;;;;;;;;;;;;;1170:1;1146:11;:16;1158:3;1146:16;;;;;;;;;;;:21;1163:3;1146:21;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;971:207;;;:::o;803:162::-;898:7;936:11;:16;948:3;936:16;;;;;;;;;;;:21;953:3;936:21;;;;;;;;;;;;;;;;;;;;;921:37;;803:162;;;;:::o;323:474::-;410:16;428;460:26;489:15;:20;505:3;489:20;;;;;;;;;;;460:49;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;519:28;564:9;:16;550:31;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;550:31:4;;;;;;;;;;;;;;;;;;;;;;;29:2:-1;21:6;17:15;125:4;109:14;101:6;88:42;156:4;148:6;144:17;134:27;;0:165;550:31:4;;;;519:62;;596:9;608:1;596:13;;591:159;615:9;:16;611:1;:20;591:159;;;652:11;666:9;676:1;666:12;;;;;;;;;;;;;;652:26;;717:11;:16;729:3;717:16;;;;;;;;;;;:21;734:3;717:21;;;;;;;;;;;;;;;;;;;;;692:11;704:1;692:14;;;;;;;;;;;;;:47;;;;;;;;;;;591:159;633:3;;;;;;;591:159;;;;767:9;778:11;759:31;;;;;;323:474;;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.8.0;\nimport \"./Lease.sol\";\n\ncontract LeaseManager {\n    mapping(bytes32 => mapping(bytes32 => Lease)) private user_leases; //用戶租借物\n    mapping(bytes32 => bytes32[]) private user_lease_list; //用戶所擁有租借物集合\n    bytes32[] private user_list; //使用者名稱集合\n\n    function get_user_all_leases(bytes32 uid)\n        public\n        view\n        returns (bytes32[] memory, address[] memory)\n    {\n        bytes32[] memory user_lids = user_lease_list[uid];\n        address[] memory lease_addrs = new address[](user_lids.length);\n        for (uint256 i = 0; i < user_lids.length; i++) {\n            bytes32 lid = user_lids[i];\n            lease_addrs[i] = address(user_leases[uid][lid]);\n        }\n        return (user_lids, lease_addrs);\n    }\n\n    function get_user_lease(bytes32 uid, bytes32 lid)\n        public\n        view\n        returns (address)\n    {\n        return address(user_leases[uid][lid]);\n    }\n\n    function add_user_lease(\n        Lease l,\n        bytes32 uid,\n        bytes32 lid\n    ) public {\n        user_list.push(uid);\n        user_lease_list[uid].push(lid);\n        user_leases[uid][lid] = l;\n    }\n}\n",
+  "sourcePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol",
+  "ast": {
+    "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol",
+>>>>>>> master
     "exportedSymbols": {
       "LeaseManager": [
         643
@@ -108,13 +120,23 @@
         "src": "0:32:5"
       },
       {
+<<<<<<< HEAD
         "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/Lease.sol",
+=======
+        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/Lease.sol",
+>>>>>>> master
         "file": "./Lease.sol",
         "id": 509,
         "nodeType": "ImportDirective",
+<<<<<<< HEAD
         "scope": 644,
         "sourceUnit": 507,
         "src": "34:21:5",
+=======
+        "scope": 532,
+        "sourceUnit": 395,
+        "src": "33:21:4",
+>>>>>>> master
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -139,8 +161,13 @@
             "name": "user_leases",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 643,
             "src": "88:65:5",
+=======
+            "scope": 531,
+            "src": "84:65:4",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -153,14 +180,22 @@
                 "id": 510,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "96:7:5",
+=======
+                "src": "92:7:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
+<<<<<<< HEAD
               "src": "88:45:5",
+=======
+              "src": "84:45:4",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                 "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -171,14 +206,22 @@
                   "id": 511,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                   "src": "115:7:5",
+=======
+                  "src": "111:7:4",
+>>>>>>> master
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
                   }
                 },
                 "nodeType": "Mapping",
+<<<<<<< HEAD
                 "src": "107:25:5",
+=======
+                "src": "103:25:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                   "typeString": "mapping(bytes32 => contract Lease)"
@@ -188,8 +231,13 @@
                   "id": 512,
                   "name": "Lease",
                   "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                   "referencedDeclaration": 506,
                   "src": "126:5:5",
+=======
+                  "referencedDeclaration": 394,
+                  "src": "122:5:4",
+>>>>>>> master
                   "typeDescriptions": {
                     "typeIdentifier": "t_contract$_Lease_$506",
                     "typeString": "contract Lease"
@@ -207,8 +255,13 @@
             "name": "user_lease_list",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 643,
             "src": "178:53:5",
+=======
+            "scope": 531,
+            "src": "173:53:4",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -221,14 +274,22 @@
                 "id": 516,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "186:7:5",
+=======
+                "src": "181:7:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
+<<<<<<< HEAD
               "src": "178:29:5",
+=======
+              "src": "173:29:4",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_array$_t_bytes32_$dyn_storage_$",
                 "typeString": "mapping(bytes32 => bytes32[])"
@@ -238,7 +299,11 @@
                   "id": 517,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                   "src": "197:7:5",
+=======
+                  "src": "192:7:4",
+>>>>>>> master
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -247,7 +312,11 @@
                 "id": 518,
                 "length": null,
                 "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                 "src": "197:9:5",
+=======
+                "src": "192:9:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                   "typeString": "bytes32[]"
@@ -264,8 +333,13 @@
             "name": "user_list",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 643,
             "src": "271:27:5",
+=======
+            "scope": 531,
+            "src": "265:27:4",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -277,7 +351,11 @@
                 "id": 521,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "271:7:5",
+=======
+                "src": "265:7:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
@@ -286,7 +364,11 @@
               "id": 522,
               "length": null,
               "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
               "src": "271:9:5",
+=======
+              "src": "265:9:4",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                 "typeString": "bytes32[]"
@@ -299,7 +381,11 @@
             "body": {
               "id": 591,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "462:355:5",
+=======
+              "src": "450:347:4",
+>>>>>>> master
               "statements": [
                 {
                   "assignments": [
@@ -313,8 +399,13 @@
                       "name": "user_lids",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 591,
                       "src": "473:26:5",
+=======
+                      "scope": 479,
+                      "src": "460:26:4",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -326,7 +417,11 @@
                           "id": 536,
                           "name": "bytes32",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "473:7:5",
+=======
+                          "src": "460:7:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -335,7 +430,11 @@
                         "id": 537,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "473:9:5",
+=======
+                        "src": "460:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                           "typeString": "bytes32[]"
@@ -354,8 +453,13 @@
                       "name": "user_lease_list",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 520,
                       "src": "502:15:5",
+=======
+                      "referencedDeclaration": 408,
+                      "src": "489:15:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_array$_t_bytes32_$dyn_storage_$",
                         "typeString": "mapping(bytes32 => bytes32[] storage ref)"
@@ -368,8 +472,13 @@
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 525,
                       "src": "518:3:5",
+=======
+                      "referencedDeclaration": 413,
+                      "src": "505:3:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -380,14 +489,22 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
+<<<<<<< HEAD
                     "src": "502:20:5",
+=======
+                    "src": "489:20:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                       "typeString": "bytes32[] storage ref"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "473:49:5"
+=======
+                  "src": "460:49:4"
+>>>>>>> master
                 },
                 {
                   "assignments": [
@@ -401,8 +518,13 @@
                       "name": "lease_addrs",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 591,
                       "src": "533:28:5",
+=======
+                      "scope": 479,
+                      "src": "519:28:4",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -414,7 +536,11 @@
                           "id": 545,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "533:7:5",
+=======
+                          "src": "519:7:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -423,7 +549,11 @@
                         "id": 546,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "533:9:5",
+=======
+                        "src": "519:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -445,8 +575,13 @@
                           "name": "user_lids",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 538,
                           "src": "578:9:5",
+=======
+                          "referencedDeclaration": 426,
+                          "src": "564:9:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                             "typeString": "bytes32[] memory"
@@ -460,7 +595,11 @@
                         "memberName": "length",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
+<<<<<<< HEAD
                         "src": "578:16:5",
+=======
+                        "src": "564:16:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -480,7 +619,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
+<<<<<<< HEAD
                       "src": "564:13:5",
+=======
+                      "src": "550:13:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
                         "typeString": "function (uint256) pure returns (address[] memory)"
@@ -490,7 +633,11 @@
                           "id": 548,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "568:7:5",
+=======
+                          "src": "554:7:4",
+>>>>>>> master
                           "stateMutability": "nonpayable",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -500,7 +647,11 @@
                         "id": 549,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "568:9:5",
+=======
+                        "src": "554:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -515,7 +666,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "564:31:5",
+=======
+                    "src": "550:31:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -523,13 +678,21 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "533:62:5"
+=======
+                  "src": "519:62:4"
+>>>>>>> master
                 },
                 {
                   "body": {
                     "id": 585,
                     "nodeType": "Block",
+<<<<<<< HEAD
                     "src": "653:115:5",
+=======
+                    "src": "638:112:4",
+>>>>>>> master
                     "statements": [
                       {
                         "assignments": [
@@ -543,8 +706,13 @@
                             "name": "lid",
                             "nodeType": "VariableDeclaration",
                             "overrides": null,
+<<<<<<< HEAD
                             "scope": 585,
                             "src": "668:11:5",
+=======
+                            "scope": 473,
+                            "src": "652:11:4",
+>>>>>>> master
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -555,7 +723,11 @@
                               "id": 566,
                               "name": "bytes32",
                               "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                               "src": "668:7:5",
+=======
+                              "src": "652:7:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
                                 "typeString": "bytes32"
@@ -574,8 +746,13 @@
                             "name": "user_lids",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 538,
                             "src": "682:9:5",
+=======
+                            "referencedDeclaration": 426,
+                            "src": "666:9:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                               "typeString": "bytes32[] memory"
@@ -588,8 +765,13 @@
                             "name": "i",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 556,
                             "src": "692:1:5",
+=======
+                            "referencedDeclaration": 444,
+                            "src": "676:1:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -600,14 +782,22 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
+<<<<<<< HEAD
                           "src": "682:12:5",
+=======
+                          "src": "666:12:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                         "src": "668:26:5"
+=======
+                        "src": "652:26:4"
+>>>>>>> master
                       },
                       {
                         "expression": {
@@ -625,8 +815,13 @@
                               "name": "lease_addrs",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 547,
                               "src": "709:11:5",
+=======
+                              "referencedDeclaration": 435,
+                              "src": "692:11:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                 "typeString": "address[] memory"
@@ -639,8 +834,13 @@
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 556,
                               "src": "721:1:5",
+=======
+                              "referencedDeclaration": 444,
+                              "src": "704:1:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -651,7 +851,11 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
+<<<<<<< HEAD
                             "src": "709:14:5",
+=======
+                            "src": "692:14:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -672,8 +876,13 @@
                                     "name": "user_leases",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 515,
                                     "src": "734:11:5",
+=======
+                                    "referencedDeclaration": 403,
+                                    "src": "717:11:4",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                                       "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -686,8 +895,13 @@
                                     "name": "uid",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 525,
                                     "src": "746:3:5",
+=======
+                                    "referencedDeclaration": 413,
+                                    "src": "729:3:4",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_bytes32",
                                       "typeString": "bytes32"
@@ -698,7 +912,11 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                   "src": "734:16:5",
+=======
+                                  "src": "717:16:4",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                                     "typeString": "mapping(bytes32 => contract Lease)"
@@ -711,8 +929,13 @@
                                   "name": "lid",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 567,
                                   "src": "751:3:5",
+=======
+                                  "referencedDeclaration": 455,
+                                  "src": "734:3:4",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -723,7 +946,11 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                 "src": "734:21:5",
+=======
+                                "src": "717:21:4",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Lease_$506",
                                   "typeString": "contract Lease"
@@ -743,7 +970,11 @@
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                               "src": "726:7:5",
+=======
+                              "src": "709:7:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_address_$",
                                 "typeString": "type(address)"
@@ -752,7 +983,11 @@
                                 "id": 575,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                                 "src": "726:7:5",
+=======
+                                "src": "709:7:4",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": null,
                                   "typeString": null
@@ -767,14 +1002,22 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
+<<<<<<< HEAD
                             "src": "726:30:5",
+=======
+                            "src": "709:30:4",
+>>>>>>> master
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
+<<<<<<< HEAD
                           "src": "709:47:5",
+=======
+                          "src": "692:47:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -782,7 +1025,11 @@
                         },
                         "id": 584,
                         "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                         "src": "709:47:5"
+=======
+                        "src": "692:47:4"
+>>>>>>> master
                       }
                     ]
                   },
@@ -803,8 +1050,13 @@
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 556,
                       "src": "626:1:5",
+=======
+                      "referencedDeclaration": 444,
+                      "src": "611:1:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -820,8 +1072,13 @@
                         "name": "user_lids",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 538,
                         "src": "630:9:5",
+=======
+                        "referencedDeclaration": 426,
+                        "src": "615:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -835,13 +1092,21 @@
                       "memberName": "length",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "630:16:5",
+=======
+                      "src": "615:16:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
+<<<<<<< HEAD
                     "src": "626:20:5",
+=======
+                    "src": "611:20:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -860,8 +1125,13 @@
                         "name": "i",
                         "nodeType": "VariableDeclaration",
                         "overrides": null,
+<<<<<<< HEAD
                         "scope": 586,
                         "src": "611:9:5",
+=======
+                        "scope": 474,
+                        "src": "596:9:4",
+>>>>>>> master
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -872,7 +1142,11 @@
                           "id": 555,
                           "name": "uint256",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "611:7:5",
+=======
+                          "src": "596:7:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -893,7 +1167,11 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
+<<<<<<< HEAD
                       "src": "623:1:5",
+=======
+                      "src": "608:1:4",
+>>>>>>> master
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
@@ -902,7 +1180,11 @@
                       "value": "0"
                     },
                     "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                     "src": "611:13:5"
+=======
+                    "src": "596:13:4"
+>>>>>>> master
                   },
                   "loopExpression": {
                     "expression": {
@@ -915,15 +1197,24 @@
                       "nodeType": "UnaryOperation",
                       "operator": "++",
                       "prefix": false,
+<<<<<<< HEAD
                       "src": "648:3:5",
+=======
+                      "src": "633:3:4",
+>>>>>>> master
                       "subExpression": {
                         "argumentTypes": null,
                         "id": 563,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 556,
                         "src": "648:1:5",
+=======
+                        "referencedDeclaration": 444,
+                        "src": "633:1:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -936,10 +1227,17 @@
                     },
                     "id": 565,
                     "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                     "src": "648:3:5"
                   },
                   "nodeType": "ForStatement",
                   "src": "606:162:5"
+=======
+                    "src": "633:3:4"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "591:159:4"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -951,8 +1249,13 @@
                         "name": "user_lids",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 538,
                         "src": "786:9:5",
+=======
+                        "referencedDeclaration": 426,
+                        "src": "767:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -964,8 +1267,13 @@
                         "name": "lease_addrs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 547,
                         "src": "797:11:5",
+=======
+                        "referencedDeclaration": 435,
+                        "src": "778:11:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                           "typeString": "address[] memory"
@@ -979,7 +1287,11 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
+<<<<<<< HEAD
                     "src": "785:24:5",
+=======
+                    "src": "766:24:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_array$_t_bytes32_$dyn_memory_ptr_$_t_array$_t_address_$dyn_memory_ptr_$",
                       "typeString": "tuple(bytes32[] memory,address[] memory)"
@@ -988,7 +1300,11 @@
                   "functionReturnParameters": 533,
                   "id": 590,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "778:31:5"
+=======
+                  "src": "759:31:4"
+>>>>>>> master
                 }
               ]
             },
@@ -1012,8 +1328,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 592,
                   "src": "360:11:5",
+=======
+                  "scope": 480,
+                  "src": "352:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1024,7 +1345,11 @@
                     "id": 524,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "360:7:5",
+=======
+                    "src": "352:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1034,7 +1359,11 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "359:13:5"
+=======
+              "src": "351:13:4"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 533,
@@ -1047,8 +1376,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 592,
                   "src": "421:16:5",
+=======
+                  "scope": 480,
+                  "src": "410:16:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1060,7 +1394,11 @@
                       "id": 527,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "421:7:5",
+=======
+                      "src": "410:7:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -1069,7 +1407,11 @@
                     "id": 528,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "421:9:5",
+=======
+                    "src": "410:9:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
@@ -1085,8 +1427,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 592,
                   "src": "439:16:5",
+=======
+                  "scope": 480,
+                  "src": "428:16:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -1098,7 +1445,11 @@
                       "id": 530,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "439:7:5",
+=======
+                      "src": "428:7:4",
+>>>>>>> master
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -1108,7 +1459,11 @@
                     "id": 531,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "439:9:5",
+=======
+                    "src": "428:9:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -1118,10 +1473,17 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "420:36:5"
             },
             "scope": 643,
             "src": "331:486:5",
+=======
+              "src": "409:36:4"
+            },
+            "scope": 531,
+            "src": "323:474:4",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -1130,7 +1492,11 @@
             "body": {
               "id": 610,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "937:56:5",
+=======
+              "src": "911:54:4",
+>>>>>>> master
               "statements": [
                 {
                   "expression": {
@@ -1146,8 +1512,13 @@
                             "name": "user_leases",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 515,
                             "src": "963:11:5",
+=======
+                            "referencedDeclaration": 403,
+                            "src": "936:11:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                               "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -1160,8 +1531,13 @@
                             "name": "uid",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 594,
                             "src": "975:3:5",
+=======
+                            "referencedDeclaration": 482,
+                            "src": "948:3:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -1172,7 +1548,11 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
+<<<<<<< HEAD
                           "src": "963:16:5",
+=======
+                          "src": "936:16:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                             "typeString": "mapping(bytes32 => contract Lease)"
@@ -1185,8 +1565,13 @@
                           "name": "lid",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 596,
                           "src": "980:3:5",
+=======
+                          "referencedDeclaration": 484,
+                          "src": "953:3:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -1197,7 +1582,11 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
+<<<<<<< HEAD
                         "src": "963:21:5",
+=======
+                        "src": "936:21:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_Lease_$506",
                           "typeString": "contract Lease"
@@ -1217,7 +1606,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                       "src": "955:7:5",
+=======
+                      "src": "928:7:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_address_$",
                         "typeString": "type(address)"
@@ -1226,7 +1619,11 @@
                         "id": 601,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                         "src": "955:7:5",
+=======
+                        "src": "928:7:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": null,
                           "typeString": null
@@ -1241,7 +1638,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "955:30:5",
+=======
+                    "src": "928:30:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1251,7 +1652,11 @@
                   "functionReturnParameters": 600,
                   "id": 609,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "948:37:5"
+=======
+                  "src": "921:37:4"
+>>>>>>> master
                 }
               ]
             },
@@ -1275,8 +1680,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 611,
                   "src": "849:11:5",
+=======
+                  "scope": 499,
+                  "src": "827:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1287,7 +1697,11 @@
                     "id": 593,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "849:7:5",
+=======
+                    "src": "827:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1303,8 +1717,13 @@
                   "name": "lid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 611,
                   "src": "862:11:5",
+=======
+                  "scope": 499,
+                  "src": "840:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1315,7 +1734,11 @@
                     "id": 595,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "862:7:5",
+=======
+                    "src": "840:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1325,7 +1748,11 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "848:26:5"
+=======
+              "src": "826:26:4"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 600,
@@ -1338,8 +1765,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 611,
                   "src": "923:7:5",
+=======
+                  "scope": 499,
+                  "src": "898:7:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1350,7 +1782,11 @@
                     "id": 598,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "923:7:5",
+=======
+                    "src": "898:7:4",
+>>>>>>> master
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1361,10 +1797,17 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "922:9:5"
             },
             "scope": 643,
             "src": "825:168:5",
+=======
+              "src": "897:9:4"
+            },
+            "scope": 531,
+            "src": "803:162:4",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -1373,7 +1816,11 @@
             "body": {
               "id": 641,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "1101:115:5",
+=======
+              "src": "1067:111:4",
+>>>>>>> master
               "statements": [
                 {
                   "expression": {
@@ -1385,8 +1832,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 615,
                         "src": "1127:3:5",
+=======
+                        "referencedDeclaration": 503,
+                        "src": "1092:3:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1406,8 +1858,13 @@
                         "name": "user_list",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 523,
                         "src": "1112:9:5",
+=======
+                        "referencedDeclaration": 411,
+                        "src": "1077:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -1421,7 +1878,11 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "1112:14:5",
+=======
+                      "src": "1077:14:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -1435,7 +1896,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1112:19:5",
+=======
+                    "src": "1077:19:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1444,7 +1909,11 @@
                   },
                   "id": 625,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1112:19:5"
+=======
+                  "src": "1077:19:4"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -1456,8 +1925,13 @@
                         "name": "lid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 617,
                         "src": "1168:3:5",
+=======
+                        "referencedDeclaration": 505,
+                        "src": "1132:3:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1479,8 +1953,13 @@
                           "name": "user_lease_list",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 520,
                           "src": "1142:15:5",
+=======
+                          "referencedDeclaration": 408,
+                          "src": "1106:15:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_array$_t_bytes32_$dyn_storage_$",
                             "typeString": "mapping(bytes32 => bytes32[] storage ref)"
@@ -1493,8 +1972,13 @@
                           "name": "uid",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 615,
                           "src": "1158:3:5",
+=======
+                          "referencedDeclaration": 503,
+                          "src": "1122:3:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -1505,7 +1989,11 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
+<<<<<<< HEAD
                         "src": "1142:20:5",
+=======
+                        "src": "1106:20:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -1519,7 +2007,11 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "1142:25:5",
+=======
+                      "src": "1106:25:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -1533,7 +2025,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1142:30:5",
+=======
+                    "src": "1106:30:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -1542,7 +2038,11 @@
                   },
                   "id": 632,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1142:30:5"
+=======
+                  "src": "1106:30:4"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -1562,8 +2062,13 @@
                           "name": "user_leases",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 515,
                           "src": "1183:11:5",
+=======
+                          "referencedDeclaration": 403,
+                          "src": "1146:11:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                             "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -1576,8 +2081,13 @@
                           "name": "uid",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 615,
                           "src": "1195:3:5",
+=======
+                          "referencedDeclaration": 503,
+                          "src": "1158:3:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -1588,7 +2098,11 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
+<<<<<<< HEAD
                         "src": "1183:16:5",
+=======
+                        "src": "1146:16:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                           "typeString": "mapping(bytes32 => contract Lease)"
@@ -1601,8 +2115,13 @@
                         "name": "lid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 617,
                         "src": "1200:3:5",
+=======
+                        "referencedDeclaration": 505,
+                        "src": "1163:3:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -1613,7 +2132,11 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
+<<<<<<< HEAD
                       "src": "1183:21:5",
+=======
+                      "src": "1146:21:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_Lease_$506",
                         "typeString": "contract Lease"
@@ -1627,14 +2150,23 @@
                       "name": "l",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 613,
                       "src": "1207:1:5",
+=======
+                      "referencedDeclaration": 501,
+                      "src": "1170:1:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_Lease_$506",
                         "typeString": "contract Lease"
                       }
                     },
+<<<<<<< HEAD
                     "src": "1183:25:5",
+=======
+                    "src": "1146:25:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Lease_$506",
                       "typeString": "contract Lease"
@@ -1642,7 +2174,11 @@
                   },
                   "id": 640,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1183:25:5"
+=======
+                  "src": "1146:25:4"
+>>>>>>> master
                 }
               ]
             },
@@ -1666,8 +2202,13 @@
                   "name": "l",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 642,
                   "src": "1035:7:5",
+=======
+                  "scope": 530,
+                  "src": "1004:7:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1679,8 +2220,13 @@
                     "id": 612,
                     "name": "Lease",
                     "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                     "referencedDeclaration": 506,
                     "src": "1035:5:5",
+=======
+                    "referencedDeclaration": 394,
+                    "src": "1004:5:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Lease_$506",
                       "typeString": "contract Lease"
@@ -1696,8 +2242,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 642,
                   "src": "1053:11:5",
+=======
+                  "scope": 530,
+                  "src": "1021:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1708,7 +2259,11 @@
                     "id": 614,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "1053:7:5",
+=======
+                    "src": "1021:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1724,8 +2279,13 @@
                   "name": "lid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 642,
                   "src": "1075:11:5",
+=======
+                  "scope": 530,
+                  "src": "1042:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1736,7 +2296,11 @@
                     "id": 616,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "1075:7:5",
+=======
+                    "src": "1042:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1746,21 +2310,33 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "1024:69:5"
+=======
+              "src": "994:65:4"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 619,
               "nodeType": "ParameterList",
               "parameters": [],
+<<<<<<< HEAD
               "src": "1101:0:5"
             },
             "scope": 643,
             "src": "1001:215:5",
+=======
+              "src": "1067:0:4"
+            },
+            "scope": 531,
+            "src": "971:207:4",
+>>>>>>> master
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
+<<<<<<< HEAD
         "scope": 644,
         "src": "59:1160:5"
       }
@@ -1769,6 +2345,16 @@
   },
   "legacyAST": {
     "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/LeaseManager.sol",
+=======
+        "scope": 532,
+        "src": "56:1124:4"
+      }
+    ],
+    "src": "0:1181:4"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol",
+>>>>>>> master
     "exportedSymbols": {
       "LeaseManager": [
         643
@@ -1792,13 +2378,23 @@
         "src": "0:32:5"
       },
       {
+<<<<<<< HEAD
         "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/Lease.sol",
+=======
+        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/Lease.sol",
+>>>>>>> master
         "file": "./Lease.sol",
         "id": 509,
         "nodeType": "ImportDirective",
+<<<<<<< HEAD
         "scope": 644,
         "sourceUnit": 507,
         "src": "34:21:5",
+=======
+        "scope": 532,
+        "sourceUnit": 395,
+        "src": "33:21:4",
+>>>>>>> master
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -1823,8 +2419,13 @@
             "name": "user_leases",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 643,
             "src": "88:65:5",
+=======
+            "scope": 531,
+            "src": "84:65:4",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1837,14 +2438,22 @@
                 "id": 510,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "96:7:5",
+=======
+                "src": "92:7:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
+<<<<<<< HEAD
               "src": "88:45:5",
+=======
+              "src": "84:45:4",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                 "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -1855,14 +2464,22 @@
                   "id": 511,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                   "src": "115:7:5",
+=======
+                  "src": "111:7:4",
+>>>>>>> master
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
                   }
                 },
                 "nodeType": "Mapping",
+<<<<<<< HEAD
                 "src": "107:25:5",
+=======
+                "src": "103:25:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                   "typeString": "mapping(bytes32 => contract Lease)"
@@ -1872,8 +2489,13 @@
                   "id": 512,
                   "name": "Lease",
                   "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                   "referencedDeclaration": 506,
                   "src": "126:5:5",
+=======
+                  "referencedDeclaration": 394,
+                  "src": "122:5:4",
+>>>>>>> master
                   "typeDescriptions": {
                     "typeIdentifier": "t_contract$_Lease_$506",
                     "typeString": "contract Lease"
@@ -1891,8 +2513,13 @@
             "name": "user_lease_list",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 643,
             "src": "178:53:5",
+=======
+            "scope": 531,
+            "src": "173:53:4",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1905,14 +2532,22 @@
                 "id": 516,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "186:7:5",
+=======
+                "src": "181:7:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
                 }
               },
               "nodeType": "Mapping",
+<<<<<<< HEAD
               "src": "178:29:5",
+=======
+              "src": "173:29:4",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_mapping$_t_bytes32_$_t_array$_t_bytes32_$dyn_storage_$",
                 "typeString": "mapping(bytes32 => bytes32[])"
@@ -1922,7 +2557,11 @@
                   "id": 517,
                   "name": "bytes32",
                   "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                   "src": "197:7:5",
+=======
+                  "src": "192:7:4",
+>>>>>>> master
                   "typeDescriptions": {
                     "typeIdentifier": "t_bytes32",
                     "typeString": "bytes32"
@@ -1931,7 +2570,11 @@
                 "id": 518,
                 "length": null,
                 "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                 "src": "197:9:5",
+=======
+                "src": "192:9:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                   "typeString": "bytes32[]"
@@ -1948,8 +2591,13 @@
             "name": "user_list",
             "nodeType": "VariableDeclaration",
             "overrides": null,
+<<<<<<< HEAD
             "scope": 643,
             "src": "271:27:5",
+=======
+            "scope": 531,
+            "src": "265:27:4",
+>>>>>>> master
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -1961,7 +2609,11 @@
                 "id": 521,
                 "name": "bytes32",
                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                 "src": "271:7:5",
+=======
+                "src": "265:7:4",
+>>>>>>> master
                 "typeDescriptions": {
                   "typeIdentifier": "t_bytes32",
                   "typeString": "bytes32"
@@ -1970,7 +2622,11 @@
               "id": 522,
               "length": null,
               "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
               "src": "271:9:5",
+=======
+              "src": "265:9:4",
+>>>>>>> master
               "typeDescriptions": {
                 "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                 "typeString": "bytes32[]"
@@ -1983,7 +2639,11 @@
             "body": {
               "id": 591,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "462:355:5",
+=======
+              "src": "450:347:4",
+>>>>>>> master
               "statements": [
                 {
                   "assignments": [
@@ -1997,8 +2657,13 @@
                       "name": "user_lids",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 591,
                       "src": "473:26:5",
+=======
+                      "scope": 479,
+                      "src": "460:26:4",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -2010,7 +2675,11 @@
                           "id": 536,
                           "name": "bytes32",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "473:7:5",
+=======
+                          "src": "460:7:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -2019,7 +2688,11 @@
                         "id": 537,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "473:9:5",
+=======
+                        "src": "460:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                           "typeString": "bytes32[]"
@@ -2038,8 +2711,13 @@
                       "name": "user_lease_list",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 520,
                       "src": "502:15:5",
+=======
+                      "referencedDeclaration": 408,
+                      "src": "489:15:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_mapping$_t_bytes32_$_t_array$_t_bytes32_$dyn_storage_$",
                         "typeString": "mapping(bytes32 => bytes32[] storage ref)"
@@ -2052,8 +2730,13 @@
                       "name": "uid",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 525,
                       "src": "518:3:5",
+=======
+                      "referencedDeclaration": 413,
+                      "src": "505:3:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -2064,14 +2747,22 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "IndexAccess",
+<<<<<<< HEAD
                     "src": "502:20:5",
+=======
+                    "src": "489:20:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                       "typeString": "bytes32[] storage ref"
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "473:49:5"
+=======
+                  "src": "460:49:4"
+>>>>>>> master
                 },
                 {
                   "assignments": [
@@ -2085,8 +2776,13 @@
                       "name": "lease_addrs",
                       "nodeType": "VariableDeclaration",
                       "overrides": null,
+<<<<<<< HEAD
                       "scope": 591,
                       "src": "533:28:5",
+=======
+                      "scope": 479,
+                      "src": "519:28:4",
+>>>>>>> master
                       "stateVariable": false,
                       "storageLocation": "memory",
                       "typeDescriptions": {
@@ -2098,7 +2794,11 @@
                           "id": 545,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "533:7:5",
+=======
+                          "src": "519:7:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2107,7 +2807,11 @@
                         "id": 546,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "533:9:5",
+=======
+                        "src": "519:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -2129,8 +2833,13 @@
                           "name": "user_lids",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 538,
                           "src": "578:9:5",
+=======
+                          "referencedDeclaration": 426,
+                          "src": "564:9:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                             "typeString": "bytes32[] memory"
@@ -2144,7 +2853,11 @@
                         "memberName": "length",
                         "nodeType": "MemberAccess",
                         "referencedDeclaration": null,
+<<<<<<< HEAD
                         "src": "578:16:5",
+=======
+                        "src": "564:16:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2164,7 +2877,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "NewExpression",
+<<<<<<< HEAD
                       "src": "564:13:5",
+=======
+                      "src": "550:13:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
                         "typeString": "function (uint256) pure returns (address[] memory)"
@@ -2174,7 +2891,11 @@
                           "id": 548,
                           "name": "address",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "568:7:5",
+=======
+                          "src": "554:7:4",
+>>>>>>> master
                           "stateMutability": "nonpayable",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
@@ -2184,7 +2905,11 @@
                         "id": 549,
                         "length": null,
                         "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                         "src": "568:9:5",
+=======
+                        "src": "554:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                           "typeString": "address[]"
@@ -2199,7 +2924,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "564:31:5",
+=======
+                    "src": "550:31:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -2207,13 +2936,21 @@
                     }
                   },
                   "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                   "src": "533:62:5"
+=======
+                  "src": "519:62:4"
+>>>>>>> master
                 },
                 {
                   "body": {
                     "id": 585,
                     "nodeType": "Block",
+<<<<<<< HEAD
                     "src": "653:115:5",
+=======
+                    "src": "638:112:4",
+>>>>>>> master
                     "statements": [
                       {
                         "assignments": [
@@ -2227,8 +2964,13 @@
                             "name": "lid",
                             "nodeType": "VariableDeclaration",
                             "overrides": null,
+<<<<<<< HEAD
                             "scope": 585,
                             "src": "668:11:5",
+=======
+                            "scope": 473,
+                            "src": "652:11:4",
+>>>>>>> master
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -2239,7 +2981,11 @@
                               "id": 566,
                               "name": "bytes32",
                               "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                               "src": "668:7:5",
+=======
+                              "src": "652:7:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
                                 "typeString": "bytes32"
@@ -2258,8 +3004,13 @@
                             "name": "user_lids",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 538,
                             "src": "682:9:5",
+=======
+                            "referencedDeclaration": 426,
+                            "src": "666:9:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                               "typeString": "bytes32[] memory"
@@ -2272,8 +3023,13 @@
                             "name": "i",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 556,
                             "src": "692:1:5",
+=======
+                            "referencedDeclaration": 444,
+                            "src": "676:1:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
@@ -2284,14 +3040,22 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
+<<<<<<< HEAD
                           "src": "682:12:5",
+=======
+                          "src": "666:12:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                         "src": "668:26:5"
+=======
+                        "src": "652:26:4"
+>>>>>>> master
                       },
                       {
                         "expression": {
@@ -2309,8 +3073,13 @@
                               "name": "lease_addrs",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 547,
                               "src": "709:11:5",
+=======
+                              "referencedDeclaration": 435,
+                              "src": "692:11:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                 "typeString": "address[] memory"
@@ -2323,8 +3092,13 @@
                               "name": "i",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
+<<<<<<< HEAD
                               "referencedDeclaration": 556,
                               "src": "721:1:5",
+=======
+                              "referencedDeclaration": 444,
+                              "src": "704:1:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2335,7 +3109,11 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
+<<<<<<< HEAD
                             "src": "709:14:5",
+=======
+                            "src": "692:14:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
@@ -2356,8 +3134,13 @@
                                     "name": "user_leases",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 515,
                                     "src": "734:11:5",
+=======
+                                    "referencedDeclaration": 403,
+                                    "src": "717:11:4",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                                       "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -2370,8 +3153,13 @@
                                     "name": "uid",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
+<<<<<<< HEAD
                                     "referencedDeclaration": 525,
                                     "src": "746:3:5",
+=======
+                                    "referencedDeclaration": 413,
+                                    "src": "729:3:4",
+>>>>>>> master
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_bytes32",
                                       "typeString": "bytes32"
@@ -2382,7 +3170,11 @@
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                   "src": "734:16:5",
+=======
+                                  "src": "717:16:4",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                                     "typeString": "mapping(bytes32 => contract Lease)"
@@ -2395,8 +3187,13 @@
                                   "name": "lid",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
+<<<<<<< HEAD
                                   "referencedDeclaration": 567,
                                   "src": "751:3:5",
+=======
+                                  "referencedDeclaration": 455,
+                                  "src": "734:3:4",
+>>>>>>> master
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_bytes32",
                                     "typeString": "bytes32"
@@ -2407,7 +3204,11 @@
                                 "isPure": false,
                                 "lValueRequested": false,
                                 "nodeType": "IndexAccess",
+<<<<<<< HEAD
                                 "src": "734:21:5",
+=======
+                                "src": "717:21:4",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_contract$_Lease_$506",
                                   "typeString": "contract Lease"
@@ -2427,7 +3228,11 @@
                               "isPure": true,
                               "lValueRequested": false,
                               "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                               "src": "726:7:5",
+=======
+                              "src": "709:7:4",
+>>>>>>> master
                               "typeDescriptions": {
                                 "typeIdentifier": "t_type$_t_address_$",
                                 "typeString": "type(address)"
@@ -2436,7 +3241,11 @@
                                 "id": 575,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                                 "src": "726:7:5",
+=======
+                                "src": "709:7:4",
+>>>>>>> master
                                 "typeDescriptions": {
                                   "typeIdentifier": null,
                                   "typeString": null
@@ -2451,14 +3260,22 @@
                             "lValueRequested": false,
                             "names": [],
                             "nodeType": "FunctionCall",
+<<<<<<< HEAD
                             "src": "726:30:5",
+=======
+                            "src": "709:30:4",
+>>>>>>> master
                             "tryCall": false,
                             "typeDescriptions": {
                               "typeIdentifier": "t_address",
                               "typeString": "address"
                             }
                           },
+<<<<<<< HEAD
                           "src": "709:47:5",
+=======
+                          "src": "692:47:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_address",
                             "typeString": "address"
@@ -2466,7 +3283,11 @@
                         },
                         "id": 584,
                         "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                         "src": "709:47:5"
+=======
+                        "src": "692:47:4"
+>>>>>>> master
                       }
                     ]
                   },
@@ -2487,8 +3308,13 @@
                       "name": "i",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 556,
                       "src": "626:1:5",
+=======
+                      "referencedDeclaration": 444,
+                      "src": "611:1:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -2504,8 +3330,13 @@
                         "name": "user_lids",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 538,
                         "src": "630:9:5",
+=======
+                        "referencedDeclaration": 426,
+                        "src": "615:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -2519,13 +3350,21 @@
                       "memberName": "length",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "630:16:5",
+=======
+                      "src": "615:16:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       }
                     },
+<<<<<<< HEAD
                     "src": "626:20:5",
+=======
+                    "src": "611:20:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -2544,8 +3383,13 @@
                         "name": "i",
                         "nodeType": "VariableDeclaration",
                         "overrides": null,
+<<<<<<< HEAD
                         "scope": 586,
                         "src": "611:9:5",
+=======
+                        "scope": 474,
+                        "src": "596:9:4",
+>>>>>>> master
                         "stateVariable": false,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2556,7 +3400,11 @@
                           "id": 555,
                           "name": "uint256",
                           "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                           "src": "611:7:5",
+=======
+                          "src": "596:7:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
@@ -2577,7 +3425,11 @@
                       "kind": "number",
                       "lValueRequested": false,
                       "nodeType": "Literal",
+<<<<<<< HEAD
                       "src": "623:1:5",
+=======
+                      "src": "608:1:4",
+>>>>>>> master
                       "subdenomination": null,
                       "typeDescriptions": {
                         "typeIdentifier": "t_rational_0_by_1",
@@ -2586,7 +3438,11 @@
                       "value": "0"
                     },
                     "nodeType": "VariableDeclarationStatement",
+<<<<<<< HEAD
                     "src": "611:13:5"
+=======
+                    "src": "596:13:4"
+>>>>>>> master
                   },
                   "loopExpression": {
                     "expression": {
@@ -2599,15 +3455,24 @@
                       "nodeType": "UnaryOperation",
                       "operator": "++",
                       "prefix": false,
+<<<<<<< HEAD
                       "src": "648:3:5",
+=======
+                      "src": "633:3:4",
+>>>>>>> master
                       "subExpression": {
                         "argumentTypes": null,
                         "id": 563,
                         "name": "i",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 556,
                         "src": "648:1:5",
+=======
+                        "referencedDeclaration": 444,
+                        "src": "633:1:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
                           "typeString": "uint256"
@@ -2620,10 +3485,17 @@
                     },
                     "id": 565,
                     "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                     "src": "648:3:5"
                   },
                   "nodeType": "ForStatement",
                   "src": "606:162:5"
+=======
+                    "src": "633:3:4"
+                  },
+                  "nodeType": "ForStatement",
+                  "src": "591:159:4"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -2635,8 +3507,13 @@
                         "name": "user_lids",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 538,
                         "src": "786:9:5",
+=======
+                        "referencedDeclaration": 426,
+                        "src": "767:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                           "typeString": "bytes32[] memory"
@@ -2648,8 +3525,13 @@
                         "name": "lease_addrs",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 547,
                         "src": "797:11:5",
+=======
+                        "referencedDeclaration": 435,
+                        "src": "778:11:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                           "typeString": "address[] memory"
@@ -2663,7 +3545,11 @@
                     "isPure": false,
                     "lValueRequested": false,
                     "nodeType": "TupleExpression",
+<<<<<<< HEAD
                     "src": "785:24:5",
+=======
+                    "src": "766:24:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$_t_array$_t_bytes32_$dyn_memory_ptr_$_t_array$_t_address_$dyn_memory_ptr_$",
                       "typeString": "tuple(bytes32[] memory,address[] memory)"
@@ -2672,7 +3558,11 @@
                   "functionReturnParameters": 533,
                   "id": 590,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "778:31:5"
+=======
+                  "src": "759:31:4"
+>>>>>>> master
                 }
               ]
             },
@@ -2696,8 +3586,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 592,
                   "src": "360:11:5",
+=======
+                  "scope": 480,
+                  "src": "352:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2708,7 +3603,11 @@
                     "id": 524,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "360:7:5",
+=======
+                    "src": "352:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2718,7 +3617,11 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "359:13:5"
+=======
+              "src": "351:13:4"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 533,
@@ -2731,8 +3634,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 592,
                   "src": "421:16:5",
+=======
+                  "scope": 480,
+                  "src": "410:16:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2744,7 +3652,11 @@
                       "id": 527,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "421:7:5",
+=======
+                      "src": "410:7:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes32",
                         "typeString": "bytes32"
@@ -2753,7 +3665,11 @@
                     "id": 528,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "421:9:5",
+=======
+                    "src": "410:9:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
                       "typeString": "bytes32[]"
@@ -2769,8 +3685,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 592,
                   "src": "439:16:5",
+=======
+                  "scope": 480,
+                  "src": "428:16:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2782,7 +3703,11 @@
                       "id": 530,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                       "src": "439:7:5",
+=======
+                      "src": "428:7:4",
+>>>>>>> master
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
@@ -2792,7 +3717,11 @@
                     "id": 531,
                     "length": null,
                     "nodeType": "ArrayTypeName",
+<<<<<<< HEAD
                     "src": "439:9:5",
+=======
+                    "src": "428:9:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2802,10 +3731,17 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "420:36:5"
             },
             "scope": 643,
             "src": "331:486:5",
+=======
+              "src": "409:36:4"
+            },
+            "scope": 531,
+            "src": "323:474:4",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -2814,7 +3750,11 @@
             "body": {
               "id": 610,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "937:56:5",
+=======
+              "src": "911:54:4",
+>>>>>>> master
               "statements": [
                 {
                   "expression": {
@@ -2830,8 +3770,13 @@
                             "name": "user_leases",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 515,
                             "src": "963:11:5",
+=======
+                            "referencedDeclaration": 403,
+                            "src": "936:11:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                               "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -2844,8 +3789,13 @@
                             "name": "uid",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
+<<<<<<< HEAD
                             "referencedDeclaration": 594,
                             "src": "975:3:5",
+=======
+                            "referencedDeclaration": 482,
+                            "src": "948:3:4",
+>>>>>>> master
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
                               "typeString": "bytes32"
@@ -2856,7 +3806,11 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
+<<<<<<< HEAD
                           "src": "963:16:5",
+=======
+                          "src": "936:16:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                             "typeString": "mapping(bytes32 => contract Lease)"
@@ -2869,8 +3823,13 @@
                           "name": "lid",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 596,
                           "src": "980:3:5",
+=======
+                          "referencedDeclaration": 484,
+                          "src": "953:3:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -2881,7 +3840,11 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
+<<<<<<< HEAD
                         "src": "963:21:5",
+=======
+                        "src": "936:21:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_contract$_Lease_$506",
                           "typeString": "contract Lease"
@@ -2901,7 +3864,11 @@
                       "isPure": true,
                       "lValueRequested": false,
                       "nodeType": "ElementaryTypeNameExpression",
+<<<<<<< HEAD
                       "src": "955:7:5",
+=======
+                      "src": "928:7:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_type$_t_address_$",
                         "typeString": "type(address)"
@@ -2910,7 +3877,11 @@
                         "id": 601,
                         "name": "address",
                         "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                         "src": "955:7:5",
+=======
+                        "src": "928:7:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": null,
                           "typeString": null
@@ -2925,7 +3896,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "955:30:5",
+=======
+                    "src": "928:30:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2935,7 +3910,11 @@
                   "functionReturnParameters": 600,
                   "id": 609,
                   "nodeType": "Return",
+<<<<<<< HEAD
                   "src": "948:37:5"
+=======
+                  "src": "921:37:4"
+>>>>>>> master
                 }
               ]
             },
@@ -2959,8 +3938,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 611,
                   "src": "849:11:5",
+=======
+                  "scope": 499,
+                  "src": "827:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2971,7 +3955,11 @@
                     "id": 593,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "849:7:5",
+=======
+                    "src": "827:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2987,8 +3975,13 @@
                   "name": "lid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 611,
                   "src": "862:11:5",
+=======
+                  "scope": 499,
+                  "src": "840:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2999,7 +3992,11 @@
                     "id": 595,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "862:7:5",
+=======
+                    "src": "840:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3009,7 +4006,11 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "848:26:5"
+=======
+              "src": "826:26:4"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 600,
@@ -3022,8 +4023,13 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 611,
                   "src": "923:7:5",
+=======
+                  "scope": 499,
+                  "src": "898:7:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3034,7 +4040,11 @@
                     "id": 598,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "923:7:5",
+=======
+                    "src": "898:7:4",
+>>>>>>> master
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -3045,10 +4055,17 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "922:9:5"
             },
             "scope": 643,
             "src": "825:168:5",
+=======
+              "src": "897:9:4"
+            },
+            "scope": 531,
+            "src": "803:162:4",
+>>>>>>> master
             "stateMutability": "view",
             "virtual": false,
             "visibility": "public"
@@ -3057,7 +4074,11 @@
             "body": {
               "id": 641,
               "nodeType": "Block",
+<<<<<<< HEAD
               "src": "1101:115:5",
+=======
+              "src": "1067:111:4",
+>>>>>>> master
               "statements": [
                 {
                   "expression": {
@@ -3069,8 +4090,13 @@
                         "name": "uid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 615,
                         "src": "1127:3:5",
+=======
+                        "referencedDeclaration": 503,
+                        "src": "1092:3:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3090,8 +4116,13 @@
                         "name": "user_list",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 523,
                         "src": "1112:9:5",
+=======
+                        "referencedDeclaration": 411,
+                        "src": "1077:9:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -3105,7 +4136,11 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "1112:14:5",
+=======
+                      "src": "1077:14:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -3119,7 +4154,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1112:19:5",
+=======
+                    "src": "1077:19:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -3128,7 +4167,11 @@
                   },
                   "id": 625,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1112:19:5"
+=======
+                  "src": "1077:19:4"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -3140,8 +4183,13 @@
                         "name": "lid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 617,
                         "src": "1168:3:5",
+=======
+                        "referencedDeclaration": 505,
+                        "src": "1132:3:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3163,8 +4211,13 @@
                           "name": "user_lease_list",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 520,
                           "src": "1142:15:5",
+=======
+                          "referencedDeclaration": 408,
+                          "src": "1106:15:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_array$_t_bytes32_$dyn_storage_$",
                             "typeString": "mapping(bytes32 => bytes32[] storage ref)"
@@ -3177,8 +4230,13 @@
                           "name": "uid",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 615,
                           "src": "1158:3:5",
+=======
+                          "referencedDeclaration": 503,
+                          "src": "1122:3:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -3189,7 +4247,11 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
+<<<<<<< HEAD
                         "src": "1142:20:5",
+=======
+                        "src": "1106:20:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_array$_t_bytes32_$dyn_storage",
                           "typeString": "bytes32[] storage ref"
@@ -3203,7 +4265,11 @@
                       "memberName": "push",
                       "nodeType": "MemberAccess",
                       "referencedDeclaration": null,
+<<<<<<< HEAD
                       "src": "1142:25:5",
+=======
+                      "src": "1106:25:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_arraypush_nonpayable$_t_bytes32_$returns$__$",
                         "typeString": "function (bytes32)"
@@ -3217,7 +4283,11 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
+<<<<<<< HEAD
                     "src": "1142:30:5",
+=======
+                    "src": "1106:30:4",
+>>>>>>> master
                     "tryCall": false,
                     "typeDescriptions": {
                       "typeIdentifier": "t_tuple$__$",
@@ -3226,7 +4296,11 @@
                   },
                   "id": 632,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1142:30:5"
+=======
+                  "src": "1106:30:4"
+>>>>>>> master
                 },
                 {
                   "expression": {
@@ -3246,8 +4320,13 @@
                           "name": "user_leases",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 515,
                           "src": "1183:11:5",
+=======
+                          "referencedDeclaration": 403,
+                          "src": "1146:11:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_mapping$_t_bytes32_$_t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$_$",
                             "typeString": "mapping(bytes32 => mapping(bytes32 => contract Lease))"
@@ -3260,8 +4339,13 @@
                           "name": "uid",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
+<<<<<<< HEAD
                           "referencedDeclaration": 615,
                           "src": "1195:3:5",
+=======
+                          "referencedDeclaration": 503,
+                          "src": "1158:3:4",
+>>>>>>> master
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes32",
                             "typeString": "bytes32"
@@ -3272,7 +4356,11 @@
                         "isPure": false,
                         "lValueRequested": false,
                         "nodeType": "IndexAccess",
+<<<<<<< HEAD
                         "src": "1183:16:5",
+=======
+                        "src": "1146:16:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_mapping$_t_bytes32_$_t_contract$_Lease_$506_$",
                           "typeString": "mapping(bytes32 => contract Lease)"
@@ -3285,8 +4373,13 @@
                         "name": "lid",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
+<<<<<<< HEAD
                         "referencedDeclaration": 617,
                         "src": "1200:3:5",
+=======
+                        "referencedDeclaration": 505,
+                        "src": "1163:3:4",
+>>>>>>> master
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
                           "typeString": "bytes32"
@@ -3297,7 +4390,11 @@
                       "isPure": false,
                       "lValueRequested": true,
                       "nodeType": "IndexAccess",
+<<<<<<< HEAD
                       "src": "1183:21:5",
+=======
+                      "src": "1146:21:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_Lease_$506",
                         "typeString": "contract Lease"
@@ -3311,14 +4408,23 @@
                       "name": "l",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
+<<<<<<< HEAD
                       "referencedDeclaration": 613,
                       "src": "1207:1:5",
+=======
+                      "referencedDeclaration": 501,
+                      "src": "1170:1:4",
+>>>>>>> master
                       "typeDescriptions": {
                         "typeIdentifier": "t_contract$_Lease_$506",
                         "typeString": "contract Lease"
                       }
                     },
+<<<<<<< HEAD
                     "src": "1183:25:5",
+=======
+                    "src": "1146:25:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Lease_$506",
                       "typeString": "contract Lease"
@@ -3326,7 +4432,11 @@
                   },
                   "id": 640,
                   "nodeType": "ExpressionStatement",
+<<<<<<< HEAD
                   "src": "1183:25:5"
+=======
+                  "src": "1146:25:4"
+>>>>>>> master
                 }
               ]
             },
@@ -3350,8 +4460,13 @@
                   "name": "l",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 642,
                   "src": "1035:7:5",
+=======
+                  "scope": 530,
+                  "src": "1004:7:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3363,8 +4478,13 @@
                     "id": 612,
                     "name": "Lease",
                     "nodeType": "UserDefinedTypeName",
+<<<<<<< HEAD
                     "referencedDeclaration": 506,
                     "src": "1035:5:5",
+=======
+                    "referencedDeclaration": 394,
+                    "src": "1004:5:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_contract$_Lease_$506",
                       "typeString": "contract Lease"
@@ -3380,8 +4500,13 @@
                   "name": "uid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 642,
                   "src": "1053:11:5",
+=======
+                  "scope": 530,
+                  "src": "1021:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3392,7 +4517,11 @@
                     "id": 614,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "1053:7:5",
+=======
+                    "src": "1021:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3408,8 +4537,13 @@
                   "name": "lid",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
+<<<<<<< HEAD
                   "scope": 642,
                   "src": "1075:11:5",
+=======
+                  "scope": 530,
+                  "src": "1042:11:4",
+>>>>>>> master
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3420,7 +4554,11 @@
                     "id": 616,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
+<<<<<<< HEAD
                     "src": "1075:7:5",
+=======
+                    "src": "1042:7:4",
+>>>>>>> master
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -3430,26 +4568,45 @@
                   "visibility": "internal"
                 }
               ],
+<<<<<<< HEAD
               "src": "1024:69:5"
+=======
+              "src": "994:65:4"
+>>>>>>> master
             },
             "returnParameters": {
               "id": 619,
               "nodeType": "ParameterList",
               "parameters": [],
+<<<<<<< HEAD
               "src": "1101:0:5"
             },
             "scope": 643,
             "src": "1001:215:5",
+=======
+              "src": "1067:0:4"
+            },
+            "scope": 531,
+            "src": "971:207:4",
+>>>>>>> master
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
+<<<<<<< HEAD
         "scope": 644,
         "src": "59:1160:5"
       }
     ],
     "src": "0:1221:5"
+=======
+        "scope": 532,
+        "src": "56:1124:4"
+      }
+    ],
+    "src": "0:1181:4"
+>>>>>>> master
   },
   "compiler": {
     "name": "solc",
@@ -3459,12 +4616,21 @@
     "5777": {
       "events": {},
       "links": {},
+<<<<<<< HEAD
       "address": "0xcaA67f633CEeFf39DBAbFBC46924Bf41EBf63972",
       "transactionHash": "0x99fd8e771f170a78b9e407fe97212668c3d91451268e1afad7c46978b783000b"
     }
   },
   "schemaVersion": "3.2.4",
   "updatedAt": "2020-09-15T08:26:20.882Z",
+=======
+      "address": "0xB8208eBbd1284AD8EbAdcf224ce9AC67307F327f",
+      "transactionHash": "0x0c9af656224db5dd847ceb801f842695359bf91da0bb2ab7c91f561c24fbd156"
+    }
+  },
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2020-09-15T09:11:53.679Z",
+>>>>>>> master
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

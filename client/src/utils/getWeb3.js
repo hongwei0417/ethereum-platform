@@ -6,7 +6,7 @@ export const connect_to_web3 = async () => {
 	let web3 = window.web3;
 
 	// Checking if Web3 has been injected by the browser (Mist/MetaMask).
-	const alreadyInjected = typeof web3 !== "undefined";
+	// const alreadyInjected = typeof web3 !== "undefined";
 
 	const provider = new Web3.providers.HttpProvider(WEB3_PROVIDER_URL);
 	web3 = new Web3(provider);
