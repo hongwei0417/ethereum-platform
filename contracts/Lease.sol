@@ -3,7 +3,7 @@ import "./User.sol";
 
 contract Lease {
     User private owner; //擁有者
-    string public catagory; //種類
+    string public category; //種類
     bool public rented_out; //是否已出租
     uint256 public start_time; //可出租起始時間
     uint256 public end_time; //可出租結束時間
@@ -41,7 +41,7 @@ contract Lease {
         uint256 et,
         uint256 qt
     ) public {
-        catagory = bytes(ct).length != 0 ? ct : catagory;
+        category = bytes(ct).length != 0 ? ct : category;
         start_time = st != 0 ? st : start_time;
         end_time = et != 0 ? et : end_time;
         quantity = qt != 0 ? qt : quantity;

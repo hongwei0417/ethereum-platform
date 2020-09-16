@@ -1,7 +1,6 @@
 import React from "react";
 import Paper from "@material-ui/core/Paper";
 import { ListGroup } from "react-bootstrap";
-
 import { connect_to_web3, get_blockchain_info } from "../utils/getWeb3";
 
 export function Home() {
