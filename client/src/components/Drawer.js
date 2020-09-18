@@ -10,23 +10,32 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AirplanemodeActiveRoundedIcon from "@material-ui/icons/AirplanemodeActiveRounded";
 import DriveEtaRoundedIcon from "@material-ui/icons/DriveEtaRounded";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
 	list: {
 		width: 250,
 	},
-	fullList: {
-		width: "auto",
-	},
+	fullList: {},
+	width: "auto",
 });
 
 export default function CustomDrawer({ open, toggle_drawer }) {
 	const classes = useStyles();
 	const [state, setState] = React.useState(false);
+	const history = useHistory();
 
 	React.useEffect(() => {
 		setState(open);
 	}, [open]);
+
+	const goToPage = (type) => {
+		if (type === 1) {
+			history.replace("/houseSearch");
+		} else if (type === 2) {
+			history.replace("/");
+		}
+	};
 
 	const list = (anchor) => (
 		<div
@@ -38,7 +47,7 @@ export default function CustomDrawer({ open, toggle_drawer }) {
 			onKeyDown={toggle_drawer}
 		>
 			<List>
-				<ListItem button key={0}>
+				<ListItem button key={0} onClick={(e) => goToPage(1)}>
 					<ListItemIcon>
 						<AirplanemodeActiveRoundedIcon />
 					</ListItemIcon>
@@ -46,7 +55,7 @@ export default function CustomDrawer({ open, toggle_drawer }) {
 				</ListItem>
 			</List>
 			<List>
-				<ListItem button key={1}>
+				<ListItem button key={1} onClick={(e) => goToPage(2)}>
 					<ListItemIcon>
 						<DriveEtaRoundedIcon />
 					</ListItemIcon>

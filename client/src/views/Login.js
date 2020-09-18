@@ -7,7 +7,8 @@ import { getContractInstance } from "../utils/getContract";
 import Auth from "../contracts/Auth.json";
 import UserManager from "../contracts/UserManager.json";
 import { string_to_bytes32 } from "../utils/tools";
-import eth_addr from '../eth_contract.json';
+import eth_addr from "../eth_contract.json";
+import NoWeb3 from "../components/NoWeb3";
 
 export function Login({}) {
 	const [uid, set_uid] = React.useState("");
@@ -242,11 +243,7 @@ export function Login({}) {
 			</div>
 		);
 	} else {
-		return (
-			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
-				{"loading..."}
-			</div>
-		);
+		return <NoWeb3 />;
 	}
 }
 

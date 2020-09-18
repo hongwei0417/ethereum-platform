@@ -7,6 +7,7 @@ import { get_all_lease_info } from "../utils/lease";
 import LeaseManager from "../contracts/LeaseManager.json";
 import UserManager from "../contracts/UserManager.json";
 import eth_addr from "../eth_contract.json";
+import NoWeb3 from "../components/NoWeb3";
 
 export function HouseSearch() {
 	const [web3, set_web3] = React.useState(null);
@@ -68,27 +69,31 @@ export function HouseSearch() {
 		load();
 	}, [user_list]);
 
-	return (
-		<div className="d-flex flex-column align-items-center pt-5">
-			<div className="w-50">
-				<SearchBar />
-				<hr color="white" />
-				{house_list.map((item, i) => {
-					return (
-						<HouseCard
-							key={i}
-							owner={item.owner}
-							house_name={item.house_name}
-							category={item.category}
-							rented_out={item.rented_out}
-							start_time={item.start_time}
-							end_time={item.end_time}
-							price={item.price}
-							quantity={item.quantity}
-						/>
-					);
-				})}
+	if (web3) {
+		return (
+			<div className="d-flex flex-column align-items-center pt-5">
+				<div className="w-50">
+					<SearchBar />
+					<hr color="white" />
+					{house_list.map((item, i) => {
+						return (
+							<HouseCard
+								key={i}
+								owner={item.owner}
+								house_name={item.house_name}
+								category={item.category}
+								rented_out={item.rented_out}
+								start_time={item.start_time}
+								end_time={item.end_time}
+								price={item.price}
+								quantity={item.quantity}
+							/>
+						);
+					})}
+				</div>
 			</div>
-		</div>
-	);
+		);
+	} else {
+		return <NoWeb3 />;
+	}
 }

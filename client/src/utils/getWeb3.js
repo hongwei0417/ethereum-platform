@@ -3,13 +3,13 @@ import { WEB3_PROVIDER_URL } from "../config";
 
 // 連結 web3
 export const connect_to_web3 = async () => {
-	let web3 = window.web3;
+	// let web3 = window.web3;
 
 	// Checking if Web3 has been injected by the browser (Mist/MetaMask).
 	// const alreadyInjected = typeof web3 !== "undefined";
 
 	const provider = new Web3.providers.HttpProvider(WEB3_PROVIDER_URL);
-	web3 = new Web3(provider);
+	let web3 = new Web3(provider);
 	console.log("No web3 instance injected, using Local web3.");
 	return web3;
 
