@@ -8,6 +8,7 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import { ListGroup } from "react-bootstrap";
+import moment from "moment";
 
 function HouseCard({
 	owner,
@@ -36,8 +37,12 @@ function HouseCard({
 					<ListGroup.Item>{`出租狀態： ${
 						rented_out ? "已出租" : "未出租"
 					}`}</ListGroup.Item>
-					<ListGroup.Item>{`開始時間： ${start_time || "---"}`}</ListGroup.Item>
-					<ListGroup.Item>{`結束時間： ${end_time || "---"}`}</ListGroup.Item>
+					<ListGroup.Item>{`開始時間： ${
+						moment(start_time).toLocaleString() || "---"
+					}`}</ListGroup.Item>
+					<ListGroup.Item>{`結束時間： ${
+						moment(end_time).toLocaleString() || "---"
+					}`}</ListGroup.Item>
 					<ListGroup.Item>{`價格： ${price || "---"}`}</ListGroup.Item>
 					<ListGroup.Item>{`數量： ${quantity || "---"}`}</ListGroup.Item>
 					<ListGroup.Item>{`種類： ${category || "---"}`}</ListGroup.Item>

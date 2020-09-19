@@ -1,6 +1,7 @@
 import { Home } from "./views/Home";
 import { Login } from "./views/Login";
 import { HouseSearch } from "./views/HouseSearch";
+import { MyHouse } from "./views/MyHouse";
 
 export const routes = [
 	{
@@ -22,5 +23,10 @@ export const routes = [
 		path: "/houseSearch",
 		name: "房間列表",
 		component: HouseSearch,
+	},
+	{
+		path: "/myHouse",
+		name: "我的房間",
+		component: MyHouse,
 	},
 ];

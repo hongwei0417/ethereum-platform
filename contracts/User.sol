@@ -53,7 +53,7 @@ contract User {
     function create_lease(
         string memory lon,
         string memory lat,
-        bytes32 lid
+        bytes32 lid //房間key
     ) public {
         Lease l = new Lease(this, lon, lat);
         LM.add_user_lease(l, uid, lid);
