@@ -6,7 +6,7 @@ import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import { useHistory } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -32,6 +32,13 @@ export default function CustomAppBar({ toggle_drawer }) {
 		history.push("/login");
 	};
 
+<<<<<<< HEAD
+=======
+	const toggle_logout = () => {
+		localStorage.removeItem("user");
+		document.location.reload();
+	};
+>>>>>>> 7d5a263a6c8e8fa25f3c664db6212b3b21fbb0e2
 
 	return (
 		<div className={classes.root}>
@@ -51,6 +58,9 @@ export default function CustomAppBar({ toggle_drawer }) {
 					</Typography>
 					<Button color="inherit" onClick={toggle_login}>
 						{"登入"}
+					</Button>
+					<Button color="inherit" onClick={toggle_logout}>
+						{"登出"}
 					</Button>
 				</Toolbar>
 			</AppBar>

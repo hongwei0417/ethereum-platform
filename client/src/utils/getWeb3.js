@@ -3,29 +3,35 @@ import { WEB3_PROVIDER_URL } from "../config";
 
 // 連結 web3
 export const connect_to_web3 = async () => {
-	let web3 = window.web3;
+	try {
+		// let web3 = window.web3;
 
-	// Checking if Web3 has been injected by the browser (Mist/MetaMask).
-	// const alreadyInjected = typeof web3 !== "undefined";
+		// Checking if Web3 has been injected by the browser (Mist/MetaMask).
+		// const alreadyInjected = typeof web3 !== "undefined";
 
-	const provider = new Web3.providers.HttpProvider(WEB3_PROVIDER_URL);
-	web3 = new Web3(provider);
-	console.log("No web3 instance injected, using Local web3.");
-	return web3;
+		const provider = new Web3.providers.HttpProvider(WEB3_PROVIDER_URL);
+		let web3 = new Web3(provider);
+		await web3.eth.net.getId();
+		console.log("No web3 instance injected, using Local web3.");
+		return web3;
 
-	// if (alreadyInjected) {
-	// 	// Use Mist/MetaMask's provider.
-	// 	web3 = new Web3(web3.currentProvider);
-	// 	console.log("Injected web3 detected.");
-	// 	return web3;
-	// } else {
-	// 	// Fallback to localhost if no web3 injection. We've configured this to
-	// 	// use the development console's port by default.
-	// 	const provider = new Web3.providers.HttpProvider(WEB3_PROVIDER_URL);
-	// 	web3 = new Web3(provider);
-	// 	console.log("No web3 instance injected, using Local web3.");
-	// 	return web3;
-	// }
+		// if (alreadyInjected) {
+		// 	// Use Mist/MetaMask's provider.
+		// 	web3 = new Web3(web3.currentProvider);
+		// 	console.log("Injected web3 detected.");
+		// 	return web3;
+		// } else {
+		// 	// Fallback to localhost if no web3 injection. We've configured this to
+		// 	// use the development console's port by default.
+		// 	const provider = new Web3.providers.HttpProvider(WEB3_PROVIDER_URL);
+		// 	web3 = new Web3(provider);
+		// 	console.log("No web3 instance injected, using Local web3.");
+		// 	return web3;
+		// }
+	} catch (error) {
+		console.log(error);
+		return null;
+	}
 };
 
 // 取得區塊鏈上常用資訊

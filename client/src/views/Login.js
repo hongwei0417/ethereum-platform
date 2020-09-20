@@ -3,11 +3,14 @@ import PropTypes from "prop-types";
 import Paper from "@material-ui/core/Paper";
 import { InputGroup, FormControl, Button, Dropdown, DropdownButton } from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
-import { getContractInstance } from "../utils/getContract";
+import { getContractInstance, contract_send, contract_call } from "../utils/getContract";
 import Auth from "../contracts/Auth.json";
 import UserManager from "../contracts/UserManager.json";
 import { string_to_bytes32 } from "../utils/tools";
-import eth_addr from '../eth_contract.json';
+import { user_from_contract } from "../utils/user";
+import eth_addr from "../eth_contract.json";
+import NoContent from "../components/NoContent";
+import { useHistory } from "react-router-dom";
 
 export function Login({}) {
 	const [uid, set_uid] = React.useState("");
@@ -18,6 +21,7 @@ export function Login({}) {
 	const [auth_contract, set_auth_contract] = React.useState(null);
 	const [userManager_contract, set_userManager_contract] = React.useState(null);
 	const [payload, set_payload] = React.useState(null);
+	const history = useHistory();
 
 	//初始載入web3
 	React.useEffect(() => {
@@ -76,7 +80,7 @@ export function Login({}) {
 		try {
 			let bytes_uid = string_to_bytes32(uid);
 			// * 執行智能合約
-			let result = await userManager_contract.methods.get_user(bytes_uid).call({
+			let result = await contract_call(userManager_contract, "get_user", [bytes_uid], {
 				from: select_account,
 				gas: 6000000,
 			});
@@ -116,10 +120,15 @@ export function Login({}) {
 			let bytes_password = string_to_bytes32(password);
 
 			// * 呼叫智能合約新增帳戶
-			let result = await auth_contract.methods.create_user(bytes_uid, bytes_password).send({
-				from: select_account,
-				gas: 6000000,
-			});
+			let result = await contract_send(
+				auth_contract,
+				"create_user",
+				[bytes_uid, bytes_password],
+				{
+					from: select_account,
+					gas: 6000000,
+				}
+			);
 
 			set_payload(JSON.stringify(result));
 
@@ -158,13 +167,21 @@ export function Login({}) {
 				let bytes_uid = string_to_bytes32(uid);
 				let bytes_password = string_to_bytes32(password);
 				// * 執行智能合約
-				let result = await auth_contract.methods.verify(bytes_uid, bytes_password).call({
-					from: select_account,
-					gas: 6000000,
-				});
+				let result = await contract_call(
+					auth_contract,
+					"verify",
+					[bytes_uid, bytes_password],
+					{
+						from: select_account,
+						gas: 6000000,
+					}
+				);
 
 				if (result) {
+					let user_obj = user_from_contract(user);
+					localStorage.setItem("user", JSON.stringify(user_obj));
 					alert("登入成功");
+					history.push("/houseSearch");
 				} else {
 					alert("登入失敗");
 				}
@@ -242,11 +259,7 @@ export function Login({}) {
 			</div>
 		);
 	} else {
-		return (
-			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
-				{"loading..."}
-			</div>
-		);
+		return <NoContent message="尚未連結至區塊鏈..." />;
 	}
 }
 
