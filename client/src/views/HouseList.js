@@ -9,14 +9,17 @@ import UserManager from "../contracts/UserManager.json";
 import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import TravelTab from "../components/TravelTab";
+import { useHistory } from "react-router-dom";
 
-export function HouseSearch() {
+export function HouseList() {
 	const [web3, set_web3] = React.useState(null);
 	const [LM, set_LM] = React.useState(null);
 	const [UM, set_UM] = React.useState(null);
-	const [user_list, set_user_list] = React.useState([]);
+	const [user_uid_list, set_user_uid_list] = React.useState([]);
+	const [user_addr_list, set_user_addr_list] = React.useState([]);
 	const [house_list, set_house_list] = React.useState([]);
 	const [user, set_user] = React.useState(null);
+	const history = useHistory();
 
 	//載入web3
 	React.useEffect(() => {
@@ -49,7 +52,8 @@ export function HouseSearch() {
 		const load = async () => {
 			if (UM) {
 				let list = await UM.methods.get_user_list().call();
-				set_user_list(list[0]);
+				set_user_uid_list(list[0]);
+				set_user_addr_list(list[1]);
 				console.log(list);
 			}
 		};
@@ -68,17 +72,28 @@ export function HouseSearch() {
 	//載入所有房間
 	React.useEffect(() => {
 		const load = async () => {
-			if (user_list.length > 0 && LM) {
+			if (user_uid_list.length > 0 && user_addr_list.length > 0 && LM) {
 				let result = [];
-				for (let i = 0; i < user_list.length; i++) {
-					let lease_infos = await get_user_all_lease_info(web3, user_list[i], LM);
+				for (let i = 0; i < user_uid_list.length; i++) {
+					let user_obj = {
+						uid: user_uid_list[i],
+						address: user_addr_list[i],
+					};
+					let lease_infos = await get_user_all_lease_info(web3, user_obj, LM);
 					result = result.concat(lease_infos);
 				}
 				set_house_list(result);
+				console.log(result);
 			}
 		};
 		load();
-	}, [user_list]);
+	}, [user_uid_list, user_addr_list]);
+
+	//進入訂房頁面
+	const enter_booking_page = (item) => {
+		history.push(`/booking/${item.lease_addr}`);
+		console.log(item);
+	};
 
 	if (web3 && user) {
 		return (
@@ -102,6 +117,7 @@ export function HouseSearch() {
 								end_time={item.end_time}
 								price={item.price}
 								quantity={item.quantity}
+								onSubmit={() => enter_booking_page(item)}
 							/>
 						);
 					})}

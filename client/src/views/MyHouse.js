@@ -115,7 +115,7 @@ const HouseList = ({ accounts, web3, LM, user }) => {
 	//取得使用者所有房子
 	const load_user_leases = async () => {
 		if (web3 && LM) {
-			let list = await get_user_all_lease_info(web3, user.uid, LM);
+			let list = await get_user_all_lease_info(web3, user, LM);
 			set_lease_list(list);
 			console.log(list);
 		}
