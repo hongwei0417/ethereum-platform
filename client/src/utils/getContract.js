@@ -10,7 +10,7 @@ export const getContractInstance = async (web3, contractDefinition, address) => 
 };
 
 //呼叫合約call
-export const contract_call = async (contract, method, params, options = {}) => {
+export const contract_call = async (contract, method, params = [], options = {}) => {
 	try {
 		let result = await contract.methods[method](...params).call(options);
 		return result;

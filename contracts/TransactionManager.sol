@@ -29,12 +29,15 @@ contract TransactionManager {
         return address(user_txns[uid][time]);
     }
 
+    function add_user(bytes32 uid) public {
+        user_list.push(uid);
+    }
+
     function add_user_txn(
         LeaseTransaction lt,
         bytes32 uid,
         uint256 time
     ) public {
-        user_list.push(uid);
         user_txn_list[uid].push(time);
         user_txns[uid][time] = lt;
     }

@@ -5,14 +5,15 @@ import Paper from "@material-ui/core/Paper";
 import SearchBar from "../components/SearchBar";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance, contract_call } from "../utils/getContract";
+import { get_txn_all_info } from "../utils/txn";
 import TransactionManager from "../contracts/TransactionManager.json";
 import Transaction from "../contracts/Transaction.json";
 import eth_addr from "../eth_contract.json";
+import moment from "moment";
 
 export function TransactionList() {
 	const [web3, set_web3] = React.useState(null);
 	const [TM, set_TM] = React.useState(null);
-	const [txn_contract, set_txn_contract] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
 	const [user, set_user] = React.useState(null);
 	const [txn_time_list, set_txn_time_list] = React.useState([]);
@@ -55,14 +56,12 @@ export function TransactionList() {
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3 && user) {
-				let instance1 = await getContractInstance(
+				let TM = await getContractInstance(
 					web3,
 					TransactionManager,
 					eth_addr.TransactionManager
 				);
-				let instance2 = await getContractInstance(web3, Transaction, user.address);
-				set_TM(instance1);
-				set_txn_contract(instance2);
+				set_TM(TM);
 			}
 		};
 		load();
@@ -71,19 +70,25 @@ export function TransactionList() {
 	//載入使用者交易列表
 	React.useEffect(() => {
 		const load = async () => {
-			if (TM && txn_contract) {
+			if (TM) {
 				let list = await contract_call(TM, "get_user_all_txns", [user.uid]);
 				if (list) {
 					set_txn_time_list(list[0]);
 					set_txn_addr_list(list[1]);
 				}
+				console.log(list);
 			}
 		};
 		load();
-	}, [TM, txn_contract]);
+	}, [TM]);
 
-	const open_modal = (item) => {
-		set_current_data(item);
+	const open_modal = async (item, i) => {
+		let txn_contract = await getContractInstance(web3, Transaction, item);
+		let data = await get_txn_all_info(txn_contract);
+		set_current_data({
+			...data,
+			time_id: txn_time_list[i],
+		});
 		set_open(true);
 	};
 
@@ -100,7 +105,7 @@ export function TransactionList() {
 			<div className="w-50">
 				<SearchBar />
 				<hr color="white" />
-				<Paper elevation={3} className="w-50">
+				<Paper elevation={3}>
 					<ListGroup>
 						{txn_addr_list.map((item, i) => {
 							return (
@@ -113,16 +118,16 @@ export function TransactionList() {
 										overflow: "hidden",
 										textOverflow: "ellipsis",
 									}}
-									onClick={(e) => open_modal(item)}
+									onClick={(e) => open_modal(item, i)}
 								>
-									{`【${item.lease_id}】`}
+									{`【${item}】`}
 								</ListGroup.Item>
 							);
 						})}
 					</ListGroup>
 				</Paper>
 			</div>
-			<Modal show={open} onHide={close_modal} centered>
+			<Modal show={open} onHide={close_modal} centered size="lg">
 				<Modal.Header closeButton>
 					<Modal.Title
 						style={{
@@ -130,42 +135,60 @@ export function TransactionList() {
 							overflow: "hidden",
 							textOverflow: "ellipsis",
 						}}
-					>{`${current_data.time} 【${current_data.sender}】`}</Modal.Title>
+					>{`${current_data.time_id} 【${current_data.sender}】`}</Modal.Title>
 				</Modal.Header>
-				<TxnDetails />
+				<TxnDetails txn_data={current_data} />
 			</Modal>
 		</div>
 	);
 }
 
-export function TxnDetails({}) {
+export function TxnDetails({ txn_data = {} }) {
 	return (
 		<Table striped bordered hover variant="dark" className="m-0">
 			<thead>
 				<tr>
-					<th>#</th>
-					<th>First Name</th>
-					<th>Last Name</th>
-					<th>Username</th>
+					<th colSpan={4} className="text-center">
+						{txn_data.complete ? "交易已完成" : "交易未完成"}
+					</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<td>1</td>
-					<td>Mark</td>
-					<td>Otto</td>
-					<td>@mdo</td>
+					<td colSpan={1}>{"交易創立者"}</td>
+					<td colSpan={3}>{txn_data.sender}</td>
 				</tr>
 				<tr>
-					<td>2</td>
-					<td>Jacob</td>
-					<td>Thornton</td>
-					<td>@fat</td>
+					<td colSpan={1}>{"租方"}</td>
+					<td colSpan={3}>{txn_data.renter}</td>
 				</tr>
 				<tr>
-					<td>3</td>
-					<td colSpan="2">Larry the Bird</td>
-					<td>@twitter</td>
+					<td colSpan={1}>{"借方"}</td>
+					<td colSpan={3}>{txn_data.borrower}</td>
+				</tr>
+				<tr>
+					<td colSpan={1}>{"交易物"}</td>
+					<td colSpan={3}>{txn_data.lease}</td>
+				</tr>
+				<tr>
+					<td>{"租方交易確認"}</td>
+					<td>{txn_data.renter_check ? "已確認" : "尚未確認"}</td>
+					<td>{"借方方交易確認"}</td>
+					<td>{txn_data.borrower_check ? "已確認" : "尚未確認"}</td>
+				</tr>
+				<tr>
+					<td colSpan={1}>{"交易金額"}</td>
+					<td colSpan={3} className="text-center">
+						{txn_data.money}
+					</td>
+				</tr>
+				<tr>
+					<td>{"開始交易時間"}</td>
+					<td>{moment(txn_data.start_time).toISOString()}</td>
+					<td>{"結束交易時間"}</td>
+					<td>
+						{txn_data.end_time ? moment(txn_data.end_time).toISOString() : "尚未結束"}
+					</td>
 				</tr>
 			</tbody>
 		</Table>

@@ -92,7 +92,6 @@ export function HouseList() {
 	//進入訂房頁面
 	const enter_booking_page = (item) => {
 		history.push(`/booking/${item.lease_addr}`);
-		console.log(item);
 	};
 
 	if (web3 && user) {

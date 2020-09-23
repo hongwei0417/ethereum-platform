@@ -3,15 +3,15 @@ import "./User.sol";
 
 contract Lease {
     User private owner; //擁有者
-    string public house_name; //房屋名稱
-    string public category; //種類
-    bool public rented_out; //是否已出租
-    uint256 public start_time; //可出租起始時間
-    uint256 public end_time; //可出租結束時間
-    uint256 public price; //出租金額
-    uint256 public quantity; //數量
-    string public lat; //緯度
-    string public lon; //經度
+    string private house_name; //房屋名稱
+    string private category; //種類
+    bool private rented_out; //是否已出租
+    uint256 private start_time; //可出租起始時間
+    uint256 private end_time; //可出租結束時間
+    uint256 private price; //出租金額
+    uint256 private quantity; //數量
+    string private lat; //緯度
+    string private lon; //經度
 
     constructor(
         User u,
@@ -21,6 +21,37 @@ contract Lease {
         owner = u;
         lat = _lat;
         lon = _lon;
+    }
+
+    function get_all_info()
+        public
+        view
+        returns (
+            address,
+            string memory,
+            string memory,
+            bool,
+            uint256,
+            uint256,
+            uint256,
+            uint256,
+            string memory,
+            string memory
+        )
+    {
+        address owner_addr = address(owner);
+        return (
+            owner_addr,
+            house_name,
+            category,
+            rented_out,
+            start_time,
+            end_time,
+            price,
+            quantity,
+            lat,
+            lon
+        );
     }
 
     function rent() public {

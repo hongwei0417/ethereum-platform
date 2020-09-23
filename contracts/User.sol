@@ -31,6 +31,8 @@ contract User {
         uid = _uid;
         password = _password;
         ACM.add_account(uid, new UserAccount(this)); //加入帳戶管理
+        LM.add_user(uid); //加入租借物管理
+        TM.add_user(uid); //加入交易管理
     }
 
     function get_uid() public view returns (bytes32) {

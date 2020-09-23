@@ -28,12 +28,15 @@ contract LeaseManager {
         return address(user_leases[uid][lid]);
     }
 
+    function add_user(bytes32 uid) public {
+        user_list.push(uid);
+    }
+
     function add_user_lease(
         Lease l,
         bytes32 uid,
         bytes32 lid
     ) public {
-        user_list.push(uid);
         user_lease_list[uid].push(lid);
         user_leases[uid][lid] = l;
     }

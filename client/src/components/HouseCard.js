@@ -51,7 +51,7 @@ function HouseCard({
 			</CardContent>
 			<CardActions className="justify-content-end">
 				<Button variant="warning" block onClick={(e) => onSubmit()}>
-					我要訂房
+					查看詳細資訊
 				</Button>
 			</CardActions>
 		</Card>
