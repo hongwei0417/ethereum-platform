@@ -3,7 +3,7 @@ import SearchBar from "../components/SearchBar";
 import HouseCard from "../components/HouseCard";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance } from "../utils/getContract";
-import { get_user_all_lease_info } from "../utils/lease";
+import { get_user_all_lease_info } from "../utils/data";
 import LeaseManager from "../contracts/LeaseManager.json";
 import UserManager from "../contracts/UserManager.json";
 import eth_addr from "../eth_contract.json";

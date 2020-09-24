@@ -1,5 +1,6 @@
 import { Home } from "./views/Home";
 import { Login } from "./views/Login";
+import { Account } from "./views/Account";
 import { HouseList } from "./views/HouseList";
 import { MyHouse } from "./views/MyHouse";
 import { TransactionList } from "./views/TransactionList";
@@ -20,6 +21,11 @@ export const routes = [
 		path: "/login",
 		name: "登入",
 		component: Login,
+	},
+	{
+		path: "/account",
+		name: "帳戶管理",
+		component: Account,
 	},
 	{
 		path: "/houseSearch",

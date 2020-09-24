@@ -6,7 +6,7 @@ import NoContent from "../components/NoContent";
 import { getContractInstance, contract_call, contract_send } from "../utils/getContract";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
-import { get_user_all_lease_info } from "../utils/lease";
+import { get_user_all_lease_info } from "../utils/data";
 import eth_addr from "../eth_contract.json";
 import User from "../contracts/User.json";
 import LeaseManager from "../contracts/LeaseManager.json";

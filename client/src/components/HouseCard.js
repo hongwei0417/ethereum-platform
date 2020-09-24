@@ -50,7 +50,12 @@ function HouseCard({
 				</ListGroup>
 			</CardContent>
 			<CardActions className="justify-content-end">
-				<Button variant="warning" block onClick={(e) => onSubmit()}>
+				<Button
+					variant="warning"
+					className="font-weight-bold"
+					block
+					onClick={(e) => onSubmit()}
+				>
 					查看詳細資訊
 				</Button>
 			</CardActions>

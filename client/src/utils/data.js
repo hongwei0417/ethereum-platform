@@ -71,3 +71,62 @@ export const get_lease_info = async (lease_contract) => {
 		lat,
 	};
 };
+
+//取得用戶資訊
+export const get_user_all_info = async (user_contract) => {
+	let uid = bytes32_to_string(await contract_call(user_contract, "get_uid"));
+	let account = bytes32_to_string(await contract_call(user_contract, "get_password"));
+	let password = await contract_call(user_contract, "get_account");
+	return {
+		uid,
+		account,
+		password,
+	};
+};
+
+//取得交易資訊
+export const get_txn_all_info = async (txn_contract) => {
+	let txn_info = await contract_call(txn_contract, "get_txn_info");
+	let txn_status = await contract_call(txn_contract, "get_txn_status");
+	let txn_times = await contract_call(txn_contract, "get_txn_times");
+	let txn_money = await contract_call(txn_contract, "get_txn_money");
+
+	let sender = txn_info[0];
+	let renter = txn_info[1];
+	let borrower = txn_info[2];
+	let lease = txn_info[3];
+	let renter_check = txn_status[0];
+	let borrower_check = txn_status[1];
+	let complete = txn_status[2];
+	let start_time = parseInt(txn_times[0]) * 1000;
+	let end_time = parseInt(txn_times[1]) * 1000;
+	let money = txn_money;
+
+	return {
+		sender,
+		renter,
+		borrower,
+		lease,
+		renter_check,
+		borrower_check,
+		complete,
+		start_time,
+		end_time,
+		money,
+	};
+};
+
+//取得帳戶資訊
+export const get_user_account_info = async (account_contract) => {
+	let owner_addr = await contract_call(account_contract, "get_owner");
+	let balance = await contract_call(account_contract, "get_balance");
+	let create_date = parseInt(await contract_call(account_contract, "create_date")) * 1000;
+	let update_date = parseInt(await contract_call(account_contract, "update_date")) * 1000;
+
+	return {
+		owner_addr,
+		balance,
+		create_date,
+		update_date,
+	};
+};
