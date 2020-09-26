@@ -6,7 +6,7 @@ import NoContent from "../components/NoContent";
 import { getContractInstance, contract_call, contract_send } from "../utils/getContract";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
-import { get_user_all_lease_info } from "../utils/lease";
+import { get_user_all_lease_info } from "../utils/data";
 import eth_addr from "../eth_contract.json";
 import User from "../contracts/User.json";
 import LeaseManager from "../contracts/LeaseManager.json";
@@ -115,7 +115,7 @@ const HouseList = ({ accounts, web3, LM, user }) => {
 	//取得使用者所有房子
 	const load_user_leases = async () => {
 		if (web3 && LM) {
-			let list = await get_user_all_lease_info(web3, user.uid, LM);
+			let list = await get_user_all_lease_info(web3, user, LM);
 			set_lease_list(list);
 			console.log(list);
 		}

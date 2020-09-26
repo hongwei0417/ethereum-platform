@@ -15,6 +15,7 @@ contract UserAccount {
 
     function set_balance(uint256 value) public {
         balance = value;
+        update_date = now;
     }
 
     function get_owner() public view returns (address) {

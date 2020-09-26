@@ -1,13 +1,13 @@
 import React from "react";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
+import CardActions from "@material-ui/core/CardActions";
+import MuiButton from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { ListGroup } from "react-bootstrap";
+import { ListGroup, Button } from "react-bootstrap";
 import moment from "moment";
 
 function HouseCard({
@@ -19,6 +19,7 @@ function HouseCard({
 	end_time,
 	price,
 	quantity,
+	onSubmit,
 }) {
 	return (
 		<Card variant="outlined" className="mb-3">
@@ -48,6 +49,16 @@ function HouseCard({
 					<ListGroup.Item>{`種類： ${category || "---"}`}</ListGroup.Item>
 				</ListGroup>
 			</CardContent>
+			<CardActions className="justify-content-end">
+				<Button
+					variant="warning"
+					className="font-weight-bold"
+					block
+					onClick={(e) => onSubmit()}
+				>
+					查看詳細資訊
+				</Button>
+			</CardActions>
 		</Card>
 	);
 }

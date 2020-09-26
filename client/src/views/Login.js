@@ -7,7 +7,6 @@ import { getContractInstance, contract_send, contract_call } from "../utils/getC
 import Auth from "../contracts/Auth.json";
 import UserManager from "../contracts/UserManager.json";
 import { string_to_bytes32 } from "../utils/tools";
-import { user_from_contract } from "../utils/user";
 import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import { useHistory } from "react-router-dom";
@@ -178,7 +177,11 @@ export function Login({}) {
 				);
 
 				if (result) {
-					let user_obj = user_from_contract(user);
+					let user_obj = {
+						address: user[0],
+						uid: user[1],
+						password: user[1],
+					};
 					localStorage.setItem("user", JSON.stringify(user_obj));
 					alert("登入成功");
 					history.push("/houseSearch");
