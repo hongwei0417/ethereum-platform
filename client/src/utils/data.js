@@ -24,7 +24,6 @@ export const get_user_all_lease_info = async (web3, user, leaseManager) => {
 		let quantity = parseInt(lease_data[7]);
 		let lon = lease_data[8];
 		let lat = lease_data[9];
-
 		result.push({
 			lease_id,
 			lease_addr,

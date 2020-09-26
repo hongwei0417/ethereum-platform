@@ -135,7 +135,6 @@ const HouseList = ({ accounts, web3, LM, user }) => {
 		set_open(false);
 		load_user_leases();
 	};
-
 	return (
 		<React.Fragment>
 			<h3 className="text-white-50">提供房間列表</h3>;

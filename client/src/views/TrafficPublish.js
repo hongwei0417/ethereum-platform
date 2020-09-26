@@ -4,21 +4,20 @@ import Paper from "@material-ui/core/Paper";
 import { InputGroup, Form, Button, Dropdown, DropdownButton,ListGroup ,Modal} from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance, contract_send  } from "../utils/getContract";
-import Ownable_Contract from "../contracts/Ownable.json";
 import Ownable from "../contracts/Ownable.json";
 import eth_addr from '../eth_contract.json';
 import Announce from "../contracts/Announce.json";
 import TrafficManager from "../contracts/TrafficManager.json";
 import NoContent from "../components/NoContent";
 import TrafficTab from "../components/TrafficTab";
-import { get_user_all_traffic_info } from "../utils/trafficall";
+import { get_all_user } from "../utils/trafficall";
 
 export function TrafficPublish(props) {
 	const [web3, set_web3] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
-	const [LM, set_LM] = React.useState(null);
+	const [An, set_An] = React.useState(null);
 	const [user, set_user] = React.useState(null);
-	const [page, set_page] = React.useState(1);
+	//const [page, set_page] = React.useState(1);
 	const [ownable_contract, set_ownable_contract] = React.useState(null);
 
 	//載入web3
@@ -61,23 +60,26 @@ export function TrafficPublish(props) {
 	// 	};
 	// 	load();
 	// }, [web3, user]);
+
+	//載入智能合約實體
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3 && user) {
-				let instance1 = await getContractInstance(web3, Ownable_Contract, user.address);
-				let instance2 = await getContractInstance(
-					web3,
-					TrafficManager,
-					eth_addr.TrafficManager
-				);
-				set_ownable_contract(instance1);
-				 set_LM(instance2);
+				let instance1 = await getContractInstance(web3, Announce, eth_addr.Announce);
+				// let instance2 = await getContractInstance(
+				// 	web3,
+				// 	Announce,
+				// 	eth_addr.Announce
+				// );
+				set_An(instance1);
+				console.log(instance1);
+				// set_Announce(instance2);
 			}
 		};
 		load();
 	}, [web3, user]);
 
-	if (web3) {
+	if (web3 && user) {
 		return (
 			<div className="d-flex flex-column align-items-center pt-5">
 				<div className="w-50">
@@ -98,7 +100,7 @@ export function TrafficPublish(props) {
 					>
 						新增房間
 					</Button> */}
-					<HouseList accounts={accounts} web3={web3} LM={LM}  user={user} />
+					<HouseList accounts={accounts} web3={web3} An={An}  user={user} />
 				</div>
 				
 				{/* {page === 1 && <HouseList accounts={accounts} web3={web3} user={user} />} */}
@@ -113,7 +115,7 @@ export function TrafficPublish(props) {
 	}
 }
 
-const HouseList = ({ accounts, web3, LM,user}) => {
+const HouseList = ({ accounts, web3, An,user}) => {
 	const [current_data, set_current_data] = React.useState({});
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
@@ -122,13 +124,13 @@ const HouseList = ({ accounts, web3, LM,user}) => {
 	//初始載入
 	React.useEffect(() => {
 		load_user_traffic();
-	}, [LM,web3]);
+	}, [An,web3]);
 
 	//取得使用者所有揪團列表
 	const load_user_traffic = async () => {
-		if (web3&& LM) {
+		if (web3&& An) {
 
-			let list = await get_user_all_traffic_info(web3, user.uid,LM);
+			let list = await get_all_user(An);
 
 			set_traffic_list(list);
 			console.log(list);
@@ -138,7 +140,7 @@ const HouseList = ({ accounts, web3, LM,user}) => {
 	//開啟視窗
 	const open_modal = async (item) => {
 		//取得房屋合約實體
-		let instance = await getContractInstance(web3, Announce, item.traffic_addr);
+		let instance = await getContractInstance(web3, An, item.traffic_addr);
 		set_traffic_contract(instance);
 		set_current_data(item);
 		set_open(true);
@@ -174,7 +176,7 @@ const HouseList = ({ accounts, web3, LM,user}) => {
 					})}
 				</ListGroup>
 			</Paper>
-			<Modal show={open} onHide={close_modal} centered>
+			{/* <Modal show={open} onHide={close_modal} centered>
 				<Modal.Header closeButton>
 					<Modal.Title
 						style={{
@@ -193,7 +195,7 @@ const HouseList = ({ accounts, web3, LM,user}) => {
 					/>
 				</Modal.Body>
 				<Modal.Footer></Modal.Footer>
-			</Modal>
+			</Modal> */}
 		</React.Fragment>
 	);
 };

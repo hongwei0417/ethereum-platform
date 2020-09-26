@@ -1,12 +1,10 @@
 import { Home } from "./views/Home";
 import { Login } from "./views/Login";
 import { Announce } from "./views/Announce";
-import { HouseSearch } from "./views/HouseSearch";
 import { MyHouse } from "./views/MyHouse";
 import { TrafficPublish } from "./views/TrafficPublish";
 import { Account } from "./views/Account";
 import { HouseList } from "./views/HouseList";
-import { MyHouse } from "./views/MyHouse";
 import { TransactionList } from "./views/TransactionList";
 import { Booking } from "./views/Booking";
 
