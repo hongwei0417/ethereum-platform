@@ -3,6 +3,7 @@ import { Login } from "./views/Login";
 import { Announce } from "./views/Announce";
 import { HouseSearch } from "./views/HouseSearch";
 import { MyHouse } from "./views/MyHouse";
+import { TrafficPublish } from "./views/TrafficPublish";
 
 export const routes = [
 	{
@@ -22,10 +23,15 @@ export const routes = [
 	},
 	{
 		path: "/Announce",
-		name: "發布",
+		name: "發布",		
+		component: Announce,
 	},
 	{
-		component: Announce,
+		path: "/TrafficPublish",
+		name: "發布列表",		
+		component: TrafficPublish,
+	},
+	{
 		path: "/houseSearch",
 		name: "房間列表",
 		component: HouseSearch,

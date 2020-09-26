@@ -1,4 +1,5 @@
 const Announce = artifacts.require("Announce");
+const TrafficManager = artifacts.require("TrafficManager");
 
 var fs = require("fs");
 var file_path = `${__dirname}/../client/src/eth_contract.json`;
@@ -12,7 +13,12 @@ module.exports = function (deployer) {
     })
     .then(function (instance) {
       An = instance.address;
-      eth_contract.Announce = An;
+			eth_contract.Announce = An;
+			return deployer.deploy(TrafficManager);
+    })
+    .then(function (instance) {
+      TM = instance.address;
+      eth_contract.TrafficManager = TM;
 
 			fs.writeFile(file_path, JSON.stringify(eth_contract, null, 2), function (err) {
 				if (err) return console.log(err);

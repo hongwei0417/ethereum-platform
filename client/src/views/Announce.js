@@ -5,7 +5,10 @@ import { InputGroup, FormControl, Button, Dropdown, DropdownButton } from "react
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance } from "../utils/getContract";
 import Announce_Contract from "../contracts/Announce.json";
-import eth_addr from '../eth_contract.json'
+import eth_addr from '../eth_contract.json';
+import NoContent from "../components/NoContent";
+import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
+import TrafficTab from "../components/TrafficTab";
 
 export function Announce({}) {
 	const [name, set_name] = React.useState("");
@@ -19,6 +22,7 @@ export function Announce({}) {
 	const [accounts, set_accounts] = React.useState([]);
 	const [announce_contract, set_announce_contract] = React.useState(null);
 	const [payload, set_payload] = React.useState(null);
+	const [user, set_user] = React.useState(null);
 
 	//初始載入web3
 	React.useEffect(() => {
@@ -52,6 +56,16 @@ export function Announce({}) {
 			}
 		};
 		load();
+	}, [web3]);
+	
+
+	//載入User
+	React.useEffect(() => {
+		let user_str = localStorage.getItem("user");
+		if (user_str) {
+			let user = JSON.parse(user_str);
+			set_user(user);
+		}
 	}, [web3]);
 
 	//更改輸入值
@@ -149,7 +163,7 @@ export function Announce({}) {
 			const instance = new web3.eth.Contract(Announce_Contract.abi, deployedAddress);
 			let result = await instance.methods
 			.create_user(
-				"0x6b6576696e000000000000000000000000000000000000000000000000000000", //用第一個帳戶
+				string_to_bytes32(generate_id(10)), 
 				bytes_name,
 				bytes_dates,
 				bytes_destination,
@@ -173,9 +187,12 @@ export function Announce({}) {
 		}
 	};
 	
-	if (web3) {
+	if (web3 && user) {
 		return (
 			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
+				<div className="w-50">
+					<TrafficTab currentPage={2} />
+				</div>
 				<Paper elevation={5} className="w-75 h-75 p-3 d-flex flex-column">
 					<h1 className="text-center mb-3">{"發布揪團"}</h1>
 					<Dropdown className="mb-3">
@@ -264,11 +281,10 @@ export function Announce({}) {
 			</div>
 		);
 	} else {
-		return (
-			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
-				{"loading..."}
-			</div>
-		);
+		if(!user){
+            return <NoContent message="尚未進行登入..." />;
+		}
+		return <NoContent message="尚未連結至區塊鏈..." />;
 	}
 }
 

@@ -3,6 +3,7 @@ pragma solidity >=0.4.22 <0.8.0;
 import "./Ownable.sol";
 contract Announce {
     mapping(bytes32 => Ownable) private Users;
+    bytes32[] private id_list; //使用者名稱集合
 
     function create_user(
         bytes32 uid,
@@ -16,6 +17,7 @@ contract Announce {
     ) public {
         Ownable user = new Ownable(name, dates,destination,traffic,people,money);
         Users[uid] = user;
+        id_list.push(uid);
     }
 
     uint balance;
@@ -36,7 +38,19 @@ contract Announce {
         bytes32 traffic = user.get_traffic();
         bytes32 people = user.get_people();
         bytes32 money = user.get_money();
-
         return (name, dates, destination,traffic,people,money);
     }
+    
+     function get_all_user()
+        public
+        view
+        returns (bytes32[] memory ,address[] memory)
+    {
+        address[] memory addressmessage = new address[](id_list.length);
+       for (uint256 i = 0; i < id_list.length; i++) {
+            addressmessage[i] = address(Users[id_list[i]]);
+        }
+        return (id_list,addressmessage);
+    }
+    
 }

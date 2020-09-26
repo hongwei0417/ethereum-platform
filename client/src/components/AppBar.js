@@ -32,13 +32,10 @@ export default function CustomAppBar({ toggle_drawer }) {
 		history.push("/login");
 	};
 
-<<<<<<< HEAD
-=======
 	const toggle_logout = () => {
 		localStorage.removeItem("user");
 		document.location.reload();
 	};
->>>>>>> 7d5a263a6c8e8fa25f3c664db6212b3b21fbb0e2
 
 	return (
 		<div className={classes.root}>

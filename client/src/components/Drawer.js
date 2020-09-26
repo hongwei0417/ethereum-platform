@@ -24,27 +24,19 @@ export default function CustomDrawer({ open, toggle_drawer }) {
 	const classes = useStyles();
 	const history = useHistory();
 	const [state, setState] = React.useState(false);
-	const history = useHistory();
 
 	React.useEffect(() => {
 		setState(open);
 	}, [open]);
-
-<<<<<<< HEAD
-	const toggle_Announce = () => {
-		history.push("/Announce");
-	};
 	
-=======
 	const goToPage = (type) => {
 		if (type === 1) {
 			history.replace("/houseSearch");
 		} else if (type === 2) {
-			history.replace("/");
+			history.replace("/TrafficPublish");
 		}
 	};
 
->>>>>>> 7d5a263a6c8e8fa25f3c664db6212b3b21fbb0e2
 	const list = (anchor) => (
 		<div
 			className={clsx(classes.list, {
@@ -63,11 +55,7 @@ export default function CustomDrawer({ open, toggle_drawer }) {
 				</ListItem>
 			</List>
 			<List>
-<<<<<<< HEAD
-				<ListItem button onClick={toggle_Announce}>
-=======
 				<ListItem button key={1} onClick={(e) => goToPage(2)}>
->>>>>>> 7d5a263a6c8e8fa25f3c664db6212b3b21fbb0e2
 					<ListItemIcon>
 						<DriveEtaRoundedIcon />
 					</ListItemIcon>
