@@ -10,7 +10,9 @@ import Announce from "../contracts/Announce.json";
 import TrafficManager from "../contracts/TrafficManager.json";
 import NoContent from "../components/NoContent";
 import TrafficTab from "../components/TrafficTab";
-import { get_all_user } from "../utils/trafficall";
+import { get_all_user, get_user_info} from "../utils/trafficall";
+import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
+import moment from "moment";
 
 export function TrafficPublish(props) {
 	const [web3, set_web3] = React.useState(null);
@@ -50,18 +52,6 @@ export function TrafficPublish(props) {
 	}, [web3]);
 
 	//載入智能合約實體
-	// React.useEffect(() => {
-	// 	const load = async () => {
-	// 		if (web3) {
-	// 			let contract = await getContractInstance(web3, Ownable_Contract);
-	// 			console.log(contract)
-	// 			set_ownable_contract(contract);
-	// 		}
-	// 	};
-	// 	load();
-	// }, [web3, user]);
-
-	//載入智能合約實體
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3 && user) {
@@ -78,6 +68,7 @@ export function TrafficPublish(props) {
 		};
 		load();
 	}, [web3, user]);
+	
 
 	if (web3 && user) {
 		return (
@@ -100,7 +91,7 @@ export function TrafficPublish(props) {
 					>
 						新增房間
 					</Button> */}
-					<HouseList accounts={accounts} web3={web3} An={An}  user={user} />
+					<TrafficList accounts={accounts} web3={web3} An={An}  user={user} />
 				</div>
 				
 				{/* {page === 1 && <HouseList accounts={accounts} web3={web3} user={user} />} */}
@@ -115,10 +106,12 @@ export function TrafficPublish(props) {
 	}
 }
 
-const HouseList = ({ accounts, web3, An,user}) => {
+const TrafficList = ({ accounts, web3, An}) => {
 	const [current_data, set_current_data] = React.useState({});
+	const [current_data1, set_current_data1] = React.useState({});
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
+	const [traffic_list1, set_traffic_list1] = React.useState([]);
 	const [traffic_contract, set_traffic_contract] = React.useState(null);
 
 	//初始載入
@@ -131,18 +124,31 @@ const HouseList = ({ accounts, web3, An,user}) => {
 		if (web3&& An) {
 
 			let list = await get_all_user(An);
+			let list1 = await get_user_info(An);
 
-			set_traffic_list(list);
-			console.log(list);
+			set_traffic_list(list1);
+			console.log(list,list1);
 		}
 	};
+	//取得使用者所有揪團列表
+	// const load_user_traffic = async () => {
+	// 	if (web3&& An) {
 
+	// 		let list = await get_user(An);
+
+	// 		set_traffic_list1(list);
+	// 		console.log(list);
+	// 	}
+	// };
 	//開啟視窗
 	const open_modal = async (item) => {
 		//取得房屋合約實體
-		let instance = await getContractInstance(web3, An, item.traffic_addr);
-		set_traffic_contract(instance);
+		let instance1 = await getContractInstance(web3, Announce, item.traffic_addr);
+		set_traffic_contract(instance1);
+		// let instance = await get_all_user(An, item.lease_addr);
+		// set_traffic_contract(instance);
 		set_current_data(item);
+		// set_current_data1(item);
 		set_open(true);
 	};
 
@@ -155,7 +161,7 @@ const HouseList = ({ accounts, web3, An,user}) => {
 	return (
 		<React.Fragment>
 			<h3 className="text-white-50">提供揪團列表</h3>;
-			<Paper elevation={3} className="w-50">
+			<Paper elevation={5} className="w-100">
 				<ListGroup>
 					{traffic_list.map((item, i) => {
 						return (
@@ -176,7 +182,7 @@ const HouseList = ({ accounts, web3, An,user}) => {
 					})}
 				</ListGroup>
 			</Paper>
-			{/* <Modal show={open} onHide={close_modal} centered>
+			<Modal show={open} onHide={close_modal} centered>
 				<Modal.Header closeButton>
 					<Modal.Title
 						style={{
@@ -195,7 +201,7 @@ const HouseList = ({ accounts, web3, An,user}) => {
 					/>
 				</Modal.Body>
 				<Modal.Footer></Modal.Footer>
-			</Modal> */}
+			</Modal>
 		</React.Fragment>
 	);
 };
@@ -207,9 +213,11 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 	//載入表單資料
 	React.useEffect(() => {
 		set_form_data({
-			...traffic_data
+			...traffic_data,
+			 dates: convert_dateTime_str(traffic_data.dates),
 		});
 	}, [traffic_data]);
+	console.log(traffic_data);
 
 	const onChange = (key, value) => {
 		switch (key) {
@@ -219,37 +227,37 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 			case "name":
 				set_form_data(value)({
 					...form_data,
-					lon: value,
+					name: value,
 				});
 				break;
 			case "dates":
 				set_form_data(value)({
 					...form_data,
-					lon: value,
+					dates: value,
 				});
 				break;
 			case "destination":
 				set_form_data(value)({
 					...form_data,
-					lon: value,
+					destination: value,
 				});
 				break;
 			case "traffic":
 				set_form_data(value)({
 					...form_data,
-					lon: value,
+					traffic: value,
 				});
 				break;
 			case "people":
 				set_form_data(value)({
 					...form_data,
-					lon: value,
+					people: value,
 				});
 				break;
 			case "money":
 				set_form_data(value)({
 					...form_data,
-					lon: value,
+					money: value,
 				});
 				break;
 			default:
@@ -264,49 +272,26 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 		}
 
 		//更新房屋資訊
-		let result1 = await contract_send(
-			traffic_contract,
-			"update_room_info",
-			[
-				form_data.name,
-				form_data.dates,
-				form_data.people,
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-		);
+		// let result1 = await contract_send(
+		// 	Announce,
+		// 	"update_room_info",
+		// 	[
+		// 		form_data.name,
+		// 		moment(form_data.dates).unix(),
+		// 		form_data.people,
+		// 		form_data.destination,
+		// 		form_data.traffic,
+		// 		form_data.money,
 
-		//更新房地理位址
-		let result2 = await contract_send(
-			traffic_contract,
-			"update_location",
-			[form_data.destination, form_data.traffic],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-		);
+		// 	],
+		// 	{
+		// 		from: select_account,
+		// 		gas: 6000000,
+		// 	}
+		// );
 
-		//更新租房價格
-		let result3 = await contract_send(traffic_contract, "update_room_price", [form_data.money], {
-			from: select_account,
-			gas: 6000000,
-		});
-
-		//更新房屋狀態
-		let result4 = await contract_send(
-			traffic_contract,
-			form_data.rented_out ? "rent" : "release",
-			[],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-		);
-
-		console.log(result1, result2, result3, result4);
+		
+		// console.log(result1);
 
 		close_modal();
 	};
@@ -333,65 +318,27 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 			</Dropdown>
 			<hr />
 			<Form>
-				<hr />
 				<Form.Group>
-					<Form.Label>姓名</Form.Label>
-					<Form.Control
-						type="text"
-						value={form_data.name || ""}
-						placeholder="請輸入姓名"
-						onChange={(e) => onChange("name", e.target.value)}
-					/>
+					<Form.Label>姓名 : {`${form_data.name}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>日期</Form.Label>
-					<Form.Control
-						type="text"
-						value={form_data.dates || ""}
-						placeholder="請輸入日期"
-						onChange={(e) => onChange("dates", e.target.value)}
-					/>
+					<Form.Label>日期 : {`${form_data.dates}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>出發地跟目的地</Form.Label>
-					<Form.Control
-						type="text"
-						value={form_data.destination || ""}
-						placeholder="請輸入出發地跟目的地"
-						onChange={(e) => onChange("destination", e.target.value)}
-					/>
+					<Form.Label>出發地跟目的地 : {`${form_data.destination}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>交通工具</Form.Label>
-					<Form.Control
-						type="text"
-						value={form_data.traffic ||""}
-						placeholder="請輸入交通工具"
-						onChange={(e) => onChange("traffic", e.target.value)}
-					/>
-				</Form.Group>
-				<hr />
-				<Form.Group>
-					<Form.Label>人數</Form.Label>
-					<Form.Control
-						type="text"
-						value={form_data.people ||""}
-						placeholder="請輸入人數"
-						onChange={(e) => onChange("people", e.target.value)}
-					/>
+					<Form.Label>交通工具 : {`${form_data.traffic}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>價錢/人</Form.Label>
-					<Form.Control
-						type="text"
-						value={form_data.money ||""}
-						placeholder="請輸入價錢/人"
-						onChange={(e) => onChange("money", e.target.value)}
-					/>
+					<Form.Label>人數 : {`${form_data.people}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>價錢/人 : {`${form_data.money}`}</Form.Label>
 				</Form.Group>
 			
 				<Button variant="primary" onClick={onSubmit} block>
-					確定儲存
+					確定跟團
 				</Button>
 			</Form>
 		</React.Fragment>
