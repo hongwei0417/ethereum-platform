@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { useHistory, useLocation } from "react-router-dom";
+import { bytes32_to_string } from "../utils/tools";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -17,12 +18,27 @@ const useStyles = makeStyles((theme) => ({
 	},
 	title: {
 		flexGrow: 1,
+		cursor: "pointer",
+		"&:hover": {
+			opacity: 0.5,
+		},
 	},
 }));
 
 export default function CustomAppBar({ toggle_drawer }) {
 	const classes = useStyles();
 	const history = useHistory();
+
+	//取得使用者
+	const get_user = () => {
+		const user = localStorage.getItem("user");
+		if (user) {
+			let data = JSON.parse(user);
+			return bytes32_to_string(data.uid);
+		} else {
+			return "無使用者";
+		}
+	};
 
 	const toggle_login = () => {
 		history.push("/login");
@@ -31,6 +47,10 @@ export default function CustomAppBar({ toggle_drawer }) {
 	const toggle_logout = () => {
 		localStorage.removeItem("user");
 		document.location.reload();
+	};
+
+	const toggle_home = () => {
+		history.replace("/");
 	};
 
 	return (
@@ -46,8 +66,8 @@ export default function CustomAppBar({ toggle_drawer }) {
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" className={classes.title}>
-						{"區塊鏈整合平台"}
+					<Typography variant="h6" className={classes.title} onClick={toggle_home}>
+						{`區塊鏈整合平台【${get_user()}】`}
 					</Typography>
 					<Button color="inherit" onClick={toggle_login}>
 						{"登入"}

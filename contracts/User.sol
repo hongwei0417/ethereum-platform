@@ -74,8 +74,8 @@ contract User {
             //租方
             lt = new LeaseTransaction(
                 this,
-                User(action_user),
                 this,
+                User(action_user),
                 Lease(lease),
                 money,
                 txn_time,
@@ -85,8 +85,8 @@ contract User {
             //借方
             lt = new LeaseTransaction(
                 this,
-                this,
                 User(action_user),
+                this,
                 Lease(lease),
                 money,
                 txn_time,

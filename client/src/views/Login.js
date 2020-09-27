@@ -129,9 +129,13 @@ export function Login({}) {
 				}
 			);
 
-			set_payload(JSON.stringify(result));
+			if (result) {
+				set_payload(JSON.stringify(result));
+				alert("註冊成功");
+			} else {
+				alert("註冊失敗");
+			}
 
-			alert("註冊成功");
 			console.log(result);
 		} catch (error) {
 			alert("註冊失敗");
