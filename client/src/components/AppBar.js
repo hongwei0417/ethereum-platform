@@ -40,6 +40,10 @@ export default function CustomAppBar({ toggle_drawer }) {
 		}
 	};
 
+	const toggle_home = () => {
+		history.push("/home");
+	};
+
 	const toggle_login = () => {
 		history.push("/login");
 	};

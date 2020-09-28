@@ -1,0 +1,1040 @@
+{
+  "contractName": "Transaction",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "get_txn_info",
+      "outputs": [
+        {
+          "internalType": "address[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "get_txn_status",
+      "outputs": [
+        {
+          "internalType": "bool[]",
+          "name": "",
+          "type": "bool[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "get_txn_times",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "get_txn_money",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "complete_txn",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user_addr",
+          "type": "address"
+        }
+      ],
+      "name": "verify_txn",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"complete_txn\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"get_txn_info\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"get_txn_money\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"get_txn_status\",\"outputs\":[{\"internalType\":\"bool[]\",\"name\":\"\",\"type\":\"bool[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"get_txn_times\",\"outputs\":[{\"internalType\":\"uint256[]\",\"name\":\"\",\"type\":\"uint256[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"user_addr\",\"type\":\"address\"}],\"name\":\"verify_txn\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/User/Desktop/ethereum-platform/contracts/Transaction.sol\":\"Transaction\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/User/Desktop/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0x2908cce17d8b4e80ac30e90f0fdf72ade0911214dadd3950ea4a3bc543fc747f\",\"urls\":[\"bzz-raw://0d36bdc6cf0135f1ca301a3d15116f1c90bd528bde703b6592d0eaf43eaaf616\",\"dweb:/ipfs/QmZCN7at8VMUsfKb2ZemhZ5X1itWpH3MX8KZz3hfrMKyFN\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0x7c73ebefce98db5170df090aaf74c78aaf4bfd04e17a5f97e3f672fe25936732\",\"urls\":[\"bzz-raw://2fbdd91d7d6a26b330e978d9ad7918d172b748fb659671e466233078d6c7331a\",\"dweb:/ipfs/QmQGw2A3Etnp3Ao7N3Exaxg6sYG7u8RTRc1LNshXrv9Uc8\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0xaed0187efd059025cf48fc3c7217efbcc8c53571d64accbb95929c010ec0685d\",\"urls\":[\"bzz-raw://d498b8099c0b2277a2b597a85f95cc06bfdc94998957a2b5f20b61a1404036be\",\"dweb:/ipfs/QmUV5VBLJtxC4iwqfFJ4GE7xg5bFrbHw4NcpycypV1VJBX\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0x61195df742f47e39d3127567cef07ec6fc51e81d602a652b55e65b93a639a26e\",\"urls\":[\"bzz-raw://b998d91b9b3e3c00ca089d44a913356beb14893584cf035bb2e36c7a75d37c72\",\"dweb:/ipfs/QmTvZkJGxaJuh856iCX7YgHKKwrAekeRgyhJNKx1QKqxpV\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0x4e0668d1ce0a48d47c008d47f472fd10e39ba05352ddf1bd8da96198576faee0\",\"urls\":[\"bzz-raw://d6f569cd00676c45513b8dd242d1147c602ebb7a394eaffae1d88852ee2d76c2\",\"dweb:/ipfs/QmZZucxKXZmqo4MNd3C6HZjAnhHV29EgmQTfH2i9muCqZo\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0x0b33a31734626f3043ce59fbdc3fc050b95e51d6a1d4655731e85293dd0f4bcc\",\"urls\":[\"bzz-raw://cfcfd8df1b098366c00f765c9a73e83acfe0799b73b8c51b61b524c69208bdcf\",\"dweb:/ipfs/QmZaoANathTGEfhSpKsjpiFdzHK4q53sbWREpz2aGb4BpZ\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0xd940c8092e1256480d22440a6e8eba86a6b6eda6017f2503ae9bd3bca95bf774\",\"urls\":[\"bzz-raw://7ce234c1ed047a9b7f70ba321735b13379e5febd1739e908c38e8b49f0b27248\",\"dweb:/ipfs/QmdwHyxpvWogNv9U84uqwDJdyXKCfKDLaGTxJbJyTN8PAY\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0xf81e2abab845589639486bb3ec0a173456176ff1744cf418af0e0f48e91a19bd\",\"urls\":[\"bzz-raw://07e3c83b5a9d35ca98a6e6f450e0c610bd5f897b9089614ecfdee0693ad3811e\",\"dweb:/ipfs/QmR3it9FR8wzbAvti2iQMbdchkjLeDdt3W5gYf27dJ9non\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0x2ddede3ebfe1ec34614dabe811f7c9ee00457aa3fa120c5402cd1929d0527ca1\",\"urls\":[\"bzz-raw://d4576dcad5f25e881931068c4e54f0294c2ee2623bc743a4c6bbdc8082cb2daa\",\"dweb:/ipfs/QmTg3FnENaRTzEBpPGZEdxuSJG7t1v4Arkj84nCCt5Upqc\"]},\"/C/Users/User/Desktop/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x244ccf075004e5c30480581a151becf1e5564a633d30d0ddb71f0f2e1ca3c414\",\"urls\":[\"bzz-raw://e6a3558bc774a4647f10bc09dde9beeb93ef8727a17a8f89925c8c65bb384368\",\"dweb:/ipfs/QmcWVf2NibSBDDUdjfhFbLTQU2YwWrKG43ggzS81Xs7zo9\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.4.22 <0.8.0;\r\nimport \"./User.sol\";\r\n\r\ninterface Transaction {\r\n    function get_txn_info() external view returns (address[] memory);\r\n\r\n    function get_txn_status() external view returns (bool[] memory);\r\n\r\n    function get_txn_times() external view returns (uint256[] memory);\r\n\r\n    function get_txn_money() external view returns (uint256);\r\n\r\n    function complete_txn() external returns (bool);\r\n\r\n    function verify_txn(address user_addr)\r\n        external\r\n        view\r\n        returns (string memory);\r\n}\r\n",
+  "sourcePath": "C:\\Users\\User\\Desktop\\ethereum-platform\\contracts\\Transaction.sol",
+  "ast": {
+    "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/Transaction.sol",
+    "exportedSymbols": {
+      "Transaction": [
+        1705
+      ]
+    },
+    "id": 1706,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1668,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:10"
+      },
+      {
+        "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/User.sol",
+        "file": "./User.sol",
+        "id": 1669,
+        "nodeType": "ImportDirective",
+        "scope": 1706,
+        "sourceUnit": 2108,
+        "src": "34:20:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1705,
+        "linearizedBaseContracts": [
+          1705
+        ],
+        "name": "Transaction",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "87cbd81d",
+            "id": 1675,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_info",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1670,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "108:2:10"
+            },
+            "returnParameters": {
+              "id": 1674,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1673,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1675,
+                  "src": "134:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1671,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "134:7:10",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1672,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "134:9:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "133:18:10"
+            },
+            "scope": 1705,
+            "src": "87:65:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "730a9c69",
+            "id": 1681,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_status",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1676,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "183:2:10"
+            },
+            "returnParameters": {
+              "id": 1680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1679,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1681,
+                  "src": "209:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
+                    "typeString": "bool[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1677,
+                      "name": "bool",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "209:4:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "id": 1678,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "209:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
+                      "typeString": "bool[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:15:10"
+            },
+            "scope": 1705,
+            "src": "160:64:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "06010a48",
+            "id": 1687,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_times",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "254:2:10"
+            },
+            "returnParameters": {
+              "id": 1686,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1685,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1687,
+                  "src": "280:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1683,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "280:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1684,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "280:9:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "279:18:10"
+            },
+            "scope": 1705,
+            "src": "232:66:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "284d0e68",
+            "id": 1692,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_money",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1688,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "328:2:10"
+            },
+            "returnParameters": {
+              "id": 1691,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1690,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1692,
+                  "src": "354:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1689,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "354:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "353:9:10"
+            },
+            "scope": 1705,
+            "src": "306:57:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "ab2f2637",
+            "id": 1697,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "complete_txn",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1693,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "392:2:10"
+            },
+            "returnParameters": {
+              "id": 1696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1695,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1697,
+                  "src": "413:4:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1694,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "413:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "412:6:10"
+            },
+            "scope": 1705,
+            "src": "371:48:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "60f936ba",
+            "id": 1704,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify_txn",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1699,
+                  "mutability": "mutable",
+                  "name": "user_addr",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1704,
+                  "src": "447:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1698,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "447:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "446:19:10"
+            },
+            "returnParameters": {
+              "id": 1703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1702,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1704,
+                  "src": "516:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1701,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "515:15:10"
+            },
+            "scope": 1705,
+            "src": "427:104:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1706,
+        "src": "58:476:10"
+      }
+    ],
+    "src": "0:536:10"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/Transaction.sol",
+    "exportedSymbols": {
+      "Transaction": [
+        1705
+      ]
+    },
+    "id": 1706,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1668,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".22",
+          "<",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:10"
+      },
+      {
+        "absolutePath": "/C/Users/User/Desktop/ethereum-platform/contracts/User.sol",
+        "file": "./User.sol",
+        "id": 1669,
+        "nodeType": "ImportDirective",
+        "scope": 1706,
+        "sourceUnit": 2108,
+        "src": "34:20:10",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 1705,
+        "linearizedBaseContracts": [
+          1705
+        ],
+        "name": "Transaction",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "87cbd81d",
+            "id": 1675,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_info",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1670,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "108:2:10"
+            },
+            "returnParameters": {
+              "id": 1674,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1673,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1675,
+                  "src": "134:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
+                    "typeString": "address[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1671,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "134:7:10",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 1672,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "134:9:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                      "typeString": "address[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "133:18:10"
+            },
+            "scope": 1705,
+            "src": "87:65:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "730a9c69",
+            "id": 1681,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_status",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1676,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "183:2:10"
+            },
+            "returnParameters": {
+              "id": 1680,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1679,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1681,
+                  "src": "209:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
+                    "typeString": "bool[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1677,
+                      "name": "bool",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "209:4:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bool",
+                        "typeString": "bool"
+                      }
+                    },
+                    "id": 1678,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "209:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bool_$dyn_storage_ptr",
+                      "typeString": "bool[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "208:15:10"
+            },
+            "scope": 1705,
+            "src": "160:64:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "06010a48",
+            "id": 1687,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_times",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1682,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "254:2:10"
+            },
+            "returnParameters": {
+              "id": 1686,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1685,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1687,
+                  "src": "280:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
+                    "typeString": "uint256[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 1683,
+                      "name": "uint256",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "280:7:10",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "id": 1684,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "280:9:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_uint256_$dyn_storage_ptr",
+                      "typeString": "uint256[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "279:18:10"
+            },
+            "scope": 1705,
+            "src": "232:66:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "284d0e68",
+            "id": 1692,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "get_txn_money",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1688,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "328:2:10"
+            },
+            "returnParameters": {
+              "id": 1691,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1690,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1692,
+                  "src": "354:7:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 1689,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "354:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "353:9:10"
+            },
+            "scope": 1705,
+            "src": "306:57:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "ab2f2637",
+            "id": 1697,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "complete_txn",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1693,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "392:2:10"
+            },
+            "returnParameters": {
+              "id": 1696,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1695,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1697,
+                  "src": "413:4:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 1694,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "413:4:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "412:6:10"
+            },
+            "scope": 1705,
+            "src": "371:48:10",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "60f936ba",
+            "id": 1704,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "verify_txn",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 1700,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1699,
+                  "mutability": "mutable",
+                  "name": "user_addr",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1704,
+                  "src": "447:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 1698,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "447:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "446:19:10"
+            },
+            "returnParameters": {
+              "id": 1703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 1702,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 1704,
+                  "src": "516:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 1701,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "516:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "515:15:10"
+            },
+            "scope": 1705,
+            "src": "427:104:10",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 1706,
+        "src": "58:476:10"
+      }
+    ],
+    "src": "0:536:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2020-09-28T05:35:11.351Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

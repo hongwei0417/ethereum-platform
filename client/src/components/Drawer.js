@@ -22,18 +22,18 @@ const useStyles = makeStyles({
 
 export default function CustomDrawer({ open, toggle_drawer }) {
 	const classes = useStyles();
-	const [state, setState] = React.useState(false);
 	const history = useHistory();
+	const [state, setState] = React.useState(false);
 
 	React.useEffect(() => {
 		setState(open);
 	}, [open]);
-
+	
 	const goToPage = (type) => {
 		if (type === 1) {
 			history.replace("/houseSearch");
 		} else if (type === 2) {
-			history.replace("/");
+			history.replace("/TrafficPublish");
 		}
 	};
 

@@ -1,8 +1,11 @@
 import { Home } from "./views/Home";
 import { Login } from "./views/Login";
+import { Announce } from "./views/Announce";
+import { MyHouse } from "./views/MyHouse";
+import { TrafficPublish } from "./views/TrafficPublish";
+import { UserTrafficPublish } from "./views/UserTrafficPublish";
 import { Account } from "./views/Account";
 import { HouseList } from "./views/HouseList";
-import { MyHouse } from "./views/MyHouse";
 import { TransactionList } from "./views/TransactionList";
 import { Booking } from "./views/Booking";
 
@@ -21,6 +24,21 @@ export const routes = [
 		path: "/login",
 		name: "登入",
 		component: Login,
+	},
+	{
+		path: "/Announce",
+		name: "發布",		
+		component: Announce,
+	},
+	{
+		path: "/TrafficPublish",
+		name: "發布列表",		
+		component: TrafficPublish,
+	},
+	{
+		path: "/UserTrafficPublish",
+		name: "User發布的揪團列表",		
+		component: UserTrafficPublish,
 	},
 	{
 		path: "/account",
