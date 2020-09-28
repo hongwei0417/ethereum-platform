@@ -15,9 +15,9 @@ function TravelTab({ currentPage }) {
 			case 2:
 				history.push("/TrafficPublish");
 				break;
-			// case 3:
-			// 	history.push("/txnList");
-			// 	break;
+			case 3:
+				history.push("/UserTrafficPublish");
+				break;
 			default:
 		}
 	};
@@ -37,12 +37,12 @@ function TravelTab({ currentPage }) {
 				>
 					發布揪團列表
 				</Button>
-				{/* <Button
+				<Button
 					variant={currentPage === 3 ? "warning" : "outline-warning"}
 					onClick={(e) => goToPage(3)}
 				>
-					交易資訊
-				</Button> */}
+					User發布的揪團列表
+				</Button>
 			</div>
 			<hr className="border-warning w-100" />
 		</React.Fragment>

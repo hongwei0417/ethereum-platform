@@ -1,18 +1,26 @@
 pragma solidity >=0.4.22 <0.8.0;
+import "./User.sol";
 
 contract Ownable {
-    // address public owner;
+    address public owner;
     bytes32 private name;
     bytes32 private dates;
     bytes32 private destination;
     bytes32 private traffic;
     bytes32 private people;
     bytes32 private money;
+    User private u;
 
-    // modifier onlyOwner() {
-    //     require(msg.sender == owner);
-    //     _;
-    // }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+   uint balance;
+    function update(uint count) public returns (address, uint){
+        balance += count;
+        return (msg.sender, balance);
+    }
 
     constructor(
         // address _owner,
@@ -21,7 +29,8 @@ contract Ownable {
         bytes32 _destination,
         bytes32 _traffic,
         bytes32 _people,
-        bytes32 _money
+        bytes32 _money,
+        User _u
     ) public {
         // require(_owner != address(0x0), "Need owner");
         require(_name.length != 0, "Need name");
@@ -38,6 +47,8 @@ contract Ownable {
         traffic = _traffic;
         people = _people;
         money = _money;
+        u=_u;
+        
     }
 
     function get_name() public view returns (bytes32 _name) {
@@ -86,5 +97,30 @@ contract Ownable {
 
     function set_money(bytes32 _money) public {
        money = _money;
+    }
+    
+     function get_u() public view returns (User _u) {
+        return u;
+    }
+
+    function set_u(User _u) public {
+       u = _u;
+    }
+    
+    function update_ownable_info(
+        bytes32 _name, 
+        bytes32 _dates, 
+        bytes32 _destination, 
+        bytes32 _traffic,
+        bytes32 _people, 
+        bytes32 _money)
+        public
+    {
+        name =  _name ;
+        dates = _dates ;
+        destination = _destination;
+        traffic =  _traffic;
+        people = _people;
+        money = _money;
     }
 }

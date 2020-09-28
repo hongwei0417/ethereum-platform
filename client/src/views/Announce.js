@@ -169,7 +169,8 @@ export function Announce({}) {
 				bytes_destination,
 				bytes_traffic,
 				bytes_people,
-				bytes_money
+				bytes_money,
+				user.address
 			)
 			.send({
 				from: select_account,
