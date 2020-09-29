@@ -5,7 +5,7 @@ import { InputGroup, FormControl, Button, Dropdown, DropdownButton } from "react
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance } from "../utils/getContract";
 import Announce_Contract from "../contracts/Announce.json";
-import eth_addr from '../eth_contract.json';
+import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import TrafficTab from "../components/TrafficTab";
@@ -51,13 +51,12 @@ export function Announce({}) {
 		const load = async () => {
 			if (web3) {
 				let contract = await getContractInstance(web3, Announce_Contract);
-				console.log(contract)
+				console.log(contract);
 				set_announce_contract(contract);
 			}
 		};
 		load();
 	}, [web3]);
-	
 
 	//載入User
 	React.useEffect(() => {
@@ -96,7 +95,6 @@ export function Announce({}) {
 				break;
 		}
 	};
-
 
 	//發布訊息
 	const onSubmit = async () => {
@@ -145,11 +143,11 @@ export function Announce({}) {
 			let bytes_destination = web3.utils.padRight(_bytes_destination, 64);
 			let _bytes_traffic = web3.utils.utf8ToHex(traffic);
 			let bytes_traffic = web3.utils.padRight(_bytes_traffic, 64);
-		    let _bytes_people = web3.utils.utf8ToHex(people);
+			let _bytes_people = web3.utils.utf8ToHex(people);
 			let bytes_people = web3.utils.padRight(_bytes_people, 64);
 			let _bytes_money = web3.utils.utf8ToHex(money);
 			let bytes_money = web3.utils.padRight(_bytes_money, 64);
-			
+
 			// * 執行智能合約
 			// let result = await announce_contract.methods.verify(bytes_name,bytes_dates,bytes_destination,bytes_traffic,bytes_people,bytes_money).call({
 			// 	from: select_account,
@@ -157,44 +155,43 @@ export function Announce({}) {
 			// });
 
 			// get network ID and the deployed address
-			const deployedAddress = eth_addr.Announce
+			const deployedAddress = eth_addr.Announce;
 
 			// create the instance
 			const instance = new web3.eth.Contract(Announce_Contract.abi, deployedAddress);
 			let result = await instance.methods
-			.create_user(
-				string_to_bytes32(generate_id(10)), 
-				bytes_name,
-				bytes_dates,
-				bytes_destination,
-				bytes_traffic,
-				bytes_people,
-				bytes_money,
-				user.address
-			)
-			.send({
-				from: select_account,
-				gas: 6000000,
-			});
+				.create_user(
+					string_to_bytes32(generate_id(10)),
+					bytes_name,
+					bytes_dates,
+					bytes_destination,
+					bytes_traffic,
+					bytes_people,
+					bytes_money,
+					user.address
+				)
+				.send({
+					from: select_account,
+					gas: 6000000,
+				});
 
 			set_payload(JSON.stringify(result));
 
 			alert("發布成功");
 			console.log(result);
-
 		} catch (error) {
 			alert("發生錯誤");
 			console.log(error);
 		}
 	};
-	
+
 	if (web3 && user) {
 		return (
 			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
 				<div className="w-50">
 					<TrafficTab currentPage={2} />
 				</div>
-				<Paper elevation={5} className="w-75 h-75 p-3 d-flex flex-column">
+				<Paper elevation={5} className="w-75 p-3 d-flex flex-column">
 					<h1 className="text-center mb-3">{"發布揪團"}</h1>
 					<Dropdown className="mb-3">
 						<Dropdown.Toggle variant="success" className="w-100">
@@ -282,8 +279,8 @@ export function Announce({}) {
 			</div>
 		);
 	} else {
-		if(!user){
-            return <NoContent message="尚未進行登入..." />;
+		if (!user) {
+			return <NoContent message="尚未進行登入..." />;
 		}
 		return <NoContent message="尚未連結至區塊鏈..." />;
 	}

@@ -53,10 +53,6 @@ export default function CustomAppBar({ toggle_drawer }) {
 		document.location.reload();
 	};
 
-	const toggle_home = () => {
-		history.replace("/");
-	};
-
 	return (
 		<div className={classes.root}>
 			<AppBar position="static">
