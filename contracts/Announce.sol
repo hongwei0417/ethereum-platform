@@ -9,14 +9,15 @@ contract Announce {
     function create_user(
         bytes32 uid,
         bytes32 name,
-        bytes32 dates,
-        bytes32 destination,
+        uint256 dates,
+        bytes32 destination_lon, 
+        bytes32 destination_lat, 
         bytes32 traffic,
         bytes32 people,
-        bytes32 money,
+        uint256 money,
         address user_addr
     ) public {
-        Ownable user = new Ownable(name, dates,destination,traffic,people,money,User(user_addr));
+        Ownable user = new Ownable(name, dates, destination_lon,destination_lat,traffic,people,money,User(user_addr));
         Users[uid] = user;
         id_list.push(uid);
     }
@@ -30,17 +31,28 @@ contract Announce {
     function get_user(bytes32 uid)
         public
         view
-        returns (bytes32 _name, bytes32 _dates, bytes32 _destination, bytes32 _traffic, bytes32 _people, bytes32 _money,User _u)
+        returns (bytes32 _name, uint256 _dates, bytes32 _traffic, bytes32 _people, uint256 _money,User _u)
     {
         Ownable user = Users[uid];
         bytes32 name = user.get_name();
-        bytes32 dates = user.get_dates();
-        bytes32 destination = user.get_destination();
+        uint256 dates = user.get_dates();
         bytes32 traffic = user.get_traffic();
         bytes32 people = user.get_people();
-        bytes32 money = user.get_money();
+        uint256 money = user.get_money();
         User u = user.get_u();
-        return (name, dates, destination,traffic,people,money,u);
+        return (name, dates,traffic,people,money,u);
+    }
+    
+     function get_user_destination(bytes32 uid)
+        public
+        view
+        returns ( bytes32 _destination_lon,bytes32 _destination_lat,User _u)
+    {
+        Ownable user = Users[uid];
+        bytes32 destination_lon = user.get_destination_lon();
+        bytes32 destination_lat = user.get_destination_lat();
+          User u = user.get_u();
+        return (destination_lon,destination_lat,u);
     }
     
      function get_all_user()
@@ -54,6 +66,5 @@ contract Announce {
         }
         return (id_list,addressmessage);
     }
-    
-
+  
 }

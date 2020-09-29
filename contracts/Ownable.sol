@@ -4,13 +4,13 @@ import "./User.sol";
 contract Ownable {
     address public owner;
     bytes32 private name;
-    bytes32 private dates;
-    bytes32 private destination;
+    uint256 private dates;
+    bytes32 private destination_lon;
+    bytes32 private destination_lat;
     bytes32 private traffic;
     bytes32 private people;
-    bytes32 private money;
+    uint256 private money;
     User private u;
-
 
     modifier onlyOwner() {
         require(msg.sender == owner);
@@ -25,17 +25,19 @@ contract Ownable {
     constructor(
         // address _owner,
         bytes32 _name,
-        bytes32 _dates,
-        bytes32 _destination,
+        uint256 _dates,
+        bytes32 _destination_lon,
+        bytes32 _destination_lat,
         bytes32 _traffic,
         bytes32 _people,
-        bytes32 _money,
+        uint256 _money,
         User _u
     ) public {
         // require(_owner != address(0x0), "Need owner");
         require(_name.length != 0, "Need name");
-        require(_dates.length != 0, "Need dates");
-        require(_destination.length != 0, "Need destination");
+        //require(_dates.length != 0, "Need dates");
+        require(_destination_lon.length != 0, "Need destination");
+        require(_destination_lat.length != 0, "Need destination");
         require(_traffic.length != 0, "Need traffic");
         require(_people.length != 0, "Need people");
         // require(_money.length != 0, "Need money");
@@ -43,7 +45,8 @@ contract Ownable {
         // owner = _owner;
         name = _name;
         dates = _dates;
-        destination = _destination;
+        destination_lon = _destination_lon;
+        destination_lat = _destination_lat;
         traffic = _traffic;
         people = _people;
         money = _money;
@@ -59,20 +62,28 @@ contract Ownable {
         name = _name;
     }
 
-    function get_dates() public view returns (bytes32 _dates) {
+    function get_dates() public view returns (uint256 _dates) {
         return dates;
     }
 
-    function set_dates(bytes32 _dates) public {
+    function set_dates(uint256 _dates) public {
        dates = _dates;
     }
 
-     function get_destination()  public view returns (bytes32 _destination) {
-        return destination;
+     function get_destination_lon()  public view returns (bytes32 _destination_lon) {
+        return destination_lon;
     }
 
-    function set_destination(bytes32 _destination) public {
-        destination = _destination;
+    function set_destination_lon(bytes32 _destination_lon) public {
+        destination_lon = _destination_lon;
+    }
+    
+     function get_destination_lat()  public view returns (bytes32 _destination_lat) {
+        return destination_lat;
+    }
+
+    function set_destination_lat(bytes32 _destination_lat) public {
+        destination_lat = _destination_lat;
     }
 
      function get_traffic() public view returns (bytes32 _traffic) {
@@ -91,11 +102,11 @@ contract Ownable {
        people = _people;
     }
 
-      function get_money() public view returns (bytes32 _money) {
+      function get_money() public view returns (uint256 _money) {
         return money;
     }
 
-    function set_money(bytes32 _money) public {
+    function set_money(uint256 _money) public {
        money = _money;
     }
     
@@ -107,18 +118,20 @@ contract Ownable {
        u = _u;
     }
     
-    function update_ownable_info(
+      function update_ownable_info(
         bytes32 _name, 
-        bytes32 _dates, 
-        bytes32 _destination, 
+        uint256 _dates, 
+        bytes32 _destination_lon, 
+        bytes32 _destination_lat, 
         bytes32 _traffic,
         bytes32 _people, 
-        bytes32 _money)
+        uint256 _money)
         public
     {
         name =  _name ;
         dates = _dates ;
-        destination = _destination;
+        destination_lon = _destination_lon;
+        destination_lat = _destination_lat;
         traffic =  _traffic;
         people = _people;
         money = _money;

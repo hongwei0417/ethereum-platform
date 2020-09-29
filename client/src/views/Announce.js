@@ -9,13 +9,15 @@ import eth_addr from '../eth_contract.json';
 import NoContent from "../components/NoContent";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import TrafficTab from "../components/TrafficTab";
+import TextField from '@material-ui/core/TextField';
 
 export function Announce({}) {
 	const [name, set_name] = React.useState("");
 	const [dates, set_dates] = React.useState("");
-	const [destination, set_destination] = React.useState("");
+	const [destination_lon, set_destination_lon] = React.useState("");
+	const [destination_lat, set_destination_lat] = React.useState("");
 	const [traffic, set_traffic] = React.useState("");
-	const [people, set_people] = React.useState("");
+	const [people, set_people] = React.useState(0);
 	const [money, set_money] = React.useState("");
 	const [select_account, set_select_account] = React.useState(null);
 	const [web3, set_web3] = React.useState(null);
@@ -80,14 +82,17 @@ export function Announce({}) {
 			case "dates":
 				set_dates(value);
 				break;
-			case "destination":
-				set_destination(value);
+			case "destination_lon":
+				set_destination_lon(value);
+				break;
+			case "destination_lat":
+				set_destination_lat(value);
 				break;
 			case "traffic":
 				set_traffic(value);
 				break;
 			case "people":
-				set_people(value);
+				set_people(parseInt(value) > 0 ? parseInt(value) : 0);
 				break;
 			case "money":
 				set_money(value);
@@ -120,8 +125,12 @@ export function Announce({}) {
 			alert("請輸入日期!");
 			return;
 		}
-		if (!destination) {
-			alert("請輸入出發地跟目的地!");
+		if (!destination_lon) {
+			alert("請輸入出發地!");
+			return;
+		}
+		if (!destination_lat) {
+			alert("請輸入目的地!");
 			return;
 		}
 		if (!traffic) {
@@ -139,22 +148,14 @@ export function Announce({}) {
 		try {
 			let _bytes_name = web3.utils.utf8ToHex(name);
 			let bytes_name = web3.utils.padRight(_bytes_name, 64);
-			let _bytes_dates = web3.utils.utf8ToHex(dates);
-			let bytes_dates = web3.utils.padRight(_bytes_dates, 64);
-			let _bytes_destination = web3.utils.utf8ToHex(destination);
-			let bytes_destination = web3.utils.padRight(_bytes_destination, 64);
+			let _bytes_destination_lon = web3.utils.utf8ToHex(destination_lon);
+			let bytes_destination_lon = web3.utils.padRight(_bytes_destination_lon, 64);
+			let _bytes_destination_lat = web3.utils.utf8ToHex(destination_lat);
+			let bytes_destination_lat = web3.utils.padRight(_bytes_destination_lat, 64);
 			let _bytes_traffic = web3.utils.utf8ToHex(traffic);
 			let bytes_traffic = web3.utils.padRight(_bytes_traffic, 64);
 		    let _bytes_people = web3.utils.utf8ToHex(people);
 			let bytes_people = web3.utils.padRight(_bytes_people, 64);
-			let _bytes_money = web3.utils.utf8ToHex(money);
-			let bytes_money = web3.utils.padRight(_bytes_money, 64);
-			
-			// * 執行智能合約
-			// let result = await announce_contract.methods.verify(bytes_name,bytes_dates,bytes_destination,bytes_traffic,bytes_people,bytes_money).call({
-			// 	from: select_account,
-			// 	gas: 6000000,
-			// });
 
 			// get network ID and the deployed address
 			const deployedAddress = eth_addr.Announce
@@ -165,11 +166,13 @@ export function Announce({}) {
 			.create_user(
 				string_to_bytes32(generate_id(10)), 
 				bytes_name,
-				bytes_dates,
-				bytes_destination,
+				Number(new Date(dates)),
+				bytes_destination_lon,
+				bytes_destination_lat,
 				bytes_traffic,
 				bytes_people,
-				bytes_money,
+				//bytes_money,
+				money,
 				user.address
 			)
 			.send({
@@ -177,8 +180,7 @@ export function Announce({}) {
 				gas: 6000000,
 			});
 
-			set_payload(JSON.stringify(result));
-
+			set_payload(JSON.stringify(result));;
 			alert("發布成功");
 			console.log(result);
 
@@ -234,20 +236,20 @@ export function Announce({}) {
 					</InputGroup>
 					<InputGroup className="mb-3">
 						<InputGroup.Prepend>
-							<InputGroup.Text>{"出發地跟目的地"}</InputGroup.Text>
+							<InputGroup.Text>{"出發地"}</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
-							placeholder="請輸入出發地跟目的地"
-							onChange={(e) => onChange("destination", e.target.value)}
+							placeholder="請輸入出發地"
+							onChange={(e) => onChange("destination_lon", e.target.value)}
 						/>
 					</InputGroup>
 					<InputGroup className="mb-3">
 						<InputGroup.Prepend>
-							<InputGroup.Text>{"交通工具"}</InputGroup.Text>
+							<InputGroup.Text>{"目的地"}</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
-							placeholder="請輸入交通工具"
-							onChange={(e) => onChange("traffic", e.target.value)}
+							placeholder="請輸入目的地"
+							onChange={(e) => onChange("destination_lat", e.target.value)}
 						/>
 					</InputGroup>
 					<InputGroup className="mb-3">
@@ -255,9 +257,12 @@ export function Announce({}) {
 							<InputGroup.Text>{"人數"}</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
+							value={people}
+							type="number"
 							placeholder="請輸入人數"
 							onChange={(e) => onChange("people", e.target.value)}
-						/>
+						>
+						</FormControl>
 					</InputGroup>
 					<InputGroup className="mb-3">
 						<InputGroup.Prepend>
@@ -267,6 +272,21 @@ export function Announce({}) {
 							placeholder="請輸入價錢/人"
 							onChange={(e) => onChange("money", e.target.value)}
 						/>
+					</InputGroup>
+					<InputGroup className="mb-3">
+						<InputGroup.Prepend>
+							<InputGroup.Text>{"交通工具"}</InputGroup.Text>
+						</InputGroup.Prepend>
+						<FormControl as="select"
+							placeholder="請輸入交通工具"
+							onChange={(e) => onChange("traffic", e.target.value)}
+							type="selcet"
+						>
+						<option>Uber</option>
+						<option>計程車</option>
+						<option>自駕</option>
+						<option>機車</option>
+						</FormControl>
 					</InputGroup>
 					<p className="text-center overflow-auto">{payload || "無資料"}</p>
 					<Button
