@@ -77,25 +77,8 @@ export function TrafficPublish(props) {
 					<TrafficTab currentPage={2} />
 				</div>
 				<div className="mb-3">
-					{/* <Button
-						className="mr-3"
-						variant={page === 1 ? "light" : "outline-light"}
-						onClick={(e) => set_page(1)}
-					>
-						我的房間
-					</Button> */}
-					{/* <Button
-						className="mr-3"
-						variant={page === 2 ? "light" : "outline-light"}
-						onClick={(e) => set_page(2)}
-					>
-						新增房間
-					</Button> */}
 					<TrafficList accounts={accounts} web3={web3} An={An}  user={user} />
 				</div>
-				
-				{/* {page === 1 && <HouseList accounts={accounts} web3={web3} user={user} />} */}
-				{/* {page === 2 && <AddHouse accounts={accounts} user_contract={user_contract} />} */}
 			</div>
 		);
 	} else {
@@ -136,10 +119,7 @@ const TrafficList = ({ accounts, web3, An}) => {
 		//取得房屋合約實體
 		let instance1 = await getContractInstance(web3, Announce, item.traffic_addr);
 		set_traffic_contract(instance1);
-		// let instance = await get_all_user(An, item.lease_addr);
-		// set_traffic_contract(instance);
 		set_current_data(item);
-		// set_current_data1(item);
 		set_open(true);
 	};
 
@@ -215,46 +195,14 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 			case "account":
 				set_select_account(value);
 				break;
-			case "name":
-				set_form_data(value)({
-					...form_data,
-					name: value,
-				});
-				break;
-			case "dates":
-				set_form_data(value)({
-					...form_data,
-					dates: value,
-				});
-				break;
-			case "destination":
-				set_form_data(value)({
-					...form_data,
-					destination: value,
-				});
-				break;
-			case "traffic":
-				set_form_data(value)({
-					...form_data,
-					traffic: value,
-				});
-				break;
-			case "people":
-				set_form_data(value)({
-					...form_data,
-					people: value,
-				});
-				break;
-			case "money":
-				set_form_data(value)({
-					...form_data,
-					money: value,
-				});
-				break;
 			default:
-				break;
+				set_form_data({
+					...form_data,
+					[key]: value,
+				});
 		}
 	};
+
 
 	const onSubmit = async () => {
 		if (!select_account) {
@@ -291,10 +239,7 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 					<Form.Label>姓名 : {`${form_data.name}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>日期 : {`${form_data.dates}`}</Form.Label>
-				</Form.Group>
-				<Form.Group>
-					<Form.Label>出發地跟目的地 : {`${form_data.destination}`}</Form.Label>
+					<Form.Label type="datetime-local">日期 : {`${convert_dateTime_str(form_data.dates)}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
 					<Form.Label>交通工具 : {`${form_data.traffic}`}</Form.Label>
@@ -305,7 +250,12 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 				<Form.Group>
 					<Form.Label>價錢/人 : {`${form_data.money}`}</Form.Label>
 				</Form.Group>
-			
+				<Form.Group>
+					<Form.Label>出發地 : {`${form_data.destination_lon}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
+				</Form.Group>
 				<Button variant="primary" onClick={onSubmit} block>
 					確定跟團
 				</Button>

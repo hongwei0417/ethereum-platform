@@ -186,8 +186,9 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract1, traffic_contra
 			...traffic_data,
 			 dates: convert_dateTime_str(traffic_data.dates),
 		});
+		console.log(traffic_data.dates);
 	}, [traffic_data]);
-	console.log(traffic_data);
+	console.log(form_data);
 
 	const onChange = (key, value) => {
 		switch (key) {
@@ -214,11 +215,12 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract1, traffic_contra
 			"update_ownable_info",
 			[
 				string_to_bytes32(form_data.name),
-				string_to_bytes32(moment(form_data.dates).unix()),
+				Number(new Date(form_data.dates)),
 				string_to_bytes32(form_data.people),
-				string_to_bytes32(form_data.destination),
+				string_to_bytes32(form_data.destination_lon),
+				string_to_bytes32(form_data.destination_lat),
 				string_to_bytes32(form_data.traffic),
-				string_to_bytes32(form_data.money),
+				form_data.money,
 			],
 			{
 				from: select_account,
@@ -268,28 +270,10 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract1, traffic_contra
                 <Form.Group>
                     <Form.Label>日期</Form.Label>
                     <Form.Control
-                        type="text"
+                        type="datetime-local"
                         value={form_data.dates || ""}
                         placeholder="請輸入日期"
                         onChange={(e) => onChange("dates", e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>出發地跟目的地</Form.Label>
-                    <Form.Control
-                        type="text"
-                        value={form_data.destination || ""}
-                        placeholder="請輸入出發地跟目的地"
-                        onChange={(e) => onChange("destination", e.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>交通工具</Form.Label>
-                    <Form.Control
-                        type="text"
-                        value={form_data.traffic ||""}
-                        placeholder="請輸入交通工具"
-                        onChange={(e) => onChange("traffic", e.target.value)}
                     />
                 </Form.Group>
                 <hr />
@@ -300,6 +284,24 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract1, traffic_contra
                         value={form_data.people ||""}
                         placeholder="請輸入人數"
                         onChange={(e) => onChange("people", e.target.value)}
+                    />
+                </Form.Group>
+				<Form.Group>
+                    <Form.Label>出發地</Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={form_data.destination_lon || ""}
+                        placeholder="請輸入出發地"
+                        onChange={(e) => onChange("destination_lon", e.target.value)}
+                    />
+                </Form.Group>
+				<Form.Group>
+                    <Form.Label>目的地</Form.Label>
+                    <Form.Control
+                        type="text"
+                        value={form_data.destination_lat || ""}
+                        placeholder="請輸入目的地"
+                        onChange={(e) => onChange("destination_lat", e.target.value)}
                     />
                 </Form.Group>
                 <Form.Group>
