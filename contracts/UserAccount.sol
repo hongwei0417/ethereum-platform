@@ -3,7 +3,7 @@ import "./User.sol";
 
 contract UserAccount {
     User owner;
-    uint256 private balance;
+    uint256 private balance = 1000;
     uint256 public create_date;
     uint256 public update_date;
 

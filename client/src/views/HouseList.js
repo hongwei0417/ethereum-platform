@@ -10,6 +10,8 @@ import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import TravelTab from "../components/TravelTab";
 import { useHistory } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import HouseMap from "../components/HouseMap";
 
 export function HouseList() {
 	const [web3, set_web3] = React.useState(null);
@@ -19,6 +21,7 @@ export function HouseList() {
 	const [user_addr_list, set_user_addr_list] = React.useState([]);
 	const [house_list, set_house_list] = React.useState([]);
 	const [user, set_user] = React.useState(null);
+	const [page, set_page] = React.useState(1);
 	const history = useHistory();
 
 	//載入web3
@@ -71,23 +74,25 @@ export function HouseList() {
 
 	//載入所有房間
 	React.useEffect(() => {
-		const load = async () => {
-			if (user_uid_list.length > 0 && user_addr_list.length > 0 && LM) {
-				let result = [];
-				for (let i = 0; i < user_uid_list.length; i++) {
-					let user_obj = {
-						uid: user_uid_list[i],
-						address: user_addr_list[i],
-					};
-					let lease_infos = await get_user_all_lease_info(web3, user_obj, LM);
-					result = result.concat(lease_infos);
-				}
-				set_house_list(result);
-				console.log(result);
-			}
-		};
-		load();
+		load_house_list();
 	}, [user_uid_list, user_addr_list]);
+
+	//取得所有房間
+	const load_house_list = async () => {
+		if (user_uid_list.length > 0 && user_addr_list.length > 0 && LM) {
+			let result = [];
+			for (let i = 0; i < user_uid_list.length; i++) {
+				let user_obj = {
+					uid: user_uid_list[i],
+					address: user_addr_list[i],
+				};
+				let lease_infos = await get_user_all_lease_info(web3, user_obj, LM);
+				result = result.concat(lease_infos);
+			}
+			set_house_list(result);
+			console.log(result);
+		}
+	};
 
 	//進入訂房頁面
 	const enter_booking_page = (item) => {
@@ -100,27 +105,52 @@ export function HouseList() {
 				<div className="w-50">
 					<TravelTab currentPage={1} />
 				</div>
-				<h3 className="text-white-50 mb-3">房間列表瀏覽</h3>
-				<div className="w-50">
-					<SearchBar />
-					<hr color="white" />
-					{house_list.map((item, i) => {
-						return (
-							<HouseCard
-								key={i}
-								owner={item.owner}
-								house_name={item.house_name}
-								category={item.category}
-								rented_out={item.rented_out}
-								start_time={item.start_time}
-								end_time={item.end_time}
-								price={item.price}
-								quantity={item.quantity}
-								onSubmit={() => enter_booking_page(item)}
-							/>
-						);
-					})}
+				<div className="w-50 d-flex justify-content-center mb-3">
+					<Button
+						className="mr-3"
+						variant={page === 1 ? "light" : "outline-light"}
+						onClick={(e) => set_page(1)}
+					>
+						瀏覽列表
+					</Button>
+					<Button
+						className="ml-3"
+						variant={page === 2 ? "light" : "outline-light"}
+						onClick={(e) => set_page(2)}
+					>
+						瀏覽地圖
+					</Button>
 				</div>
+				{page === 1 && (
+					<React.Fragment>
+						<h3 className="text-white-50 mb-3">房間列表瀏覽</h3>
+						<div className="w-50">
+							<SearchBar />
+							<hr color="white" />
+							{house_list.map((item, i) => {
+								return (
+									<HouseCard
+										key={i}
+										owner={item.owner}
+										house_name={item.house_name}
+										category={item.category}
+										rented_out={item.rented_out}
+										start_time={item.start_time}
+										end_time={item.end_time}
+										price={item.price}
+										quantity={item.quantity}
+										onSubmit={() => enter_booking_page(item)}
+									/>
+								);
+							})}
+						</div>
+					</React.Fragment>
+				)}
+				{page === 2 && (
+					<div className="w-50" style={{ height: "600px" }}>
+						<HouseMap house_list={house_list} refresh={load_house_list} />
+					</div>
+				)}
 			</div>
 		);
 	} else {

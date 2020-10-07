@@ -203,7 +203,7 @@ export function Login({}) {
 
 	if (web3) {
 		return (
-			<div className="d-flex flex-column h-75 justify-content-center align-items-center">
+			<div className="d-flex flex-column p-3 justify-content-center align-items-center">
 				<Paper elevation={5} className="w-75 h-75 p-3 d-flex flex-column">
 					<h1 className="text-center mb-3">{"登入"}</h1>
 					<Dropdown className="mb-3">
