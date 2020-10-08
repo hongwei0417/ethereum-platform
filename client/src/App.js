@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import { routes } from "./routes";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
+import "./index.scss";
 
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";

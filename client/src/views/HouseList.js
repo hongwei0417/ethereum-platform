@@ -12,6 +12,7 @@ import TravelTab from "../components/TravelTab";
 import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import HouseMap from "../components/HouseMap";
+import HouseMapCard from "../components/HouseMapCard";
 
 export function HouseList() {
 	const [web3, set_web3] = React.useState(null);
@@ -20,8 +21,9 @@ export function HouseList() {
 	const [user_uid_list, set_user_uid_list] = React.useState([]);
 	const [user_addr_list, set_user_addr_list] = React.useState([]);
 	const [house_list, set_house_list] = React.useState([]);
+	const [selectedIndex, set_selectedIndex] = React.useState(-1);
 	const [user, set_user] = React.useState(null);
-	const [page, set_page] = React.useState(1);
+	const [page, set_page] = React.useState(2);
 	const history = useHistory();
 
 	//載入web3
@@ -147,8 +149,26 @@ export function HouseList() {
 					</React.Fragment>
 				)}
 				{page === 2 && (
-					<div className="w-50" style={{ height: "600px" }}>
-						<HouseMap house_list={house_list} refresh={load_house_list} />
+					<div className="row w-100 pl-5 pr-5">
+						<div className="col-5">
+							{house_list.map((item, i) => {
+								return (
+									<HouseMapCard
+										key={i}
+										{...item}
+										onSubmit={() => enter_booking_page(item)}
+										onClick={() => set_selectedIndex(i)}
+									/>
+								);
+							})}
+						</div>
+						<div className="col-7" style={{ height: "600px" }}>
+							<HouseMap
+								house_list={house_list}
+								refresh={load_house_list}
+								selectedIndex={selectedIndex}
+							/>
+						</div>
 					</div>
 				)}
 			</div>

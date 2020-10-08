@@ -84,15 +84,16 @@
       "constant": true
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"um\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"acm\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"lm\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tm\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"acm_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lm_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tm_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"um_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol\":\"Global\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0xb718042991c4dbd6adc2da46d9a7aca64bf93dcd093934426fc31ef58d30826e\",\"urls\":[\"bzz-raw://6af3b591b2d05011797f1eb6f714035595ee5daa743c3e702759932c471779ee\",\"dweb:/ipfs/QmRr9WnymUgNs3guYcZxBjF6Q5YGNZs3xLHmdLc9w31t7g\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0xfaef74cbc58d095c0b37ab16ca79559be57be6fa9fc30f02ffab255dd13dc1a3\",\"urls\":[\"bzz-raw://974b0fe8ac053d9e413c7e6e2b683534309654ad869f65190643b8dc3c3a438a\",\"dweb:/ipfs/QmSBBmKGj5aHaQsRbYtv6xyraxhGd1UTUZVrj82b9LiCkc\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0xc2e944b0dce7a99a803ba78f135a7fb5e8f9bf78e49ff3fdbd709990c10d6b76\",\"urls\":[\"bzz-raw://a6401a104d079daf940aa75645eefca9a7a8c10420dd57fbeb211392320f8a3c\",\"dweb:/ipfs/QmQ6MsxYUBBfASaBY8JAfoCAA4yzSxXwoi1Rix2A1xFNp6\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0x42b38f1b6a71927b336c9dc389e2b7b034bc4447b2c3256222bbaca9686241fc\",\"urls\":[\"bzz-raw://f6d0a61aeb27a26676d4de6010248c2d19b0ca2c0a29b9b65f8824ec8201940a\",\"dweb:/ipfs/QmWzo2xFSwBXZHBzM2tsWxkB2MfRGRPZUZQjNYWM3sz41X\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0xb3e1c86bcb747ff99afc8e79258694b17651eaef806ec2ceec40059e1b7538c1\",\"urls\":[\"bzz-raw://06f79cd47d890edbda3c9191b6fe67e43da86ff33fe8ec42ad23956db59d9fb0\",\"dweb:/ipfs/QmRKBTqCM8hxe8KnHHf2aWrBHhotHEJFwTrhDC892mLYYE\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0xe3a52ce8c4a5ad3ad0f0ef10ba8cd8c5fc0dfcd22c39fec762525eb5101c40bc\",\"urls\":[\"bzz-raw://a27da5543fd8925f87575c32bc2d1b46e24c4837b59f2b6a0bd9ae9d3a7328e3\",\"dweb:/ipfs/QmWChEJJ2qxwbpi4STSiLc9bvM67mHrgfgNQ4K8rsY6kvj\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0x204d9a89fb29751de455c09bcc0899b0a0b5165ae36815fc40b408cd5f8d6c0e\",\"urls\":[\"bzz-raw://02b2d300ec6ee771b649432666f8391fb157463544fc34315dcbbc64f28adbf5\",\"dweb:/ipfs/QmR14DmDnTyiM7N2nTvoqTRcd63BmSy5s9mMAw85rRjsPC\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0x66fee93dd932d00881d9115bb3ce401fd4320ac3fcc002036c4a3de3ce102d8b\",\"urls\":[\"bzz-raw://bb648cf7fcf3ad5eb783af0a295207d1096ccedeb1de4795485cd39d68673fa2\",\"dweb:/ipfs/QmTBgHMDSnmRsH9pLx98QJPyo5UL9HgjToNBCmh7GGdiux\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0xd69dc94930da297b441275c1a443790b0d4138b243e0b42141e27c12980a40ae\",\"urls\":[\"bzz-raw://a0984cae3f1207ce44030b69f7dc87491cdcf6e4c90470f8401c75e67b9a8467\",\"dweb:/ipfs/QmUnBCcAtQz8rhpFgxTzNGLPqpWXf2WT6WdXewY4tn95N4\"]},\"/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x14bdabe6f85215276fe853223cb2f41d46fd9fdc21efa0a81a2682c7c4b688a2\",\"urls\":[\"bzz-raw://1548128aa1f3379f1486a940b28f27eb25dce1a31e82e85e7dad57415e1e76ff\",\"dweb:/ipfs/QmZYcW3SeSeMbBGADysj44BvweLgYBmUsyPpTjxqYr5gQc\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516103be3803806103be8339818101604052608081101561003357600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050836000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555082600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505050610246806101786000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631fb444921461005157806368bb23ed1461009b5780637dd1bc25146100e5578063d3388a1f1461012f575b600080fd5b610059610179565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100a361019e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ed6101c4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101376101ea565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea2646970667358221220ad74a69f548aaa49b235c749f3d7a6d7f567c048186037f19a1e0ed5c3525bf664736f6c63430006060033",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80631fb444921461005157806368bb23ed1461009b5780637dd1bc25146100e5578063d3388a1f1461012f575b600080fd5b610059610179565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100a361019e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ed6101c4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101376101ea565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea2646970667358221220ad74a69f548aaa49b235c749f3d7a6d7f567c048186037f19a1e0ed5c3525bf664736f6c63430006060033",
-  "sourceMap": "157:452:3:-:0;;;404:203;5:9:-1;2:2;;;27:1;24;17:12;2:2;404:203:3;;;;;;;;;;;;;;;15:3:-1;10;7:12;4:2;;;32:1;29;22:12;4:2;404:203:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;530:2;520:7;;:12;;;;;;;;;;;;;;;;;;553:3;542:8;;:14;;;;;;;;;;;;;;;;;;576:2;566:7;;:12;;;;;;;;;;;;;;;;;;598:2;588:7;;:12;;;;;;;;;;;;;;;;;;404:203;;;;157:452;;;;;;",
-  "deployedSourceMap": "157:452:3:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;157:452:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;179:22:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;351;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;296;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;237:23;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;179:22;;;;;;;;;;;;;:::o;351:::-;;;;;;;;;;;;;:::o;296:::-;;;;;;;;;;;;;:::o;237:23::-;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity >=0.4.22 <0.8.0;\nimport \"./UserManager.sol\";\nimport \"./AccountManager.sol\";\nimport \"./LeaseManager.sol\";\nimport \"./TransactionManager.sol\";\n\ncontract Global {\n    address public um_addr; //用戶管理合員約位址\n    address public acm_addr; //帳戶管理合員約位址\n    address public lm_addr; //租借物管理員位址\n    address public tm_addr; //交易管理員位址\n\n    constructor(\n        address um,\n        address acm,\n        address lm,\n        address tm\n    ) public {\n        um_addr = um;\n        acm_addr = acm;\n        lm_addr = lm;\n        tm_addr = tm;\n    }\n}\n",
-  "sourcePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"um\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"acm\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"lm\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"tm\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"acm_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lm_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"tm_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"um_addr\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/Hongwei/Project/ethereum-platform/contracts/Global.sol\":\"Global\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Hongwei/Project/ethereum-platform/contracts/AccountManager.sol\":{\"keccak256\":\"0x2908cce17d8b4e80ac30e90f0fdf72ade0911214dadd3950ea4a3bc543fc747f\",\"urls\":[\"bzz-raw://0d36bdc6cf0135f1ca301a3d15116f1c90bd528bde703b6592d0eaf43eaaf616\",\"dweb:/ipfs/QmZCN7at8VMUsfKb2ZemhZ5X1itWpH3MX8KZz3hfrMKyFN\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/Global.sol\":{\"keccak256\":\"0x7c73ebefce98db5170df090aaf74c78aaf4bfd04e17a5f97e3f672fe25936732\",\"urls\":[\"bzz-raw://2fbdd91d7d6a26b330e978d9ad7918d172b748fb659671e466233078d6c7331a\",\"dweb:/ipfs/QmQGw2A3Etnp3Ao7N3Exaxg6sYG7u8RTRc1LNshXrv9Uc8\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/Lease.sol\":{\"keccak256\":\"0x9ea4d0844498425b35c8c5c6ff7d7001ac783f2c6234eb2349550a73ba2c1fb0\",\"urls\":[\"bzz-raw://cc16ffcc670c0af5d2d215859cb9076297a3e54a82251daf73349722efef3bf5\",\"dweb:/ipfs/QmVJLSHmrCkVZUw9CYgnzDifQ1KHr26aVh555p67kRTE3t\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/LeaseManager.sol\":{\"keccak256\":\"0x61195df742f47e39d3127567cef07ec6fc51e81d602a652b55e65b93a639a26e\",\"urls\":[\"bzz-raw://b998d91b9b3e3c00ca089d44a913356beb14893584cf035bb2e36c7a75d37c72\",\"dweb:/ipfs/QmTvZkJGxaJuh856iCX7YgHKKwrAekeRgyhJNKx1QKqxpV\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/LeaseTransaction.sol\":{\"keccak256\":\"0x4e0668d1ce0a48d47c008d47f472fd10e39ba05352ddf1bd8da96198576faee0\",\"urls\":[\"bzz-raw://d6f569cd00676c45513b8dd242d1147c602ebb7a394eaffae1d88852ee2d76c2\",\"dweb:/ipfs/QmZZucxKXZmqo4MNd3C6HZjAnhHV29EgmQTfH2i9muCqZo\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/Transaction.sol\":{\"keccak256\":\"0x0b33a31734626f3043ce59fbdc3fc050b95e51d6a1d4655731e85293dd0f4bcc\",\"urls\":[\"bzz-raw://cfcfd8df1b098366c00f765c9a73e83acfe0799b73b8c51b61b524c69208bdcf\",\"dweb:/ipfs/QmZaoANathTGEfhSpKsjpiFdzHK4q53sbWREpz2aGb4BpZ\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/TransactionManager.sol\":{\"keccak256\":\"0xd940c8092e1256480d22440a6e8eba86a6b6eda6017f2503ae9bd3bca95bf774\",\"urls\":[\"bzz-raw://7ce234c1ed047a9b7f70ba321735b13379e5febd1739e908c38e8b49f0b27248\",\"dweb:/ipfs/QmdwHyxpvWogNv9U84uqwDJdyXKCfKDLaGTxJbJyTN8PAY\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/User.sol\":{\"keccak256\":\"0x8e3f15d15abffa9c7797df4e0870001ebe5d9fec853ec95c952d02cfa3442e94\",\"urls\":[\"bzz-raw://f5322285a7d61392d1fcccdf182f8119e0f01babd17305491a77161e6853a657\",\"dweb:/ipfs/QmRmYZNyHHqfm4Fu3q6C5K2AQzfV2iGaUjsYiFGw97jDYb\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/UserAccount.sol\":{\"keccak256\":\"0x62e023289fca25cf282edcc4050445725238b28c44d2d5c1ec2f4bba84cd15a2\",\"urls\":[\"bzz-raw://874f5a6bc6c339a5490abdf885167181441d4db62ce863f07fe47a8892c177fc\",\"dweb:/ipfs/QmUypzgfnywXfmyw1z9WWtPnr5JibtHFQijuFobrpjVgsR\"]},\"/D/Hongwei/Project/ethereum-platform/contracts/UserManager.sol\":{\"keccak256\":\"0x244ccf075004e5c30480581a151becf1e5564a633d30d0ddb71f0f2e1ca3c414\",\"urls\":[\"bzz-raw://e6a3558bc774a4647f10bc09dde9beeb93ef8727a17a8f89925c8c65bb384368\",\"dweb:/ipfs/QmcWVf2NibSBDDUdjfhFbLTQU2YwWrKG43ggzS81Xs7zo9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516103be3803806103be8339818101604052608081101561003357600080fd5b8101908080519060200190929190805190602001909291908051906020019092919080519060200190929190505050836000806101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555082600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555081600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050505050610246806101786000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631fb444921461005157806368bb23ed1461009b5780637dd1bc25146100e5578063d3388a1f1461012f575b600080fd5b610059610179565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100a361019e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ed6101c4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101376101ea565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea26469706673582212208053722b62d8575533735ae33ca49c55ae9938965f47c8fa6d31123f96ad303864736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80631fb444921461005157806368bb23ed1461009b5780637dd1bc25146100e5578063d3388a1f1461012f575b600080fd5b610059610179565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100a361019e565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6100ed6101c4565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6101376101ea565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6000809054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea26469706673582212208053722b62d8575533735ae33ca49c55ae9938965f47c8fa6d31123f96ad303864736f6c63430006060033",
+  "immutableReferences": {},
+  "sourceMap": "163:469:3:-:0;;;416:213;5:9:-1;2:2;;;27:1;24;17:12;2:2;416:213:3;;;;;;;;;;;;;;;15:3:-1;10;7:12;4:2;;;32:1;29;22:12;4:2;416:213:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;548:2;538:7;;:12;;;;;;;;;;;;;;;;;;572:3;561:8;;:14;;;;;;;;;;;;;;;;;;596:2;586:7;;:12;;;;;;;;;;;;;;;;;;619:2;609:7;;:12;;;;;;;;;;;;;;;;;;416:213;;;;163:469;;;;;;",
+  "deployedSourceMap": "163:469:3:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;163:469:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;186:22:3;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;361;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;305;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;245:23;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;186:22;;;;;;;;;;;;;:::o;361:::-;;;;;;;;;;;;;:::o;305:::-;;;;;;;;;;;;;:::o;245:23::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.22 <0.8.0;\r\nimport \"./UserManager.sol\";\r\nimport \"./AccountManager.sol\";\r\nimport \"./LeaseManager.sol\";\r\nimport \"./TransactionManager.sol\";\r\n\r\ncontract Global {\r\n    address public um_addr; //用戶管理合員約位址\r\n    address public acm_addr; //帳戶管理合員約位址\r\n    address public lm_addr; //租借物管理員位址\r\n    address public tm_addr; //交易管理員位址\r\n\r\n    constructor(\r\n        address um,\r\n        address acm,\r\n        address lm,\r\n        address tm\r\n    ) public {\r\n        um_addr = um;\r\n        acm_addr = acm;\r\n        lm_addr = lm;\r\n        tm_addr = tm;\r\n    }\r\n}\r\n",
+  "sourcePath": "D:\\Hongwei\\Project\\ethereum-platform\\contracts\\Global.sol",
   "ast": {
-    "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol",
+    "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/Global.sol",
     "exportedSymbols": {
       "Global": [
         460
@@ -116,46 +117,46 @@
         "src": "0:32:3"
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/UserManager.sol",
         "file": "./UserManager.sol",
         "id": 420,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 2380,
-        "src": "33:27:3",
+        "src": "34:27:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/AccountManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/AccountManager.sol",
         "file": "./AccountManager.sol",
         "id": 421,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 119,
-        "src": "61:30:3",
+        "src": "63:30:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/LeaseManager.sol",
         "file": "./LeaseManager.sol",
         "id": 422,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 813,
-        "src": "92:28:3",
+        "src": "95:28:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/TransactionManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/TransactionManager.sol",
         "file": "./TransactionManager.sol",
         "id": 423,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 1856,
-        "src": "121:34:3",
+        "src": "125:34:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -182,7 +183,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "179:22:3",
+            "src": "186:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -193,7 +194,7 @@
               "id": 424,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "179:7:3",
+              "src": "186:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -212,7 +213,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "237:23:3",
+            "src": "245:23:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -223,7 +224,7 @@
               "id": 426,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "237:7:3",
+              "src": "245:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -242,7 +243,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "296:22:3",
+            "src": "305:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -253,7 +254,7 @@
               "id": 428,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "296:7:3",
+              "src": "305:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -272,7 +273,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "351:22:3",
+            "src": "361:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -283,7 +284,7 @@
               "id": 430,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "351:7:3",
+              "src": "361:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -297,7 +298,7 @@
             "body": {
               "id": 458,
               "nodeType": "Block",
-              "src": "510:97:3",
+              "src": "527:102:3",
               "statements": [
                 {
                   "expression": {
@@ -314,7 +315,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 425,
-                      "src": "520:7:3",
+                      "src": "538:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -329,13 +330,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 433,
-                      "src": "530:2:3",
+                      "src": "548:2:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "520:12:3",
+                    "src": "538:12:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -343,7 +344,7 @@
                   },
                   "id": 445,
                   "nodeType": "ExpressionStatement",
-                  "src": "520:12:3"
+                  "src": "538:12:3"
                 },
                 {
                   "expression": {
@@ -360,7 +361,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 427,
-                      "src": "542:8:3",
+                      "src": "561:8:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -375,13 +376,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 435,
-                      "src": "553:3:3",
+                      "src": "572:3:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "542:14:3",
+                    "src": "561:14:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -389,7 +390,7 @@
                   },
                   "id": 449,
                   "nodeType": "ExpressionStatement",
-                  "src": "542:14:3"
+                  "src": "561:14:3"
                 },
                 {
                   "expression": {
@@ -406,7 +407,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 429,
-                      "src": "566:7:3",
+                      "src": "586:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -421,13 +422,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 437,
-                      "src": "576:2:3",
+                      "src": "596:2:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "566:12:3",
+                    "src": "586:12:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -435,7 +436,7 @@
                   },
                   "id": 453,
                   "nodeType": "ExpressionStatement",
-                  "src": "566:12:3"
+                  "src": "586:12:3"
                 },
                 {
                   "expression": {
@@ -452,7 +453,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 431,
-                      "src": "588:7:3",
+                      "src": "609:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -467,13 +468,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 439,
-                      "src": "598:2:3",
+                      "src": "619:2:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "588:12:3",
+                    "src": "609:12:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -481,7 +482,7 @@
                   },
                   "id": 457,
                   "nodeType": "ExpressionStatement",
-                  "src": "588:12:3"
+                  "src": "609:12:3"
                 }
               ]
             },
@@ -505,7 +506,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "425:10:3",
+                  "src": "438:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -516,7 +517,7 @@
                     "id": 432,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "425:7:3",
+                    "src": "438:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -534,7 +535,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "445:11:3",
+                  "src": "459:11:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -545,7 +546,7 @@
                     "id": 434,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "445:7:3",
+                    "src": "459:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -563,7 +564,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "466:10:3",
+                  "src": "481:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -574,7 +575,7 @@
                     "id": 436,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "466:7:3",
+                    "src": "481:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -592,7 +593,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "486:10:3",
+                  "src": "502:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -603,7 +604,7 @@
                     "id": 438,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "486:7:3",
+                    "src": "502:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -614,29 +615,29 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "415:87:3"
+              "src": "427:92:3"
             },
             "returnParameters": {
               "id": 441,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "510:0:3"
+              "src": "527:0:3"
             },
             "scope": 460,
-            "src": "404:203:3",
+            "src": "416:213:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
         "scope": 461,
-        "src": "157:452:3"
+        "src": "163:469:3"
       }
     ],
-    "src": "0:610:3"
+    "src": "0:634:3"
   },
   "legacyAST": {
-    "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/Global.sol",
+    "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/Global.sol",
     "exportedSymbols": {
       "Global": [
         460
@@ -660,46 +661,46 @@
         "src": "0:32:3"
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/UserManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/UserManager.sol",
         "file": "./UserManager.sol",
         "id": 420,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 2380,
-        "src": "33:27:3",
+        "src": "34:27:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/AccountManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/AccountManager.sol",
         "file": "./AccountManager.sol",
         "id": 421,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 119,
-        "src": "61:30:3",
+        "src": "63:30:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/LeaseManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/LeaseManager.sol",
         "file": "./LeaseManager.sol",
         "id": 422,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 813,
-        "src": "92:28:3",
+        "src": "95:28:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/Users/hongwei/Documents/Project/ethereum-platform/contracts/TransactionManager.sol",
+        "absolutePath": "/D/Hongwei/Project/ethereum-platform/contracts/TransactionManager.sol",
         "file": "./TransactionManager.sol",
         "id": 423,
         "nodeType": "ImportDirective",
         "scope": 461,
         "sourceUnit": 1856,
-        "src": "121:34:3",
+        "src": "125:34:3",
         "symbolAliases": [],
         "unitAlias": ""
       },
@@ -726,7 +727,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "179:22:3",
+            "src": "186:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -737,7 +738,7 @@
               "id": 424,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "179:7:3",
+              "src": "186:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -756,7 +757,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "237:23:3",
+            "src": "245:23:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -767,7 +768,7 @@
               "id": 426,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "237:7:3",
+              "src": "245:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -786,7 +787,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "296:22:3",
+            "src": "305:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -797,7 +798,7 @@
               "id": 428,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "296:7:3",
+              "src": "305:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -816,7 +817,7 @@
             "nodeType": "VariableDeclaration",
             "overrides": null,
             "scope": 460,
-            "src": "351:22:3",
+            "src": "361:22:3",
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
@@ -827,7 +828,7 @@
               "id": 430,
               "name": "address",
               "nodeType": "ElementaryTypeName",
-              "src": "351:7:3",
+              "src": "361:7:3",
               "stateMutability": "nonpayable",
               "typeDescriptions": {
                 "typeIdentifier": "t_address",
@@ -841,7 +842,7 @@
             "body": {
               "id": 458,
               "nodeType": "Block",
-              "src": "510:97:3",
+              "src": "527:102:3",
               "statements": [
                 {
                   "expression": {
@@ -858,7 +859,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 425,
-                      "src": "520:7:3",
+                      "src": "538:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -873,13 +874,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 433,
-                      "src": "530:2:3",
+                      "src": "548:2:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "520:12:3",
+                    "src": "538:12:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -887,7 +888,7 @@
                   },
                   "id": 445,
                   "nodeType": "ExpressionStatement",
-                  "src": "520:12:3"
+                  "src": "538:12:3"
                 },
                 {
                   "expression": {
@@ -904,7 +905,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 427,
-                      "src": "542:8:3",
+                      "src": "561:8:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -919,13 +920,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 435,
-                      "src": "553:3:3",
+                      "src": "572:3:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "542:14:3",
+                    "src": "561:14:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -933,7 +934,7 @@
                   },
                   "id": 449,
                   "nodeType": "ExpressionStatement",
-                  "src": "542:14:3"
+                  "src": "561:14:3"
                 },
                 {
                   "expression": {
@@ -950,7 +951,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 429,
-                      "src": "566:7:3",
+                      "src": "586:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -965,13 +966,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 437,
-                      "src": "576:2:3",
+                      "src": "596:2:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "566:12:3",
+                    "src": "586:12:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -979,7 +980,7 @@
                   },
                   "id": 453,
                   "nodeType": "ExpressionStatement",
-                  "src": "566:12:3"
+                  "src": "586:12:3"
                 },
                 {
                   "expression": {
@@ -996,7 +997,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 431,
-                      "src": "588:7:3",
+                      "src": "609:7:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
@@ -1011,13 +1012,13 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 439,
-                      "src": "598:2:3",
+                      "src": "619:2:3",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "src": "588:12:3",
+                    "src": "609:12:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
                       "typeString": "address"
@@ -1025,7 +1026,7 @@
                   },
                   "id": 457,
                   "nodeType": "ExpressionStatement",
-                  "src": "588:12:3"
+                  "src": "609:12:3"
                 }
               ]
             },
@@ -1049,7 +1050,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "425:10:3",
+                  "src": "438:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1060,7 +1061,7 @@
                     "id": 432,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "425:7:3",
+                    "src": "438:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1078,7 +1079,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "445:11:3",
+                  "src": "459:11:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1089,7 +1090,7 @@
                     "id": 434,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "445:7:3",
+                    "src": "459:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1107,7 +1108,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "466:10:3",
+                  "src": "481:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1118,7 +1119,7 @@
                     "id": 436,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "466:7:3",
+                    "src": "481:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1136,7 +1137,7 @@
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
                   "scope": 459,
-                  "src": "486:10:3",
+                  "src": "502:10:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1147,7 +1148,7 @@
                     "id": 438,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "486:7:3",
+                    "src": "502:7:3",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1158,26 +1159,26 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "415:87:3"
+              "src": "427:92:3"
             },
             "returnParameters": {
               "id": 441,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "510:0:3"
+              "src": "527:0:3"
             },
             "scope": 460,
-            "src": "404:203:3",
+            "src": "416:213:3",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
         "scope": 461,
-        "src": "157:452:3"
+        "src": "163:469:3"
       }
     ],
-    "src": "0:610:3"
+    "src": "0:634:3"
   },
   "compiler": {
     "name": "solc",
@@ -1187,12 +1188,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x77A1cf0d201ED2FA6D14893ea2aE602523b11e22",
-      "transactionHash": "0xb5dce99cf1b276b5437eaa2aa44c208b55396e78257262aaf9192db303ef9f7f"
+      "address": "0x6a1b73f297D90F4a58A9DDa26298e04ee7547c94",
+      "transactionHash": "0x88f3a016ce54d4ecc972b22cc21480d1d6bc21573a9b96338701d918aa76d706"
     }
   },
-  "schemaVersion": "3.0.20",
-  "updatedAt": "2020-10-07T14:10:57.891Z",
+  "schemaVersion": "3.2.3",
+  "updatedAt": "2020-10-08T01:54:14.794Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

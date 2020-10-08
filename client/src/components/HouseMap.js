@@ -5,27 +5,40 @@ import { generate_id, string_to_bytes32 } from "../utils/tools";
 import { contract_send } from "../utils/getContract";
 import "../index.scss";
 
-export default function HouseMap({ house_list, user_contract, accounts = [], refresh, canAdd }) {
+//房子座標點
+const HouseMarker = (props) => {
+	const markerRef = React.useRef();
+
+	React.useEffect(() => {
+		if (props.showPopup) {
+			markerRef.current.leafletElement.openPopup();
+		}
+	}, [props.showPopup]);
+
+	return (
+		<Marker ref={markerRef} position={[props.lat, props.lon]}>
+			<Popup className="map-popup">
+				<div className="title">{props.house_name}</div>
+				<div className="subtitle">{`房間種類：${props.category || "無"}`}</div>
+				<div className="subtitle">{`價格：${props.price || 0}`}</div>
+				<div className="subtitle">{`數量：${props.quantity || 0}`}</div>
+			</Popup>
+		</Marker>
+	);
+};
+
+export default function HouseMap({
+	house_list,
+	user_contract,
+	accounts = [],
+	refresh,
+	canAdd,
+	selectedIndex,
+}) {
 	const [select_account, set_select_account] = React.useState(null);
 	const [show_addModal, set_show_addModal] = React.useState(false);
 	const [form_data, set_form_data] = React.useState({});
 	const position = [24.1, 120.675678]; //台中
-
-	//房子座標點
-	const HouseMarker = React.memo((props) => {
-		console.log(props);
-
-		return (
-			<Marker position={[props.lat, props.lon]}>
-				<Popup className="map-popup">
-					<div className="title">{props.house_name}</div>
-					<div className="subtitle">{`房間種類：${props.category || "無"}`}</div>
-					<div className="subtitle">{`價格：${props.price || 0}`}</div>
-					<div className="subtitle">{`數量：${props.quantity || 0}`}</div>
-				</Popup>
-			</Marker>
-		);
-	}, []);
 
 	//更改輸入內容
 	const onChange = (type, value) => {
@@ -106,7 +119,6 @@ export default function HouseMap({ house_list, user_contract, accounts = [], ref
 			}
 		};
 	};
-
 	return (
 		<React.Fragment>
 			<Map
@@ -120,7 +132,7 @@ export default function HouseMap({ house_list, user_contract, accounts = [], ref
 					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 				/>
 				{house_list.map((item, i) => {
-					return <HouseMarker key={i} {...item} />;
+					return <HouseMarker key={i} {...item} showPopup={i === selectedIndex} />;
 				})}
 			</Map>
 			<Modal show={show_addModal} onHide={close_modal} centered>
