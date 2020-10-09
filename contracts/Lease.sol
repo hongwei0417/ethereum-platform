@@ -15,12 +15,14 @@ contract Lease {
 
     constructor(
         User u,
-        string memory _lat,
-        string memory _lon
+        string memory _house_name,
+        string memory _lon, //經度
+        string memory _lat //緯度
     ) public {
         owner = u;
-        lat = _lat;
+        house_name = _house_name;
         lon = _lon;
+        lat = _lat;
     }
 
     function get_all_info()
@@ -49,8 +51,8 @@ contract Lease {
             end_time,
             price,
             quantity,
-            lat,
-            lon
+            lon,
+            lat
         );
     }
 
@@ -62,9 +64,9 @@ contract Lease {
         rented_out = false;
     }
 
-    function update_location(string memory _lat, string memory _lon) public {
-        lat = _lat;
-        lon = _lon;
+    function update_location(string memory _lon, string memory _lat) public {
+        lon = _lon; //經度
+        lat = _lat; //緯度
     }
 
     function update_room_info(

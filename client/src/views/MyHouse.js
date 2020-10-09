@@ -11,6 +11,7 @@ import eth_addr from "../eth_contract.json";
 import User from "../contracts/User.json";
 import LeaseManager from "../contracts/LeaseManager.json";
 import Lease from "../contracts/Lease.json";
+import HouseMap from "../components/HouseMap";
 import moment from "moment";
 
 export function MyHouse(props) {
@@ -18,8 +19,8 @@ export function MyHouse(props) {
 	const [accounts, set_accounts] = React.useState([]);
 	const [LM, set_LM] = React.useState(null);
 	const [user_contract, set_user_contract] = React.useState(null);
+	const [house_list, set_house_list] = React.useState([]);
 	const [user, set_user] = React.useState(null);
-	const [page, set_page] = React.useState(1);
 
 	//載入web3
 	React.useEffect(() => {
@@ -67,30 +68,45 @@ export function MyHouse(props) {
 		load();
 	}, [web3, user]);
 
+	//載入房間
+	React.useEffect(() => {
+		load_user_leases();
+	}, [LM, web3]);
+
+	//取得使用者所有房子
+	const load_user_leases = async () => {
+		if (web3 && LM) {
+			let list = await get_user_all_lease_info(web3, user, LM);
+			set_house_list(list);
+			console.log(list);
+		}
+	};
+
 	if (web3 && user) {
 		return (
 			<div className="d-flex flex-column align-items-center pt-5">
 				<div className="w-50">
 					<TravelTab currentPage={2} />
 				</div>
-				<div className="mb-3">
-					<Button
-						className="mr-3"
-						variant={page === 1 ? "light" : "outline-light"}
-						onClick={(e) => set_page(1)}
-					>
-						我的房間
-					</Button>
-					<Button
-						className="mr-3"
-						variant={page === 2 ? "light" : "outline-light"}
-						onClick={(e) => set_page(2)}
-					>
-						新增房間
-					</Button>
+				<div className="row w-100 p-5 d-flex">
+					<div className="col-7" style={{ height: "600px" }}>
+						<HouseMap
+							accounts={accounts}
+							user_contract={user_contract}
+							house_list={house_list}
+							refresh={load_user_leases}
+							canAdd={true}
+						/>
+					</div>
+					<div className="col-5">
+						<HouseList
+							accounts={accounts}
+							web3={web3}
+							house_list={house_list}
+							refresh={load_user_leases}
+						/>
+					</div>
 				</div>
-				{page === 1 && <HouseList accounts={accounts} web3={web3} LM={LM} user={user} />}
-				{page === 2 && <AddHouse accounts={accounts} user_contract={user_contract} />}
 			</div>
 		);
 	} else {
@@ -101,25 +117,10 @@ export function MyHouse(props) {
 	}
 }
 
-const HouseList = ({ accounts, web3, LM, user }) => {
+const HouseList = ({ web3, accounts, house_list, refresh }) => {
 	const [current_data, set_current_data] = React.useState({});
 	const [open, set_open] = React.useState(null);
-	const [lease_list, set_lease_list] = React.useState([]);
 	const [lease_contract, set_lease_contract] = React.useState(null);
-
-	//初始載入
-	React.useEffect(() => {
-		load_user_leases();
-	}, [LM, web3]);
-
-	//取得使用者所有房子
-	const load_user_leases = async () => {
-		if (web3 && LM) {
-			let list = await get_user_all_lease_info(web3, user, LM);
-			set_lease_list(list);
-			console.log(list);
-		}
-	};
 
 	//開啟視窗
 	const open_modal = async (item) => {
@@ -133,27 +134,29 @@ const HouseList = ({ accounts, web3, LM, user }) => {
 	//關閉視窗
 	const close_modal = () => {
 		set_open(false);
-		load_user_leases();
+		refresh();
 	};
+
 	return (
 		<React.Fragment>
-			<h3 className="text-white-50">提供房間列表</h3>;
-			<Paper elevation={3} className="w-50">
+			<h3 className="text-white-50 text-center">提供房間列表</h3>;
+			<Paper elevation={3} className="w-100">
 				<ListGroup>
-					{lease_list.map((item, i) => {
+					{house_list.map((item, i) => {
 						return (
 							<ListGroup.Item
 								key={i}
 								action
 								variant="success"
 								style={{
+									textAlign: "center",
 									whiteSpace: "normal",
 									overflow: "hidden",
 									textOverflow: "ellipsis",
 								}}
 								onClick={(e) => open_modal(item)}
 							>
-								{`${item.lease_addr} 【${item.lease_id}】`}
+								{`【${item.house_name}】 #${item.lease_id} `}
 							</ListGroup.Item>
 						);
 					})}
@@ -163,11 +166,9 @@ const HouseList = ({ accounts, web3, LM, user }) => {
 				<Modal.Header closeButton>
 					<Modal.Title
 						style={{
-							whiteSpace: "normal",
-							overflow: "hidden",
-							textOverflow: "ellipsis",
+							overflowWrap: "anywhere",
 						}}
-					>{`${current_data.lease_addr} 【${current_data.lease_id}】`}</Modal.Title>
+					>{`【${current_data.lease_addr}】`}</Modal.Title>
 				</Modal.Header>
 				<Modal.Body>
 					<UpdateHouse
@@ -180,100 +181,6 @@ const HouseList = ({ accounts, web3, LM, user }) => {
 				<Modal.Footer></Modal.Footer>
 			</Modal>
 		</React.Fragment>
-	);
-};
-
-const AddHouse = ({ accounts, user_contract }) => {
-	const [form_data, set_form_data] = React.useState({});
-	const [select_account, set_select_account] = React.useState(null);
-
-	const onChange = (key, value) => {
-		switch (key) {
-			case "account":
-				set_select_account(value);
-				break;
-			case "lon":
-				set_form_data({
-					...form_data,
-					lon: value,
-				});
-				break;
-			case "lat":
-				set_form_data({
-					...form_data,
-					lat: value,
-				});
-				break;
-			default:
-				break;
-		}
-	};
-
-	const onSubmit = async () => {
-		if (!select_account) {
-			alert("請先選擇帳戶");
-			return;
-		}
-
-		let result = await contract_send(
-			user_contract,
-			"create_lease",
-			[
-				form_data.lon,
-				form_data.lat,
-				string_to_bytes32(generate_id(10)), //lid
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-		);
-		console.log(result);
-		alert("新增成功");
-	};
-
-	return (
-		<Paper elevation={3} className="w-50 p-3">
-			<Dropdown className="mb-3">
-				<Dropdown.Toggle variant="success" className="w-100">
-					{select_account || "選擇帳戶"}
-				</Dropdown.Toggle>
-				<Dropdown.Menu className="w-100">
-					{accounts.map((item, i) => {
-						return (
-							<Dropdown.Item
-								className="text-center"
-								key={i}
-								onClick={(e) => onChange("account", item)}
-							>
-								{item}
-							</Dropdown.Item>
-						);
-					})}
-				</Dropdown.Menu>
-			</Dropdown>
-			<Form>
-				<Form.Group>
-					<Form.Label>地圖經度</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="請輸入經度"
-						onChange={(e) => onChange("lon", e.target.value)}
-					/>
-				</Form.Group>
-				<Form.Group>
-					<Form.Label>地圖緯度</Form.Label>
-					<Form.Control
-						type="text"
-						placeholder="請輸入緯度"
-						onChange={(e) => onChange("lat", e.target.value)}
-					/>
-				</Form.Group>
-				<Button variant="primary" block onClick={onSubmit}>
-					新增房間
-				</Button>
-			</Form>
-		</Paper>
 	);
 };
 
@@ -381,7 +288,7 @@ const UpdateHouse = ({ accounts, lease_data, lease_contract, close_modal }) => {
 		let result2 = await contract_send(
 			lease_contract,
 			"update_location",
-			[form_data.lat, form_data.lon],
+			[form_data.lon, form_data.lat],
 			{
 				from: select_account,
 				gas: 6000000,
@@ -409,6 +316,8 @@ const UpdateHouse = ({ accounts, lease_data, lease_contract, close_modal }) => {
 
 		close_modal();
 	};
+
+	console.log(form_data);
 
 	return (
 		<React.Fragment>

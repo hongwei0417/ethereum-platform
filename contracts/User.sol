@@ -54,11 +54,12 @@ contract User {
 
     // 新增個人租借物
     function create_lease(
-        string memory lon,
-        string memory lat,
+        string memory house_name,
+        string memory lon, //經度
+        string memory lat, //緯度
         bytes32 lid //房間key
     ) public {
-        Lease l = new Lease(this, lon, lat);
+        Lease l = new Lease(this, house_name, lon, lat);
         LM.add_user_lease(l, uid, lid);
     }
 

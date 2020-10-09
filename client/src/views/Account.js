@@ -124,7 +124,7 @@ export function Account() {
 							<ListGroup.Item>{`用戶地址： ${account.owner_addr}`}</ListGroup.Item>
 							<ListGroup.Item>{`帳戶餘額： ${
 								account.balance || 0
-							} wei`}</ListGroup.Item>
+							} 元`}</ListGroup.Item>
 							<ListGroup.Item>{`更新時間： ${
 								account.update_date
 									? moment(account.update_date).toISOString()

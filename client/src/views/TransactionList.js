@@ -13,6 +13,7 @@ import User from "../contracts/User.json";
 import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import moment from "moment";
+import "../index.scss";
 
 export function TransactionList() {
 	const [web3, set_web3] = React.useState(null);
@@ -107,12 +108,16 @@ export function TransactionList() {
 
 	//載入交易用戶資料
 	const open_modal = async (item) => {
-		let renter_contract = await getContractInstance(web3, User, item.renter);
-		let borrower_contract = await getContractInstance(web3, User, item.borrower);
-		let renter_data = await get_user_all_info(renter_contract);
-		let borrower_data = await get_user_all_info(borrower_contract);
+		const sender_contract = await getContractInstance(web3, User, item.sender);
+		const renter_contract = await getContractInstance(web3, User, item.renter);
+		const borrower_contract = await getContractInstance(web3, User, item.borrower);
+		const sender_data = await get_user_all_info(sender_contract);
+		const renter_data = await get_user_all_info(renter_contract);
+		const borrower_data = await get_user_all_info(borrower_contract);
+
 		set_current_data({
 			...item,
+			sender_data,
 			renter_data,
 			borrower_data,
 		});
@@ -240,6 +245,32 @@ export function TransactionList() {
 }
 
 export function TxnDetails({ txn_data = {}, complete_txn }) {
+	const [show_sender, set_show_sender] = React.useState(false);
+	const [show_renter, set_show_renter] = React.useState(false);
+	const [show_borrower, set_show_borrower] = React.useState(false);
+	const [show_lease, set_show_lease] = React.useState(false);
+
+	const onChange = (type) => {
+		return (e) => {
+			switch (type) {
+				case "sender":
+					set_show_sender(!show_sender);
+					break;
+				case "renter":
+					set_show_renter(!show_renter);
+					break;
+				case "borrower":
+					set_show_borrower(!show_borrower);
+					break;
+				case "lease":
+					set_show_lease(!show_lease);
+					break;
+				default:
+					break;
+			}
+		};
+	};
+
 	return (
 		<Table striped bordered hover variant="dark" className="m-0">
 			<thead>
@@ -266,29 +297,47 @@ export function TxnDetails({ txn_data = {}, complete_txn }) {
 				</tr>
 				<tr>
 					<td colSpan={1}>{"交易創立者"}</td>
-					<td colSpan={3}>{txn_data.sender}</td>
+					<td colSpan={3}>
+						{txn_data.sender_data && txn_data.sender_data.uid}
+						<button className="show-detail-btn" onClick={onChange("sender")}>
+							區塊鏈地址
+						</button>
+						{show_sender && txn_data.sender}
+					</td>
 				</tr>
 				<tr>
 					<td colSpan={1}>{"租方"}</td>
-					<td colSpan={3}>{`${txn_data.renter_data && txn_data.renter_data.uid}【${
-						txn_data.renter
-					}】`}</td>
+					<td colSpan={3}>
+						{txn_data.renter_data && txn_data.renter_data.uid}
+						<button className="show-detail-btn" onClick={onChange("renter")}>
+							區塊鏈地址
+						</button>
+						{show_renter && txn_data.renter}
+					</td>
 				</tr>
 				<tr>
 					<td colSpan={1}>{"借方"}</td>
-					<td colSpan={3}>{`${txn_data.borrower_data && txn_data.borrower_data.uid}【${
-						txn_data.borrower
-					}】`}</td>
+					<td colSpan={3}>
+						{txn_data.borrower_data && txn_data.borrower_data.uid}
+						<button className="show-detail-btn" onClick={onChange("borrower")}>
+							區塊鏈地址
+						</button>
+						{show_borrower && txn_data.borrower}
+					</td>
 				</tr>
 				<tr>
-					<td colSpan={1}>{"交易物"}</td>
-					<td colSpan={3}>{txn_data.lease}</td>
+					<td colSpan={1}>{"房間名稱"}</td>
+					<td colSpan={3}>
+						{txn_data.lease_data && txn_data.lease_data.house_name}
+						<button className="show-detail-btn" onClick={onChange("lease")}>
+							區塊鏈地址
+						</button>
+						{show_lease && txn_data.lease}
+					</td>
 				</tr>
 				<tr>
-					<td>{"房間名稱"}</td>
-					<td>{`${txn_data.lease_data && txn_data.lease_data.house_name}`}</td>
-					<td>{"房間類型"}</td>
-					<td>{`${txn_data.lease_data && txn_data.lease_data.category}`}</td>
+					<td colSpan={1}>{"房間類型"}</td>
+					<td colSpan={3}>{`${txn_data.lease_data && txn_data.lease_data.category}`}</td>
 				</tr>
 				<tr>
 					<td>{"租方交易確認"}</td>

@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance, contract_send } from "../utils/getContract";
-import { get_lease_info } from "../utils/data";
+import { get_lease_info, get_user_all_info } from "../utils/data";
 import User from "../contracts/User.json";
 import Lease from "../contracts/Lease.json";
 import NoContent from "../components/NoContent";
@@ -18,6 +18,7 @@ export function Booking() {
 	const [accounts, set_accounts] = React.useState([]);
 	const [select_account, set_select_account] = React.useState(null);
 	const [user, set_user] = React.useState(null);
+	const [owner, set_owner] = React.useState(null);
 	const [user_contract, set_user_contract] = React.useState(null);
 	const [lease_contract, set_lease_contract] = React.useState(null);
 	const [lease_data, set_lease_data] = React.useState(null);
@@ -78,6 +79,18 @@ export function Booking() {
 		};
 		load();
 	}, [lease_contract]);
+
+	//載入房間擁有者
+	React.useEffect(() => {
+		const load = async () => {
+			if (lease_data) {
+				const owner_contract = await getContractInstance(web3, User, lease_data.owner_addr);
+				const owner = await get_user_all_info(owner_contract);
+				set_owner(owner);
+			}
+		};
+		load();
+	}, [lease_data]);
 
 	//更改輸入值
 	const onChange = (type, value) => {
@@ -188,7 +201,9 @@ export function Booking() {
 					).toLocaleString()}`}</h4>
 				</div>
 				<div className="d-flex pl-5 mt-3 align-items-end">
-					<h4 className="ml-5 font-weight-bold text-secondary">{`聯絡人: ${lease_data.owner_addr}`}</h4>
+					<h4 className="ml-5 font-weight-bold text-secondary">{`聯絡人: ${
+						owner && owner.uid
+					}`}</h4>
 				</div>
 			</div>
 		);
