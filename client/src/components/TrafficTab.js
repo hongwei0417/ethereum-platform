@@ -18,6 +18,9 @@ function TravelTab({ currentPage }) {
 			case 3:
 				history.push("/UserTrafficPublish");
 				break;
+			case 4:
+				history.push("/TrafficConfirmList");
+				break;
 			default:
 		}
 	};
@@ -42,6 +45,12 @@ function TravelTab({ currentPage }) {
 					onClick={(e) => goToPage(3)}
 				>
 					User發布的揪團列表
+				</Button>
+				<Button
+					variant={currentPage === 4 ? "warning" : "outline-warning"}
+					onClick={(e) => goToPage(4)}
+				>
+					跟團資訊
 				</Button>
 			</div>
 			<hr className="border-warning w-100" />

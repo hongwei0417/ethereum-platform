@@ -4,23 +4,27 @@ import Paper from "@material-ui/core/Paper";
 import { InputGroup, Form, Button, Dropdown, DropdownButton,ListGroup ,Modal} from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance, contract_send  } from "../utils/getContract";
-import Ownable from "../contracts/Ownable.json";
-import eth_addr from '../eth_contract.json';
 import Announce from "../contracts/Announce.json";
+import eth_addr from '../eth_contract.json';
+import AnnounceManager from "../contracts/AnnounceManager.json";
 import TrafficManager from "../contracts/TrafficManager.json";
 import NoContent from "../components/NoContent";
 import TrafficTab from "../components/TrafficTab";
-import { get_all_ownable, get_all_ownable_info} from "../utils/trafficall";
+import { get_all_announce_info ,get_all_user_info} from "../utils/trafficall";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import moment from "moment";
+import { useHistory, useLocation, useParams } from "react-router-dom";
+import User from "../contracts/User.json";
+import TrafficCard from "../components/TrafficCard";
 
 export function TrafficPublish(props) {
 	const [web3, set_web3] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
 	const [An, set_An] = React.useState(null);
 	const [user, set_user] = React.useState(null);
+	const [user_contract, set_user_contract] = React.useState(null);
+	const { id } = useParams();
 	//const [page, set_page] = React.useState(1);
-	const [ownable_contract, set_ownable_contract] = React.useState(null);
 
 	//載入web3
 	React.useEffect(() => {
@@ -55,19 +59,16 @@ export function TrafficPublish(props) {
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3 && user) {
-				let instance1 = await getContractInstance(web3, Announce, eth_addr.Announce);
-				// let instance2 = await getContractInstance(
-				// 	web3,
-				// 	Announce,
-				// 	eth_addr.Announce
-				// );
+				let instance1 = await getContractInstance(web3, AnnounceManager, eth_addr.AnnounceManager);
+				let user_contract = await getContractInstance(web3, User, user.address);
 				set_An(instance1);
 				console.log(instance1);
-				// set_Announce(instance2);
+				set_user_contract(user_contract);
+				console.log(user_contract);
 			}
 		};
 		load();
-	}, [web3, user]);
+	}, [web3, id,user]);
 	
 
 	if (web3 && user) {
@@ -89,13 +90,10 @@ export function TrafficPublish(props) {
 	}
 }
 
-const TrafficList = ({ accounts, web3, An}) => {
+const TrafficList = ({ accounts, web3, An ,user}) => {
 	const [current_data, set_current_data] = React.useState({});
-	const [current_data1, set_current_data1] = React.useState({});
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
-	const [traffic_list1, set_traffic_list1] = React.useState([]);
-	const [traffic_contract, set_traffic_contract] = React.useState(null);
 
 	//初始載入
 	React.useEffect(() => {
@@ -104,21 +102,15 @@ const TrafficList = ({ accounts, web3, An}) => {
 
 	//取得使用者所有揪團列表
 	const load_user_traffic = async () => {
-		if (web3&& An) {
-
-			let list = await get_all_ownable(An);
-			let list1 = await get_all_ownable_info(An);
-
-			set_traffic_list(list1);
-			console.log(list,list1);
+		if (web3 && An) {
+				let list = await get_all_announce_info(An);
+					set_traffic_list(list);
+				console.log(list);			
 		}
 	};
 
 	//開啟視窗
 	const open_modal = async (item) => {
-		//取得房屋合約實體
-		let instance1 = await getContractInstance(web3, Announce, item.traffic_addr);
-		set_traffic_contract(instance1);
 		set_current_data(item);
 		set_open(true);
 	};
@@ -129,30 +121,34 @@ const TrafficList = ({ accounts, web3, An}) => {
 		load_user_traffic();
 	};
 
+
 	return (
 		<React.Fragment>
 			<h3 className="text-white-50">所有揪團列表</h3>;
-			<Paper elevation={5} className="w-100">
-				<ListGroup>
+				<ListGroup className="col-8">
 					{traffic_list.map((item, i) => {
 						return (
-							<ListGroup.Item
-								key={i}
-								action
-								variant="success"
-								style={{
-									whiteSpace: "normal",
-									overflow: "hidden",
-									textOverflow: "ellipsis",
-								}}
-								onClick={(e) => open_modal(item)}
-							>
-								{`${item.traffic_addr} 【${item.traffic_id}】`}
-							</ListGroup.Item>
+							// <ListGroup.Item
+							// 	key={i}
+							// 	action
+							// 	variant="success"
+							// 	style={{
+							// 		whiteSpace: "normal",
+							// 		overflow: "hidden",
+							// 		textOverflow: "ellipsis",
+							// 	}}
+							// 	onClick={(e) => open_modal(item)}
+							// >
+							// 	{`${item.traffic_addr} 【${item.traffic_id}】` }
+							// </ListGroup.Item>
+							<TrafficCard
+										key={i}
+										{...item}
+										onSubmit={() => open_modal(item)}
+									/>
 						);
 					})}
 				</ListGroup>
-			</Paper>
 			<Modal show={open} onHide={close_modal} centered>
 				<Modal.Header closeButton>
 					<Modal.Title
@@ -165,9 +161,10 @@ const TrafficList = ({ accounts, web3, An}) => {
 				</Modal.Header>
 				<Modal.Body>
 					<UpdateHouse
+						user={user}
+						An={An}
 						accounts={accounts}
 						traffic_data={current_data}
-						traffic_contract={traffic_contract}
 						close_modal={close_modal}
 					/>
 				</Modal.Body>
@@ -177,9 +174,10 @@ const TrafficList = ({ accounts, web3, An}) => {
 	);
 };
 
-const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) => {
+const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
+	const history = useHistory();
 
 	//載入表單資料
 	React.useEffect(() => {
@@ -187,8 +185,10 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 			...traffic_data,
 			 dates: convert_dateTime_str(traffic_data.dates),
 		});
+
 	}, [traffic_data]);
 	console.log(traffic_data);
+
 
 	const onChange = (key, value) => {
 		switch (key) {
@@ -203,15 +203,59 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 		}
 	};
 
-
 	const onSubmit = async () => {
+
 		if (!select_account) {
 			alert("請先選擇帳戶");
 			return;
 		}
-
+		console.log(user.address);
+		if (user.address === traffic_data.u) {
+			alert("您是貼文發布者，不能跟團");
+			return;
+		}
+		else if(traffic_data.people-traffic_data.people_count===0)
+		{
+			alert("跟團已滿無法跟單");
+		}
+		else
+		{
+				//更新確認跟單
+				let result1 = await contract_send(
+				An,
+				"join_announce",
+			[
+				string_to_bytes32(traffic_data.traffic_id)
+			],
+			{
+				from: select_account,
+				gas: 6000000,
+			}
+			);	
+			//更新資訊
+			let result2 = await contract_send(
+				An,
+			"create_confirm_user_announce",
+			[
+				string_to_bytes32(traffic_data.traffic_id),
+				user.address
+			],
+			{
+				from: select_account,
+				gas: 6000000,
+			}
+		);	 
+			console.log(result1);
+			console.log(result2);
+			alert("跟團成功");
+			history.push("/TrafficConfirmList");
+		}
+				
+			
 		close_modal();
 	};
+
+	console.log(form_data)
 
 	return (
 		<React.Fragment>
@@ -255,6 +299,9 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract, close_modal }) 
 				</Form.Group>
 				<Form.Group>
 					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>剩餘人數 : {`${form_data.people - form_data.people_count}`}</Form.Label>
 				</Form.Group>
 				<Button variant="primary" onClick={onSubmit} block>
 					確定跟團

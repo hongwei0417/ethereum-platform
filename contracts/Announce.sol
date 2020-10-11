@@ -1,70 +1,145 @@
-// SPDX-License-Identifier: MIT
 pragma solidity >=0.4.22 <0.8.0;
-import "./Ownable.sol";
 import "./User.sol";
+
 contract Announce {
-    mapping(bytes32 => Ownable) private Users;
-    bytes32[] private id_list; //使用者名稱集合
+    address public owner;
+    bytes32 private name;
+    uint256 private dates;
+    bytes32 private destination_lon;
+    bytes32 private destination_lat;
+    bytes32 private traffic;
+    uint256 private money;
+    uint256 private people; //可乘車人數
+    uint256 public people_count = 0; //目前下單人數
+    bool public close = false;
+    User private u;
 
-    function create_user(
-        bytes32 uid,
-        bytes32 name,
-        uint256 dates,
-        bytes32 destination_lon, 
-        bytes32 destination_lat, 
-        bytes32 traffic,
-        bytes32 people,
-        uint256 money,
-        address user_addr
+    modifier onlyOwner() {
+        require(msg.sender == owner);
+        _;
+    }
+
+    constructor(
+        // address _owner,
+        bytes32 _name,
+        uint256 _dates,
+        bytes32 _destination_lon,
+        bytes32 _destination_lat,
+        bytes32 _traffic,
+        uint256 _people,
+        uint256 _money,
+        User _u
     ) public {
-        Ownable user = new Ownable(name, dates, destination_lon,destination_lat,traffic,people,money,User(user_addr));
-        Users[uid] = user;
-        id_list.push(uid);
+        // require(_owner != address(0x0), "Need owner");
+        require(_name.length != 0, "Need name");
+        //require(_dates.length != 0, "Need dates");
+        require(_destination_lon.length != 0, "Need destination");
+        require(_destination_lat.length != 0, "Need destination");
+        require(_traffic.length != 0, "Need traffic");
+        //require(_people.length != 0, "Need people");
+        // require(_money.length != 0, "Need money");
+
+        // owner = _owner;
+        name = _name;
+        dates = _dates;
+        destination_lon = _destination_lon;
+        destination_lat = _destination_lat;
+        traffic = _traffic;
+        people = _people;
+        money = _money;
+        u=_u;
+        
     }
 
-    uint balance;
-    function update(uint count) public returns (address, uint){
-        balance += count;
-        return (msg.sender, balance);
+    function get_name() public view returns (bytes32 _name) {
+        return name;
     }
 
-    function get_user(bytes32 uid)
-        public
-        view
-        returns (bytes32 _name, uint256 _dates, bytes32 _traffic, bytes32 _people, uint256 _money,User _u)
-    {
-        Ownable user = Users[uid];
-        bytes32 name = user.get_name();
-        uint256 dates = user.get_dates();
-        bytes32 traffic = user.get_traffic();
-        bytes32 people = user.get_people();
-        uint256 money = user.get_money();
-        User u = user.get_u();
-        return (name, dates,traffic,people,money,u);
+    function set_name(bytes32 _name) public {
+        name = _name;
+    }
+
+    function get_dates() public view returns (uint256 _dates) {
+        return dates;
+    }
+
+    function set_dates(uint256 _dates) public {
+       dates = _dates;
+    }
+
+    function get_destination_lon()  public view returns (bytes32 _destination_lon) {
+        return destination_lon;
+    }
+
+    function set_destination_lon(bytes32 _destination_lon) public {
+        destination_lon = _destination_lon;
     }
     
-     function get_user_destination(bytes32 uid)
-        public
-        view
-        returns ( bytes32 _destination_lon,bytes32 _destination_lat,User _u)
-    {
-        Ownable user = Users[uid];
-        bytes32 destination_lon = user.get_destination_lon();
-        bytes32 destination_lat = user.get_destination_lat();
-          User u = user.get_u();
-        return (destination_lon,destination_lat,u);
+     function get_destination_lat()  public view returns (bytes32 _destination_lat) {
+        return destination_lat;
+    }
+
+    function set_destination_lat(bytes32 _destination_lat) public {
+        destination_lat = _destination_lat;
+    }
+
+    function get_traffic() public view returns (bytes32 _traffic) {
+        return traffic;
+    }
+
+    function set_traffic(bytes32 _traffic) public {
+       traffic = _traffic;
+    }
+
+    function get_people() public view returns (uint256, uint256) {
+        return (people, people_count);
+    }
+
+    function set_people(uint256 _people) public {
+       people = _people;
+    }
+
+    function get_money() public view returns (uint256 _money) {
+        return money;
+    }
+
+    function set_money(uint256 _money) public {
+       money = _money;
     }
     
-     function get_all_user()
+    function get_u() public view returns (User _u) {
+        return u;
+    }
+
+    function set_u(User _u) public {
+       u = _u;
+    }
+    
+      function update_announce_info(
+        bytes32 _name, 
+        uint256 _dates, 
+        bytes32 _destination_lon, 
+        bytes32 _destination_lat, 
+        bytes32 _traffic,
+        uint256 _people, 
+        uint256 _money)
         public
-        view
-        returns (bytes32[] memory ,address[] memory)
     {
-        address[] memory addressmessage = new address[](id_list.length);
-       for (uint256 i = 0; i < id_list.length; i++) {
-            addressmessage[i] = address(Users[id_list[i]]);
+        name =  _name ;
+        dates = _dates ;
+        destination_lon = _destination_lon;
+        destination_lat = _destination_lat;
+        traffic =  _traffic;
+        people = _people;
+        money = _money;
+    }
+
+    function add_people() public {
+        if(!close) {
+            people_count += 1;
+            if(people == people_count) {
+                close = true;
+            }
         }
-        return (id_list,addressmessage);
     }
-  
 }

@@ -4,13 +4,12 @@ import Paper from "@material-ui/core/Paper";
 import { InputGroup, FormControl, Button, Dropdown, DropdownButton } from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance } from "../utils/getContract";
-import Announce_Contract from "../contracts/Announce.json";
+import AnnounceManager from "../contracts/AnnounceManager.json";
 import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import TrafficTab from "../components/TrafficTab";
 import Leafletmap from "../components/leafletmap";
-
 import TextField from '@material-ui/core/TextField';
 
 export function Announce({}) {
@@ -24,7 +23,7 @@ export function Announce({}) {
 	const [select_account, set_select_account] = React.useState(null);
 	const [web3, set_web3] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
-	const [announce_contract, set_announce_contract] = React.useState(null);
+	const [announceManager_contract, set_announceManager_contract] = React.useState(null);
 	const [payload, set_payload] = React.useState(null);
 	const [user, set_user] = React.useState(null);
 
@@ -54,9 +53,9 @@ export function Announce({}) {
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3) {
-				let contract = await getContractInstance(web3, Announce_Contract);
+				let contract = await getContractInstance(web3, AnnounceManager, eth_addr.AnnounceManager);
 				console.log(contract);
-				set_announce_contract(contract);
+				set_announceManager_contract(contract);
 			}
 		};
 		load();
@@ -154,23 +153,21 @@ export function Announce({}) {
 			let bytes_destination_lat = web3.utils.padRight(_bytes_destination_lat, 64);
 			let _bytes_traffic = web3.utils.utf8ToHex(traffic);
 			let bytes_traffic = web3.utils.padRight(_bytes_traffic, 64);
-			let _bytes_people = web3.utils.utf8ToHex(people);
-			let bytes_people = web3.utils.padRight(_bytes_people, 64);
 
 			// get network ID and the deployed address
-			const deployedAddress = eth_addr.Announce;
+			const deployedAddress = eth_addr.AnnounceManager;
 
 			// create the instance
-			const instance = new web3.eth.Contract(Announce_Contract.abi, deployedAddress);
+			const instance = new web3.eth.Contract(AnnounceManager.abi, deployedAddress);
 			let result = await instance.methods
-			.create_user(
+			.create_announce(
 				string_to_bytes32(generate_id(10)), 
 				bytes_name,
 				Number(new Date(dates)),
 				bytes_destination_lon,
 				bytes_destination_lat,
 				bytes_traffic,
-				bytes_people,
+				people,
 				//bytes_money,
 				money,
 				user.address
@@ -193,7 +190,7 @@ export function Announce({}) {
 		return (
 			<div className="d-flex flex-column justify-content-center align-items-center">
 				<div className="w-50 mt-5">
-					<TrafficTab currentPage={2} />
+					<TrafficTab currentPage={1} />
 				</div>
 				<Paper elevation={5} className="w-75 p-3 d-flex flex-column">
 					<h1 className="text-center mb-3">{"發布揪團"}</h1>
@@ -258,8 +255,6 @@ export function Announce({}) {
 							<InputGroup.Text>{"人數"}</InputGroup.Text>
 						</InputGroup.Prepend>
 						<FormControl
-							value={people}
-							type="number"
 							placeholder="請輸入人數"
 							onChange={(e) => onChange("people", e.target.value)}
 						>
@@ -283,6 +278,7 @@ export function Announce({}) {
 							onChange={(e) => onChange("traffic", e.target.value)}
 							type="selcet"
 						>
+						<option>請選擇</option>
 						<option>Uber</option>
 						<option>計程車</option>
 						<option>自駕</option>
@@ -295,7 +291,7 @@ export function Announce({}) {
 						size="lg"
 						block
 						onClick={onSubmit}
-						disabled={!announce_contract}
+						disabled={!announceManager_contract}
 					>
 						{"確認送出"}
 					</Button>

@@ -4,13 +4,13 @@ import Paper from "@material-ui/core/Paper";
 import { InputGroup, Form, Button, Dropdown, DropdownButton,ListGroup ,Modal} from "react-bootstrap";
 import { connect_to_web3 } from "../utils/getWeb3";
 import { getContractInstance, contract_send  } from "../utils/getContract";
-import Ownable from "../contracts/Ownable.json";
-import eth_addr from '../eth_contract.json';
 import Announce from "../contracts/Announce.json";
+import eth_addr from '../eth_contract.json';
+import AnnounceManager from "../contracts/AnnounceManager.json";
 import TrafficManager from "../contracts/TrafficManager.json";
 import NoContent from "../components/NoContent";
 import TrafficTab from "../components/TrafficTab";
-import { get_all_ownable, get_all_ownable_info, get_all_user_info} from "../utils/trafficall";
+import { get_all_announce_info, get_all_user_info } from "../utils/trafficall";
 import { bytes32_to_string, string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import moment from "moment";
 import User from "../contracts/User.json";
@@ -21,7 +21,6 @@ export function UserTrafficPublish(props) {
 	const [An, set_An] = React.useState(null);
 	const [user, set_user] = React.useState(null);
 	const [user_info, set_user_info] = React.useState(null);
-	const [ownable_contract, set_ownable_contract] = React.useState(null);
 
 	//載入web3
 	React.useEffect(() => {
@@ -57,7 +56,7 @@ export function UserTrafficPublish(props) {
 	React.useEffect(() => {
 		const load = async () => {
 			if (web3 && user) {
-				let instance1 = await getContractInstance(web3, Announce, eth_addr.Announce);
+				let instance1 = await getContractInstance(web3, AnnounceManager, eth_addr.AnnounceManager);
 				let instance2 = await getContractInstance(web3, User, user.address);
 				set_An(instance1);
 				console.log(instance1);
@@ -102,21 +101,18 @@ const TrafficList = ({ accounts, web3, An,user}) => {
 	const load_user_traffic = async () => {
 		if (web3&& An) {
 
-			let ownable_info_data = await get_all_ownable_info(An); 
-			let user_data = await get_all_user_info(web3, ownable_info_data, user)
+			let all_announce_list = await get_all_announce_info(An); 
+			let user_announce_list = await get_all_user_info(web3, all_announce_list, user)
 
-			set_traffic_list(user_data);
-			console.log(user_data);
+			set_traffic_list(user_announce_list);
+			console.log(user_announce_list);
 		}
 	};
 
 	//開啟視窗
 	const open_modal = async (item) => {
 		//取得房屋合約實體
-		// let instance1 = await getContractInstance(web3, Announce, item.traffic_addr);
-		console.log( item.traffic_addr)
-		let instance2 = await getContractInstance(web3, Ownable, item.traffic_addr);
-		// set_traffic_contract(instance1);
+		let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
 		set_traffic_contract1(instance2);
 		set_current_data(item);
 		set_open(true);
@@ -212,14 +208,14 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract1, traffic_contra
 		//更新資訊
 		let result1 = await contract_send(
 			traffic_contract1,
-			"update_ownable_info",
+			"update_announce_info",
 			[
 				string_to_bytes32(form_data.name),
 				Number(new Date(form_data.dates)),
-				string_to_bytes32(form_data.people),
 				string_to_bytes32(form_data.destination_lon),
 				string_to_bytes32(form_data.destination_lat),
 				string_to_bytes32(form_data.traffic),
+				form_data.people,
 				form_data.money,
 			],
 			{
@@ -228,8 +224,6 @@ const UpdateHouse = ({ accounts, traffic_data, traffic_contract1, traffic_contra
 			}
 		);
 
-		
-	
 		console.log(result1);
 
 		close_modal();

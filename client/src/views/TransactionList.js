@@ -95,6 +95,7 @@ export function TransactionList() {
 		}
 		set_txn_list(txn_list);
 		console.log(txn_list);
+		console.log(list);
 	};
 
 	//更改輸入值

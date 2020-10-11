@@ -4,6 +4,7 @@ import { Announce } from "./views/Announce";
 import { MyHouse } from "./views/MyHouse";
 import { TrafficPublish } from "./views/TrafficPublish";
 import { UserTrafficPublish } from "./views/UserTrafficPublish";
+import { TrafficConfirmList } from "./views/TrafficConfirmList";
 import { Account } from "./views/Account";
 import { HouseList } from "./views/HouseList";
 import { TransactionList } from "./views/TransactionList";
@@ -39,6 +40,11 @@ export const routes = [
 		path: "/UserTrafficPublish",
 		name: "User發布的揪團列表",		
 		component: UserTrafficPublish,
+	},
+	{
+		path: "/TrafficConfirmList",
+		name: "跟團資訊",		
+		component: TrafficConfirmList,
 	},
 	{
 		path: "/account",
