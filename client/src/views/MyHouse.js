@@ -7,12 +7,14 @@ import { getContractInstance, contract_call, contract_send } from "../utils/getC
 import { connect_to_web3 } from "../utils/getWeb3";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import { get_user_all_lease_info } from "../utils/data";
+import { get_data_from_address, get_data_from_coordinate } from "../utils/api";
 import eth_addr from "../eth_contract.json";
 import User from "../contracts/User.json";
 import LeaseManager from "../contracts/LeaseManager.json";
 import Lease from "../contracts/Lease.json";
 import HouseMap from "../components/HouseMap";
 import moment from "moment";
+import SearchBar from "../components/SearchBar";
 
 export function MyHouse(props) {
 	const [web3, set_web3] = React.useState(null);
@@ -21,6 +23,8 @@ export function MyHouse(props) {
 	const [user_contract, set_user_contract] = React.useState(null);
 	const [house_list, set_house_list] = React.useState([]);
 	const [user, set_user] = React.useState(null);
+	const [search_text, set_search_text] = React.useState("");
+	const [search_data, set_search_data] = React.useState();
 
 	//載入web3
 	React.useEffect(() => {
@@ -82,13 +86,31 @@ export function MyHouse(props) {
 		}
 	};
 
+	//更新搜尋文字
+	const onChange = (e) => {
+		set_search_text(e.target.value);
+	};
+
+	//搜尋地點
+	const handle_search = async () => {
+		if (search_text != "") {
+			const data = await get_data_from_address(search_text);
+			if (data) {
+				set_search_data(data);
+			}
+			console.log(data);
+		}
+	};
+
 	if (web3 && user) {
 		return (
 			<div className="d-flex flex-column align-items-center pt-5">
 				<div className="w-50">
 					<TravelTab currentPage={2} />
+					<SearchBar onChange={onChange} onSubmit={handle_search} />
+					<hr color="white" />
 				</div>
-				<div className="row w-100 p-5 d-flex">
+				<div className="row w-100 pt-3 pl-5 pr-5 pb-5 d-flex">
 					<div className="col-7" style={{ height: "600px" }}>
 						<HouseMap
 							accounts={accounts}
@@ -96,6 +118,7 @@ export function MyHouse(props) {
 							house_list={house_list}
 							refresh={load_user_leases}
 							canAdd={true}
+							search_data={search_data}
 						/>
 					</div>
 					<div className="col-5">
@@ -187,6 +210,7 @@ const HouseList = ({ web3, accounts, house_list, refresh }) => {
 const UpdateHouse = ({ accounts, lease_data, lease_contract, close_modal }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
+	const [address, set_address] = React.useState("");
 
 	//載入表單資料
 	React.useEffect(() => {
@@ -195,6 +219,22 @@ const UpdateHouse = ({ accounts, lease_data, lease_contract, close_modal }) => {
 			start_time: convert_dateTime_str(lease_data.start_time),
 			end_time: convert_dateTime_str(lease_data.end_time),
 		});
+	}, [lease_data]);
+
+	//載入地址
+	React.useEffect(() => {
+		const load = async () => {
+			if (lease_data.lat && lease_data.lon) {
+				const data = await get_data_from_coordinate({
+					lat: lease_data.lat,
+					lon: lease_data.lon,
+				});
+				set_address(data.address);
+
+				console.log(data);
+			}
+		};
+		load();
 	}, [lease_data]);
 
 	const onChange = (key, value) => {
@@ -350,6 +390,16 @@ const UpdateHouse = ({ accounts, lease_data, lease_contract, close_modal }) => {
 				/>
 
 				<hr />
+				<Form.Group>
+					<Form.Label>房間地址</Form.Label>
+					<Form.Control
+						type="text"
+						value={address}
+						placeholder="請輸入房間地址"
+						onChange={(e) => {}}
+						disabled
+					/>
+				</Form.Group>
 				<Form.Group>
 					<Form.Label>房間名稱</Form.Label>
 					<Form.Control

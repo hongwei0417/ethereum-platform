@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import HouseMap from "../components/HouseMap";
 import HouseMapCard from "../components/HouseMapCard";
+import { get_data_from_address } from "../utils/api";
 
 export function HouseList() {
 	const [web3, set_web3] = React.useState(null);
@@ -24,6 +25,8 @@ export function HouseList() {
 	const [selectedIndex, set_selectedIndex] = React.useState(-1);
 	const [user, set_user] = React.useState(null);
 	const [page, set_page] = React.useState(2);
+	const [search_text, set_search_text] = React.useState("");
+	const [search_data, set_search_data] = React.useState();
 	const history = useHistory();
 
 	//載入web3
@@ -101,11 +104,29 @@ export function HouseList() {
 		history.push(`/booking/${item.lease_addr}`);
 	};
 
+	//更新搜尋文字
+	const onChange = (e) => {
+		set_search_text(e.target.value);
+	};
+
+	//搜尋地點
+	const handle_search = async () => {
+		if (search_text != "") {
+			const data = await get_data_from_address(search_text);
+			if (data) {
+				set_search_data(data);
+			}
+			console.log(data);
+		}
+	};
+
 	if (web3 && user) {
 		return (
-			<div className="d-flex flex-column align-items-center pt-5">
+			<div className="d-flex flex-column align-items-center pt-5 pb-5">
 				<div className="w-50">
 					<TravelTab currentPage={1} />
+					<SearchBar onChange={onChange} onSubmit={handle_search} />
+					<hr color="white" />
 				</div>
 				<div className="w-50 d-flex justify-content-center mb-3">
 					<Button
@@ -127,8 +148,6 @@ export function HouseList() {
 					<React.Fragment>
 						<h3 className="text-white-50 mb-3">房間列表瀏覽</h3>
 						<div className="w-50">
-							<SearchBar />
-							<hr color="white" />
 							{house_list.map((item, i) => {
 								return (
 									<HouseCard
@@ -166,6 +185,7 @@ export function HouseList() {
 							<HouseMap
 								house_list={house_list}
 								refresh={load_house_list}
+								search_data={search_data}
 								selectedIndex={selectedIndex}
 							/>
 						</div>

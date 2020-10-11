@@ -28,13 +28,13 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
-function SearchBar({ onChange }) {
+function SearchBar({ onChange, onSubmit }) {
 	const classes = useStyles();
 	return (
 		<Paper component="form" className={classes.root}>
 			<InputBase className={classes.input} placeholder="輸入關鍵字搜尋" onChange={onChange} />
 			<Divider className={classes.divider} orientation="vertical" />
-			<IconButton type="submit" className={classes.iconButton} aria-label="search">
+			<IconButton className={classes.iconButton} onClick={onSubmit}>
 				<SearchIcon />
 			</IconButton>
 		</Paper>

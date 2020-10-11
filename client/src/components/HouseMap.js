@@ -3,7 +3,7 @@ import { Map, Marker, Popup, TileLayer, Polygon, Rectangle } from "react-leaflet
 import { Modal, Form, Button, Dropdown } from "react-bootstrap";
 import { generate_id, string_to_bytes32 } from "../utils/tools";
 import { contract_send } from "../utils/getContract";
-import "../index.scss";
+import { get_data_from_coordinate } from "../utils/api";
 
 //房子座標點
 const HouseMarker = (props) => {
@@ -34,11 +34,48 @@ export default function HouseMap({
 	refresh,
 	canAdd,
 	selectedIndex,
+	search_data,
 }) {
 	const [select_account, set_select_account] = React.useState(null);
 	const [show_addModal, set_show_addModal] = React.useState(false);
 	const [form_data, set_form_data] = React.useState({});
-	const position = [24.1, 120.675678]; //台中
+	const [zoom, set_zoom] = React.useState(10.5);
+	const [search_address, set_search_address] = React.useState("台中市");
+	const [search_position, set_search_position] = React.useState([24.1, 120.675678]); //台中
+
+	//顯示搜尋定位座標點
+	const SearchMarker = ({ position, address }) => {
+		return (
+			<Marker position={position}>
+				<Popup>
+					<div className="d-flex flex-column align-items-center justify-content-center">
+						<div>{address}</div>
+						{canAdd && (
+							<Button
+								className="mt-2"
+								variant="warning"
+								size="sm"
+								style={{ fontSize: "0.8rem" }}
+								onClick={open_modal("add_search_house", { position, address })}
+							>
+								新增房間
+							</Button>
+						)}
+					</div>
+				</Popup>
+			</Marker>
+		);
+	};
+
+	//變更目前位置
+	React.useEffect(() => {
+		if (search_data) {
+			const { address, location } = search_data;
+			set_zoom(18);
+			set_search_address(address);
+			set_search_position(location);
+		}
+	}, [search_data]);
 
 	//更改輸入內容
 	const onChange = (type, value) => {
@@ -55,18 +92,30 @@ export default function HouseMap({
 	};
 
 	//開啟彈出視窗
-	const open_modal = (type) => {
-		return (e) => {
+	const open_modal = (type, value) => {
+		return async (e) => {
 			if (canAdd) {
 				switch (type) {
 					case "add_house":
-						console.log(e);
-						set_form_data({
+						const data = await get_data_from_coordinate({
 							lat: e.latlng.lat,
 							lon: e.latlng.lng,
 						});
+						set_form_data({
+							lat: e.latlng.lat,
+							lon: e.latlng.lng,
+							address: data.address,
+						});
 						set_show_addModal(true);
+						console.log(e);
 						break;
+					case "add_search_house":
+						set_form_data({
+							lat: value.position[0],
+							lon: value.position[1],
+							address: value.address,
+						});
+						set_show_addModal(true);
 					default:
 						break;
 				}
@@ -122,8 +171,8 @@ export default function HouseMap({
 	return (
 		<React.Fragment>
 			<Map
-				center={position}
-				zoom={10.5}
+				center={search_position}
+				zoom={zoom}
 				style={{ height: "100%" }}
 				onClick={open_modal("add_house")}
 			>
@@ -134,6 +183,9 @@ export default function HouseMap({
 				{house_list.map((item, i) => {
 					return <HouseMarker key={i} {...item} showPopup={i === selectedIndex} />;
 				})}
+				{search_position && (
+					<SearchMarker position={search_position} address={search_address} />
+				)}
 			</Map>
 			<Modal show={show_addModal} onHide={close_modal} centered>
 				<Modal.Header closeButton>
@@ -173,6 +225,15 @@ export default function HouseMap({
 								type="text"
 								value={form_data.house_name || ""}
 								placeholder="請輸入房間名稱"
+								onChange={onChange("house_name")}
+							/>
+						</Form.Group>
+						<Form.Group>
+							<Form.Label>房間地址</Form.Label>
+							<Form.Control
+								type="text"
+								value={form_data.address || ""}
+								placeholder="請輸入房間地址"
 								onChange={onChange("house_name")}
 							/>
 						</Form.Group>
