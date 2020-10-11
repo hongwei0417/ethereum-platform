@@ -142,7 +142,7 @@ const TrafficList = ({ accounts, web3, An,user}) => {
 								}}
 								onClick={(e) => open_modal(item)}
 							>
-								{`${item.traffic_addr} 【${item.traffic_id}】`}
+								{`編號 : ${item.traffic_id}   發布者姓名 :【${item.name}】`}
 							</ListGroup.Item>
 						);
 					})}

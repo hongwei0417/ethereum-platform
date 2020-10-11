@@ -13,6 +13,7 @@ contract Announce {
     uint256 public people_count = 0; //目前下單人數
     bool public close = false;
     User private u;
+    User[] private joined_users; //已經下單的人
 
     modifier onlyOwner() {
         require(msg.sender == owner);
@@ -115,6 +116,7 @@ contract Announce {
        u = _u;
     }
     
+    
       function update_announce_info(
         bytes32 _name, 
         uint256 _dates, 
@@ -134,12 +136,18 @@ contract Announce {
         money = _money;
     }
 
-    function add_people() public {
+    function add_people(address user_addr) public {
         if(!close) {
             people_count += 1;
+            joined_users.push(User(user_addr));
             if(people == people_count) {
                 close = true;
             }
         }
     }
+
+    function get_joined_users() public view returns(User[] memory) {
+        return joined_users;
+    }
+    
 }

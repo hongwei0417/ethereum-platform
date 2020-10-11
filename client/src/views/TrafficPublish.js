@@ -220,22 +220,10 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 		}
 		else
 		{
-				//更新確認跟單
-				let result1 = await contract_send(
-				An,
-				"join_announce",
-			[
-				string_to_bytes32(traffic_data.traffic_id)
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-			);	
-			//更新資訊
-			let result2 = await contract_send(
-				An,
-			"create_confirm_user_announce",
+			//更新確認跟單
+			let result1 = await contract_send(
+			An,
+			"join_announce",
 			[
 				string_to_bytes32(traffic_data.traffic_id),
 				user.address
@@ -244,9 +232,9 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 				from: select_account,
 				gas: 6000000,
 			}
-		);	 
+			);		 
 			console.log(result1);
-			console.log(result2);
+			// console.log(result2);
 			alert("跟團成功");
 			history.push("/TrafficConfirmList");
 		}

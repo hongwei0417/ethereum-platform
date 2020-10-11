@@ -9,10 +9,11 @@ import eth_addr from '../eth_contract.json';
 import AnnounceManager from "../contracts/AnnounceManager.json";
 import NoContent from "../components/NoContent";
 import TrafficTab from "../components/TrafficTab";
-import { get_all_announce_info, get_all_user_info,get_all_user_confirm_info} from "../utils/trafficall";
+import { get_all_announce_info, get_user_all_announce_info } from "../utils/trafficall";
 import { bytes32_to_string, string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import moment from "moment";
 import User from "../contracts/User.json";
+import TrafficCard from "../components/TrafficCard";
 
 export function TrafficConfirmList(props) {
 	const [web3, set_web3] = React.useState(null);
@@ -20,6 +21,7 @@ export function TrafficConfirmList(props) {
 	const [An, set_An] = React.useState(null);
 	const [user, set_user] = React.useState(null);
 	const [user_info, set_user_info] = React.useState(null);
+	const [announce_list, set_announce_list] = React.useState([]);
 
 	//載入web3
 	React.useEffect(() => {
@@ -64,7 +66,6 @@ export function TrafficConfirmList(props) {
 		};
 		load();
 	}, [web3, user]);
-	
 
 	if (web3 && user) {
 		return (
@@ -73,7 +74,7 @@ export function TrafficConfirmList(props) {
 					<TrafficTab currentPage={4} />
 				</div>
 				<div className="mb-3">
-					<TrafficList accounts={accounts} web3={web3} An={An} user={user}  user_info={user_info}/>
+					<TrafficList accounts={accounts} web3={web3} An={An} user={user} user_info={user_info} />
 				</div>
 			</div>
 		);
@@ -85,33 +86,31 @@ export function TrafficConfirmList(props) {
 	}
 }
 
-const TrafficList = ({ accounts, web3, An,user,Tr}) => {
+const TrafficList = ({ accounts, web3, An, user}) => {
 	const [current_data, set_current_data] = React.useState({});
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
 	const [traffic_contract, set_traffic_contract] = React.useState(null);
 	const [traffic_contract1, set_traffic_contract1] = React.useState(null);
-	//初始載入
-	React.useEffect(() => {
-		load_user_traffic();
-	}, [An,web3]);
 
-	//取得使用者所有揪團列表
-	const load_user_traffic = async () => {
-		if (web3&& An) {
-			// //更新資訊
-			let list = await get_all_announce_info(An);
-			set_traffic_list(list);
-			console.log(list);
-			//console.log(user_announce_list);
+	//載入所有使用者相關跟單
+	React.useEffect(() => {
+		load_user_all_announce_list()
+	}, [An])
+
+	//取得使用者相關跟單
+	const load_user_all_announce_list = async() => {
+		if(An) {
+			const data = await get_user_all_announce_info(An, user.address);
+			set_traffic_list(data)
 		}
-	};
+	}
 
 	//開啟視窗
 	const open_modal = async (item) => {
 		//取得房屋合約實體
-		let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
-		set_traffic_contract1(instance2);
+		// let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
+		// set_traffic_contract1(instance2);
 		set_current_data(item);
 		set_open(true);
 	};
@@ -119,14 +118,13 @@ const TrafficList = ({ accounts, web3, An,user,Tr}) => {
 	//關閉視窗
 	const close_modal = () => {
 		set_open(false);
-		load_user_traffic();
+		load_user_all_announce_list();
 	};
 
 	return (
 		<React.Fragment>
-			<h3 className="text-white-50">提供揪團列表</h3>;
-			<Paper elevation={5} className="w-100">
-				<ListGroup>
+			<h3 className="text-white-50">所有揪團列表</h3>;
+				<ListGroup className="col-15">
 					{traffic_list.map((item, i) => {
 						return (
 							<ListGroup.Item
@@ -140,13 +138,132 @@ const TrafficList = ({ accounts, web3, An,user,Tr}) => {
 								}}
 								onClick={(e) => open_modal(item)}
 							>
-								{`${item.u}`}
+								{`編號 :  ${item.announce_id}  發布者姓名 : 【${item.name}】` }
 							</ListGroup.Item>
+							// <TrafficCard
+							// 			key={i}
+							// 			{...item}
+							// 			onSubmit={() => open_modal(item)}
+							// 		/>
 						);
 					})}
 				</ListGroup>
-			</Paper>
+			<Modal show={open} onHide={close_modal} centered>
+				{/* <Modal.Header closeButton>
+					<Modal.Title
+						style={{
+							whiteSpace: "normal",
+							overflow: "hidden",
+							textOverflow: "ellipsis",
+						}}
+					>{`${current_data.traffic_addr} 【${current_data.traffic_id}】`}</Modal.Title>
+				</Modal.Header> */}
+				<Modal.Body>
+					<UpdateHouse
+						user={user}
+						An={An}
+						accounts={accounts}
+						traffic_data={current_data}
+						close_modal={close_modal}
+					/>
+				</Modal.Body>
+				<Modal.Footer></Modal.Footer>
+			</Modal>
 		</React.Fragment>
 	);
 };
 
+const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => {
+	const [form_data, set_form_data] = React.useState({});
+	const [select_account, set_select_account] = React.useState(null);
+
+	//載入表單資料
+	React.useEffect(() => {
+		set_form_data({
+			...traffic_data,
+			 dates: convert_dateTime_str(traffic_data.dates),
+		});
+
+	}, [traffic_data]);
+	console.log(traffic_data);
+
+
+	const onChange = (key, value) => {
+		switch (key) {
+			case "account":
+				set_select_account(value);
+				break;
+			default:
+				set_form_data({
+					...form_data,
+					[key]: value,
+				});
+		}
+	};
+
+	const onSubmit = async () => {
+
+		if (!select_account) {
+			alert("請先選擇帳戶");
+			return;
+		}
+
+		alert("完成訂單");
+		//history.push("/TrafficConfirmList");
+		
+		close_modal();
+	};
+
+	console.log(form_data)
+
+	return (
+		<React.Fragment>
+			<Dropdown className="mb-3">
+				<Dropdown.Toggle variant="success" className="w-100">
+					{select_account || "選擇帳戶"}
+				</Dropdown.Toggle>
+				<Dropdown.Menu className="w-100">
+					{accounts.map((item, i) => {
+						return (
+							<Dropdown.Item
+								className="text-center"
+								key={i}
+								onClick={(e) => onChange("account", item)}
+							>
+								{item}
+							</Dropdown.Item>
+						);
+					})}
+				</Dropdown.Menu>
+			</Dropdown>
+			<hr />
+			<Form>
+				<Form.Group>
+					<Form.Label>姓名 : {`${form_data.name}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label type="datetime-local">日期 : {`${convert_dateTime_str(form_data.dates)}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>交通工具 : {`${form_data.traffic}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>人數 : {`${form_data.people}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>應付金額 : {`${form_data.money}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>出發地 : {`${form_data.destination_lon}`}</Form.Label>
+				</Form.Group>
+				<Form.Group>
+					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
+				</Form.Group>
+				<Button variant="primary" onClick={onSubmit} block>
+					完成訂單
+				</Button>
+			
+			</Form>
+		</React.Fragment>
+	);
+};

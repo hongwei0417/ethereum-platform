@@ -14,9 +14,9 @@ L.Marker.prototype.options.icon = DefaultIcon;
 
 export default class leafletmap extends React.Component{
 	state = {
-		lat: 51.505,
-		lng: -0.09,
-		zoom: 13,
+		lat: 24.123206 ,
+		lng: 120.675679,
+		zoom: 15,
 	  }
 
 
@@ -30,10 +30,11 @@ export default class leafletmap extends React.Component{
         />
         <Marker position={position}>
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            中興大學
           </Popup>
         </Marker>
       </Map>
+      
     )
   }
 }
