@@ -9,14 +9,13 @@ import eth_addr from '../eth_contract.json';
 import AnnounceManager from "../contracts/AnnounceManager.json";
 import NoContent from "../components/NoContent";
 import TrafficTab from "../components/TrafficTab";
-import { get_all_announce_info, get_user_all_announce_info } from "../utils/trafficall";
+import { get_all_user_info, get_user_all_announce_info,get_user_all_announce_info_paymoney } from "../utils/trafficall";
 import { bytes32_to_string, string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import moment from "moment";
 import User from "../contracts/User.json";
 import TrafficCard from "../components/TrafficCard";
-import { useHistory, useLocation, useParams } from "react-router-dom";
 
-export function TrafficConfirmList(props) {
+export function TrafficTransaction(props) {
 	const [web3, set_web3] = React.useState(null);
 	const [accounts, set_accounts] = React.useState([]);
 	const [An, set_An] = React.useState(null);
@@ -72,7 +71,7 @@ export function TrafficConfirmList(props) {
 		return (
 			<div className="d-flex flex-column align-items-center pt-5">
 				<div className="w-50">
-					<TrafficTab currentPage={4} />
+					<TrafficTab currentPage={5} />
 				</div>
 				<div className="mb-3">
 					<TrafficList accounts={accounts} web3={web3} An={An} user={user} user_info={user_info} />
@@ -102,16 +101,19 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	//取得使用者相關跟單
 	const load_user_all_announce_list = async() => {
 		if(An) {
-			const data = await get_user_all_announce_info(An, user.address);
-			set_traffic_list(data)
+			let all_announce_list = await get_user_all_announce_info_paymoney(An); 
+			let user_announce_list = await get_all_user_info(web3, all_announce_list, user)
+			//const data = await get_user_all_announce_info_paymoney(An, user.address);
+			set_traffic_list(user_announce_list);
+			console.log(user_announce_list);
 		}
 	}
 
 	//開啟視窗
 	const open_modal = async (item) => {
 		//取得房屋合約實體
-		// let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
-		// set_traffic_contract1(instance2);
+		let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
+		set_traffic_contract1(instance2);
 		set_current_data(item);
 		set_open(true);
 	};
@@ -139,7 +141,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 								}}
 								onClick={(e) => open_modal(item)}
 							>
-								{`編號 :  ${item.announce_id}  發布者姓名 : 【${item.name}】` }
+								{`編號 :  ${item.traffic_id}  發布者姓名 : 【${item.name}】` }
 							</ListGroup.Item>
 							// <TrafficCard
 							// 			key={i}
@@ -177,7 +179,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
-	const history = useHistory();
+
 	//載入表單資料
 	React.useEffect(() => {
 		set_form_data({
@@ -203,48 +205,29 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 	};
 
 	const onSubmit = async () => {
+
 		if (!select_account) {
 			alert("請先選擇帳戶");
 			return;
 		}
-		let result1 = await contract_call(
-			An,
-			"get_pay_announce",
-			[
-				string_to_bytes32(traffic_data.announce_id)
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-			);	
-		let result2 = await contract_send(
-			An,
-			"pay_announce",
-			[
-				string_to_bytes32(traffic_data.announce_id)
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-			);	
-		let result3 = await contract_call(
-			An,
-			"get_paymoney",
-			[
-				
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-			);	
-			console.log(result1);
-			console.log(result2);
-			console.log(result3);
-		alert("完成訂單");
-		history.push("/TrafficTransaction");
+		if(traffic_data.paymoney === '0')
+		{
+			alert("跟單者還沒付錢");
+		}
+		// let result1 = await contract_send(
+		// 	An,
+		// 	"pay_announce",
+		// 	[
+		// 		string_to_bytes32(traffic_data.traffic_id)
+		// 	],
+		// 	{
+		// 		from: select_account,
+		// 		gas: 6000000,
+		// 	}
+		// 	);	
+		// 	console.log(result1);
+		alert("結單");
+		//history.push("/TrafficConfirmList");
 		
 		close_modal();
 	};
@@ -294,8 +277,11 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 				<Form.Group>
 					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
 				</Form.Group>
+				<Form.Group>
+					<Form.Label>跟單者已付金額 : {`${form_data.paymoney}`}</Form.Label>
+				</Form.Group>
 				<Button variant="primary" onClick={onSubmit} block>
-					完成訂單 並付款
+				完成並結束訂單-確認收款
 				</Button>
 			
 			</Form>

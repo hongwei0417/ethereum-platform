@@ -8,8 +8,8 @@ import "./TrafficTransaction.sol";
 contract AnnounceManager {
     mapping(address => bytes32[]) private UserAnnounces; //使用者的所有相關貼文
     mapping(bytes32 => Announce) private AnnounceCollection; //所有發布貼文
-    mapping(bytes32 => TrafficTransaction) private AnnounceUserCollection; //所有使用者發布貼文
     bytes32[] private announce_id_list; //所有貼文id
+    uint256 private paymoney;
 
     function create_announce(
         bytes32 announce_id,
@@ -30,7 +30,7 @@ contract AnnounceManager {
     function get_announce(bytes32 announce_id)
         public
         view
-        returns ( bytes32 _name, uint256 _dates, bytes32 _traffic, uint256 _people, uint256 _people_count, uint256 _money,User _u)
+        returns (bytes32 _name, uint256 _dates, bytes32 _traffic, uint256 _people, uint256 _people_count, uint256 _money,User _u)
     {
         uint256 people;
         uint256 people_count;
@@ -41,7 +41,7 @@ contract AnnounceManager {
         (people, people_count) = announce.get_people();
         uint256 money = announce.get_money();
         User user = announce.get_u();
-        return ( name, dates, traffic, people, people_count, money,user);
+        return (name, dates, traffic, people, people_count, money,user);
     }
     
      function get_announce_destination(bytes32 announce_id)
@@ -74,6 +74,25 @@ contract AnnounceManager {
         Announce announce = AnnounceCollection[announce_id];
         announce.add_people(user_addr);
         UserAnnounces[user_addr].push(announce_id);
+    }
+    
+    function pay_announce(bytes32 announce_id) public {
+       Announce announce = AnnounceCollection[announce_id];
+       paymoney = announce.get_money();
+    }
+
+     function get_paymoney() public view returns (uint256 _paymoney) {
+        return paymoney;
+    }
+    
+     function get_pay_announce(bytes32 announce_id)
+        public
+        view
+        returns (uint256 _money1)
+    {
+        Announce announce = AnnounceCollection[announce_id];
+        uint256 money1 = announce.get_money();
+        return (money1);
     }
     
     function get_user_all_announce(address user_addr) public view returns(bytes32[] memory) {

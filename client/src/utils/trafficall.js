@@ -112,17 +112,46 @@ export const get_all_user_info= async (web3, announce_list, user) => {
 	return result;
 };
 
-
-//取得登入使用者跟單
-export const get_all_user_confirm_info= async (web3, announce_list, user) => {
+//取得所有使用者相關貼文
+export const get_user_all_announce_info_paymoney = async(announceManager) => {
 	let result = [];
-	for(let i = 0; i < announce_list.length; i++) {
-		let announce_instance = await getContractInstance(web3, TrafficTransaction, announce_list[i].traffic_addr);
-		let user_addr = await announce_instance.methods.get_u().call();
-		if(user_addr === user.address) {
-			result.push(announce_list[i]);
-		}
+	let all_traffic_data = await announceManager.methods.get_all_announces().call({
+		gas: 6000000,
+	});
+	for (let i = 0; i < all_traffic_data[1].length; i++) {
+		let traffic_id = bytes32_to_string(all_traffic_data[0][i]);
+		let traffic_addr = all_traffic_data[1][i]; //ownable addr
+		let traffic_data = await announceManager.methods.get_announce(all_traffic_data[0][i]).call();
+		let traffic_data_destination = await announceManager.methods.get_announce_destination(all_traffic_data[0][i]).call();
+		let traffic_data_paymoney = await announceManager.methods.get_paymoney().call();
+		let owner = bytes32_to_string(all_traffic_data[0][i]); //random id
+		//let announce =  traffic_data[0];
+		let name =  bytes32_to_string(traffic_data[0]);
+		let dates = parseInt(traffic_data[1]);
+		let traffic = bytes32_to_string(traffic_data[2]);
+		let people = parseInt(traffic_data[3]);
+		let people_count = parseInt(traffic_data[4]);
+		let money = parseInt(traffic_data[5]);
+		let destination_lon = bytes32_to_string(traffic_data_destination[0]);
+		let destination_lat = bytes32_to_string(traffic_data_destination[1]);
+		let u = traffic_data_destination[2];
+		let paymoney = traffic_data_paymoney;
+		result.push({
+			traffic_id,
+			traffic_addr,
+			//announce,
+			owner,
+			name,
+			dates,
+			money,
+			people,
+			people_count,
+			traffic,
+			destination_lon,
+			destination_lat,
+			u,
+			paymoney
+		});
 	}
 	return result;
-};
-
+}

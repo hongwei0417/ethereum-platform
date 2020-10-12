@@ -19,7 +19,7 @@ contract LeaseTransaction is Transaction {
     uint256 private start_time; //訂單開始時間
     uint256 private end_time; //訂單結束時間
     AccountManager private ACM; //帳戶管理員
-
+ 
     constructor(
         User s,
         User r,
