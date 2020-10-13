@@ -91,7 +91,6 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
 	const [traffic_contract, set_traffic_contract] = React.useState(null);
-	const [traffic_contract1, set_traffic_contract1] = React.useState(null);
 
 	//載入所有使用者相關跟單
 	React.useEffect(() => {
@@ -103,7 +102,6 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 		if(An) {
 			let all_announce_list = await get_user_all_announce_info_paymoney(An); 
 			let user_announce_list = await get_all_user_info(web3, all_announce_list, user)
-			//const data = await get_user_all_announce_info_paymoney(An, user.address);
 			set_traffic_list(user_announce_list);
 			console.log(user_announce_list);
 		}
@@ -111,9 +109,10 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 
 	//開啟視窗
 	const open_modal = async (item) => {
+		console.log(item);
 		//取得房屋合約實體
 		let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
-		set_traffic_contract1(instance2);
+		set_traffic_contract(instance2);
 		set_current_data(item);
 		set_open(true);
 	};
@@ -168,6 +167,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 						accounts={accounts}
 						traffic_data={current_data}
 						close_modal={close_modal}
+						traffic_contract = {traffic_contract}
 					/>
 				</Modal.Body>
 				<Modal.Footer></Modal.Footer>
@@ -176,7 +176,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	);
 };
 
-const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => {
+const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user,traffic_contract }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
 
@@ -184,11 +184,12 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 	React.useEffect(() => {
 		set_form_data({
 			...traffic_data,
+			traffic_contract,
 			 dates: convert_dateTime_str(traffic_data.dates),
 		});
 
-	}, [traffic_data]);
-	console.log(traffic_data);
+	}, [traffic_data,traffic_contract]);
+	console.log(traffic_data,traffic_contract);
 
 
 	const onChange = (key, value) => {
@@ -210,22 +211,21 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 			alert("請先選擇帳戶");
 			return;
 		}
-		if(traffic_data.paymoney === '0')
+		if(traffic_data.total_money === '0')
 		{
 			alert("跟單者還沒付錢");
 		}
-		// let result1 = await contract_send(
-		// 	An,
-		// 	"pay_announce",
-		// 	[
-		// 		string_to_bytes32(traffic_data.traffic_id)
-		// 	],
-		// 	{
-		// 		from: select_account,
-		// 		gas: 6000000,
-		// 	}
-		// 	);	
-		// 	console.log(result1);
+		let result1 = await contract_send(
+			traffic_contract,
+			"announce_compileted",
+			[
+			],
+			{
+				from: select_account,
+				gas: 6000000,
+			}
+			);	
+			console.log(result1);
 		alert("結單");
 		//history.push("/TrafficConfirmList");
 		
@@ -278,7 +278,7 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>跟單者已付金額 : {`${form_data.paymoney}`}</Form.Label>
+					<Form.Label>跟單者已付金額 : {`${form_data.total_money}`}</Form.Label>
 				</Form.Group>
 				<Button variant="primary" onClick={onSubmit} block>
 				完成並結束訂單-確認收款

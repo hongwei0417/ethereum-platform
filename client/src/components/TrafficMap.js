@@ -38,7 +38,7 @@ export default function TrafficMap({
 	const [form_data, set_form_data] = React.useState({});
 	const [zoom, set_zoom] = React.useState(10.5);
 	const [search_address, set_search_address] = React.useState("中興大學");
-	const [search_position, set_search_position] = React.useState([24.123206, 120.675679]); //台中
+	const [search_position, set_search_position] = React.useState([24.123206, 120.675679]); 
 
 	//顯示搜尋定位座標點
 	const SearchMarker = ({ position, address }) => {
@@ -204,12 +204,12 @@ export default function TrafficMap({
 					url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
 					attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 				/>
-				{house_list.map((item, i) => {
+				{/* {house_list.map((item, i) => {
 					return <HouseMarker key={i} {...item} showPopup={i === selectedIndex} />;
 				})}
 				{search_position && (
 					<SearchMarker position={search_position} address={search_address} />
-				)}
+				)} */}
 			</Map>
 			<Modal show={show_addModal} onHide={close_modal} centered>
 				<Modal.Header closeButton>

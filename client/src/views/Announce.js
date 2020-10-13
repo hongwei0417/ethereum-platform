@@ -9,7 +9,7 @@ import eth_addr from "../eth_contract.json";
 import NoContent from "../components/NoContent";
 import { string_to_bytes32, generate_id, convert_dateTime_str } from "../utils/tools";
 import TrafficTab from "../components/TrafficTab";
-import Leafletmap from "../components/leafletmap";
+import Trafficmap from "../components/TrafficMap";
 import TextField from '@material-ui/core/TextField';
 
 export function Announce({}) {
@@ -194,7 +194,10 @@ export function Announce({}) {
 				</div>
 				<Paper elevation={5} className="w-75 p-3 d-flex flex-column">
 					<h1 className="text-center mb-3">{"發布揪團"}</h1>
-					<Leafletmap/>
+					<div style={{ height: '600px'}}>
+					<Trafficmap/>	
+
+					</div>
 					<Dropdown className="mb-3">
 						<Dropdown.Toggle variant="success" className="w-100">
 							{select_account || "選擇帳戶"}

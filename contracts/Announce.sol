@@ -1,8 +1,8 @@
 pragma solidity >=0.4.22 <0.8.0;
 import "./User.sol";
+import "./UserAccount.sol";
 
 contract Announce {
-    address public owner;
     bytes32 private name;
     uint256 private dates;
     bytes32 private destination_lon;
@@ -12,16 +12,13 @@ contract Announce {
     uint256 private people; //可乘車人數
     uint256 public people_count = 0; //目前下單人數
     bool public close = false;
-    User private u;
+    User private u; //發文的人
     User[] private joined_users; //已經下單的人
-
-    modifier onlyOwner() {
-        require(msg.sender == owner);
-        _;
-    }
+    uint256 private total_money = 0;
+    mapping(address => bool) private pay_completed; //跟單者已完成
+    bytes32 private account;
 
     constructor(
-        // address _owner,
         bytes32 _name,
         uint256 _dates,
         bytes32 _destination_lon,
@@ -146,8 +143,28 @@ contract Announce {
         }
     }
 
+
     function get_joined_users() public view returns(User[] memory) {
         return joined_users;
     }
     
+    
+    function get_all_user_pay_completed(address user_addr) public view returns(bool) {
+        return pay_completed[user_addr];
+    }
+    
+    function transfer_money(address user_addr) public {
+        UserAccount uc = UserAccount(User(user_addr).get_account());
+        uc.set_balance(uc.get_balance() - money); //減少使用者帳戶餘額
+        total_money += money; //增加訂單總金額
+    }
+    
+    function announce_compileted() public {
+        UserAccount uc = UserAccount(User(u).get_account());
+        uc.set_balance(uc.get_balance() + total_money); //增加使用者帳戶餘額
+    }
+  
+        function get_total_money() public view returns (uint256) {
+        return total_money;
+    }
 }

@@ -102,7 +102,7 @@ const TrafficList = ({ accounts, web3, An,user}) => {
 		if (web3&& An) {
 
 			let all_announce_list = await get_all_announce_info(An); 
-			let user_announce_list = await get_all_user_info(web3, all_announce_list, user)
+			let user_announce_list = await get_all_user_info(web3, all_announce_list, user);
 
 			set_traffic_list(user_announce_list);
 			console.log(user_announce_list);

@@ -8,6 +8,7 @@ import "./TrafficTransaction.sol";
 contract AnnounceManager {
     mapping(address => bytes32[]) private UserAnnounces; //使用者的所有相關貼文
     mapping(bytes32 => Announce) private AnnounceCollection; //所有發布貼文
+    mapping(address => address[]) private UserAnnounces1; //使用者的所有相關貼文
     bytes32[] private announce_id_list; //所有貼文id
     uint256 private paymoney;
 
@@ -95,8 +96,28 @@ contract AnnounceManager {
         return (money1);
     }
     
-    function get_user_all_announce(address user_addr) public view returns(bytes32[] memory) {
-        return UserAnnounces[user_addr];
+   function join_announce(bytes32 announce_id,address announce_addr, address user_addr) public
+    {
+        Announce announce = AnnounceCollection[announce_id];
+        announce.add_people(user_addr);
+        UserAnnounces[user_addr].push(announce_id);
+        UserAnnounces1[user_addr].push(announce_addr);
+    }
+    
+    
+    
+    function get_user_all_announce(address user_addr) public view returns(bytes32[] memory,address[] memory) {
+        return (UserAnnounces[user_addr],UserAnnounces1[user_addr]);
+    }
+
+       function get_announce_total_money(bytes32 announce_id)
+        public
+        view
+        returns ( uint256 _total_money)
+    {
+        Announce announce = AnnounceCollection[announce_id];
+        uint256 total_money = announce.get_total_money();
+        return (total_money);
     }
 
 }

@@ -92,7 +92,6 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
 	const [traffic_contract, set_traffic_contract] = React.useState(null);
-	const [traffic_contract1, set_traffic_contract1] = React.useState(null);
 
 	//載入所有使用者相關跟單
 	React.useEffect(() => {
@@ -104,14 +103,16 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 		if(An) {
 			const data = await get_user_all_announce_info(An, user.address);
 			set_traffic_list(data)
+			console.log(data);
 		}
 	}
 
 	//開啟視窗
 	const open_modal = async (item) => {
-		//取得房屋合約實體
-		// let instance2 = await getContractInstance(web3, Announce, item.traffic_addr);
-		// set_traffic_contract1(instance2);
+		//取得Announce合約實體
+		console.log( item.announce_addr);
+		let instance2 = await getContractInstance(web3, Announce, item.announce_addr);
+		set_traffic_contract(instance2);
 		set_current_data(item);
 		set_open(true);
 	};
@@ -127,6 +128,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 			<h3 className="text-white-50">所有揪團列表</h3>;
 				<ListGroup className="col-15">
 					{traffic_list.map((item, i) => {
+						console.log(item);
 						return (
 							<ListGroup.Item
 								key={i}
@@ -166,6 +168,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 						accounts={accounts}
 						traffic_data={current_data}
 						close_modal={close_modal}
+						traffic_contract = {traffic_contract}
 					/>
 				</Modal.Body>
 				<Modal.Footer></Modal.Footer>
@@ -174,7 +177,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	);
 };
 
-const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => {
+const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user,traffic_contract }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
 	const history = useHistory();
@@ -207,42 +210,19 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 			alert("請先選擇帳戶");
 			return;
 		}
-		let result1 = await contract_call(
-			An,
-			"get_pay_announce",
+		console.log(user.address);
+		let result1 = await contract_send(
+			traffic_contract,
+			"transfer_money",
 			[
-				string_to_bytes32(traffic_data.announce_id)
+				user.address
 			],
 			{
 				from: select_account,
 				gas: 6000000,
 			}
-			);	
-		let result2 = await contract_send(
-			An,
-			"pay_announce",
-			[
-				string_to_bytes32(traffic_data.announce_id)
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-			);	
-		let result3 = await contract_call(
-			An,
-			"get_paymoney",
-			[
-				
-			],
-			{
-				from: select_account,
-				gas: 6000000,
-			}
-			);	
+			);		
 			console.log(result1);
-			console.log(result2);
-			console.log(result3);
 		alert("完成訂單");
 		history.push("/TrafficTransaction");
 		

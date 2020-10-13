@@ -209,7 +209,6 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 			alert("請先選擇帳戶");
 			return;
 		}
-		console.log(user.address);
 		if (user.address === traffic_data.u) {
 			alert("您是貼文發布者，不能跟團");
 			return;
@@ -226,6 +225,7 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 			"join_announce",
 			[
 				string_to_bytes32(traffic_data.traffic_id),
+				traffic_data.traffic_addr,
 				user.address
 			],
 			{

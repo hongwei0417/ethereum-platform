@@ -24,6 +24,9 @@ function TravelTab({ currentPage }) {
 			case 5:
 				history.push("/TrafficTransaction");
 				break;
+			case 6:
+				history.push("/account");
+				break;
 			default:
 		}
 	};
@@ -60,6 +63,12 @@ function TravelTab({ currentPage }) {
 					onClick={(e) => goToPage(5)}
 				>
 					交易資訊
+				</Button>
+				<Button
+					variant={currentPage === 6 ? "warning" : "outline-warning"}
+					onClick={(e) => goToPage(6)}
+				>
+					帳戶管理
 				</Button>
 			</div>
 			<hr className="border-warning w-100" />
