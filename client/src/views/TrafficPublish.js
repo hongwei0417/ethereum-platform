@@ -16,6 +16,8 @@ import moment from "moment";
 import { useHistory, useLocation, useParams } from "react-router-dom";
 import User from "../contracts/User.json";
 import TrafficCard from "../components/TrafficCard";
+import { Map, Marker, Popup, TileLayer, Polygon, Rectangle } from "react-leaflet";
+import { get_data_from_coordinate,get_data_from_address } from "../utils/api";
 
 export function TrafficPublish(props) {
 	const [web3, set_web3] = React.useState(null);
@@ -24,7 +26,6 @@ export function TrafficPublish(props) {
 	const [user, set_user] = React.useState(null);
 	const [user_contract, set_user_contract] = React.useState(null);
 	const { id } = useParams();
-	//const [page, set_page] = React.useState(1);
 
 	//載入web3
 	React.useEffect(() => {
@@ -77,7 +78,7 @@ export function TrafficPublish(props) {
 				<div className="w-50">
 					<TrafficTab currentPage={2} />
 				</div>
-				<div className="mb-3">
+				<div className="w-50 mb-3">
 					<TrafficList accounts={accounts} web3={web3} An={An}  user={user} />
 				</div>
 			</div>
@@ -94,6 +95,7 @@ const TrafficList = ({ accounts, web3, An ,user}) => {
 	const [current_data, set_current_data] = React.useState({});
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
+	const mapRef = React.useRef()
 
 	//初始載入
 	React.useEffect(() => {
@@ -121,26 +123,17 @@ const TrafficList = ({ accounts, web3, An ,user}) => {
 		load_user_traffic();
 	};
 
+	const show_modal = () => {
+		mapRef.current.leafletElement.invalidateSize()
+		console.log(mapRef.current)
+	}
 
 	return (
-		<React.Fragment>
+		<div className="d-flex flex-column align-items-center w-100">
 			<h3 className="text-white-50">所有揪團列表</h3>;
 				<ListGroup className="col-8">
 					{traffic_list.map((item, i) => {
 						return (
-							// <ListGroup.Item
-							// 	key={i}
-							// 	action
-							// 	variant="success"
-							// 	style={{
-							// 		whiteSpace: "normal",
-							// 		overflow: "hidden",
-							// 		textOverflow: "ellipsis",
-							// 	}}
-							// 	onClick={(e) => open_modal(item)}
-							// >
-							// 	{`${item.traffic_addr} 【${item.traffic_id}】` }
-							// </ListGroup.Item>
 							<TrafficCard
 										key={i}
 										{...item}
@@ -149,7 +142,8 @@ const TrafficList = ({ accounts, web3, An ,user}) => {
 						);
 					})}
 				</ListGroup>
-			<Modal show={open} onHide={close_modal} centered>
+			
+			<Modal show={open} onHide={close_modal} centered onShow={show_modal}>
 				<Modal.Header closeButton>
 					<Modal.Title
 						style={{
@@ -161,23 +155,29 @@ const TrafficList = ({ accounts, web3, An ,user}) => {
 				</Modal.Header>
 				<Modal.Body>
 					<UpdateHouse
+						
 						user={user}
 						An={An}
 						accounts={accounts}
 						traffic_data={current_data}
 						close_modal={close_modal}
+						mapRef={mapRef}
 					/>
 				</Modal.Body>
 				<Modal.Footer></Modal.Footer>
 			</Modal>
-		</React.Fragment>
+		</div>
 	);
 };
 
-const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => {
+const UpdateHouse = ({ accounts, traffic_data, close_modal, An, user, mapRef }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
 	const history = useHistory();
+	const [position, set_position] = React.useState([24.123206, 120.675679]);
+	const [start_position, set_start_position] = React.useState([]);
+	const [zoom, set_zoom] = React.useState(10.5);
+	const [address, set_address] = React.useState("");
 
 	//載入表單資料
 	React.useEffect(() => {
@@ -242,11 +242,8 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 			
 		close_modal();
 	};
-
-	console.log(form_data)
-
 	return (
-		<React.Fragment>
+		<div className="w-100">
 			<Dropdown className="mb-3">
 				<Dropdown.Toggle variant="success" className="w-100">
 					{select_account || "選擇帳戶"}
@@ -266,6 +263,21 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 				</Dropdown.Menu>
 			</Dropdown>
 			<hr />
+			<Map
+					ref={mapRef}
+					center={[24.1, 120.675678]}
+					zoom={10}
+					style={{height: '300px', width: '100%'}}
+				>
+					<TileLayer
+						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+						attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+					/>
+					<Marker position={ [parseFloat(form_data.departure_lon), parseFloat(form_data.departure_lat)]}>
+					</Marker>
+					<Marker position={ [parseFloat(form_data.destination_lon), parseFloat(form_data.destination_lat)]}>
+					</Marker>
+				</Map>
 			<Form>
 				<Form.Group>
 					<Form.Label>姓名 : {`${form_data.name}`}</Form.Label>
@@ -282,12 +294,12 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 				<Form.Group>
 					<Form.Label>價錢/人 : {`${form_data.money}`}</Form.Label>
 				</Form.Group>
-				<Form.Group>
-					<Form.Label>出發地 : {`${form_data.destination_lon}`}</Form.Label>
+				{/* <Form.Group>
+					<Form.Label>出發地 : {`${parseFloat(form_data.destination_lon)}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
-					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
-				</Form.Group>
+					<Form.Label>目的地 : {`${parseFloat(form_data.destination_lat)}`}</Form.Label>
+				</Form.Group> */}
 				<Form.Group>
 					<Form.Label>剩餘人數 : {`${form_data.people - form_data.people_count}`}</Form.Label>
 				</Form.Group>
@@ -295,6 +307,7 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user }) => 
 					確定跟團
 				</Button>
 			</Form>
-		</React.Fragment>
+			
+		</div>
 	);
 };

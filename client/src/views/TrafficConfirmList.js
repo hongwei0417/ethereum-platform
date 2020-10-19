@@ -15,6 +15,8 @@ import moment from "moment";
 import User from "../contracts/User.json";
 import TrafficCard from "../components/TrafficCard";
 import { useHistory, useLocation, useParams } from "react-router-dom";
+import { Map, Marker, Popup, TileLayer, Polygon, Rectangle } from "react-leaflet";
+
 
 export function TrafficConfirmList(props) {
 	const [web3, set_web3] = React.useState(null);
@@ -92,6 +94,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	const [open, set_open] = React.useState(null);
 	const [traffic_list, set_traffic_list] = React.useState([]);
 	const [traffic_contract, set_traffic_contract] = React.useState(null);
+	const mapRef = React.useRef()
 
 	//載入所有使用者相關跟單
 	React.useEffect(() => {
@@ -123,6 +126,11 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 		load_user_all_announce_list();
 	};
 
+	const show_modal = () => {
+		mapRef.current.leafletElement.invalidateSize()
+		console.log(mapRef.current)
+	}
+
 	return (
 		<React.Fragment>
 			<h3 className="text-white-50">所有揪團列表</h3>;
@@ -151,7 +159,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 						);
 					})}
 				</ListGroup>
-			<Modal show={open} onHide={close_modal} centered>
+			<Modal show={open} onHide={close_modal} centered onShow={show_modal}>
 				{/* <Modal.Header closeButton>
 					<Modal.Title
 						style={{
@@ -169,6 +177,7 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 						traffic_data={current_data}
 						close_modal={close_modal}
 						traffic_contract = {traffic_contract}
+						mapRef={mapRef}
 					/>
 				</Modal.Body>
 				<Modal.Footer></Modal.Footer>
@@ -177,10 +186,11 @@ const TrafficList = ({ accounts, web3, An, user}) => {
 	);
 };
 
-const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user,traffic_contract }) => {
+const UpdateHouse = ({ accounts, traffic_data, close_modal,mapRef, An, user,traffic_contract }) => {
 	const [form_data, set_form_data] = React.useState({});
 	const [select_account, set_select_account] = React.useState(null);
 	const history = useHistory();
+
 	//載入表單資料
 	React.useEffect(() => {
 		set_form_data({
@@ -252,6 +262,21 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user,traffi
 				</Dropdown.Menu>
 			</Dropdown>
 			<hr />
+			<Map
+					ref={mapRef}
+					center={[24.1, 120.675678]}
+					zoom={10}
+					style={{height: '300px', width: '100%'}}
+				>
+					<TileLayer
+						url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+						attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+					/>
+					<Marker position={ [parseFloat(form_data.departure_lon), parseFloat(form_data.departure_lat)]}>
+					</Marker>
+					<Marker position={ [parseFloat(form_data.destination_lon), parseFloat(form_data.destination_lat)]}>
+					</Marker>
+				</Map>
 			<Form>
 				<Form.Group>
 					<Form.Label>姓名 : {`${form_data.name}`}</Form.Label>
@@ -268,16 +293,16 @@ const UpdateHouse = ({ accounts, traffic_data, close_modal,web3, An, user,traffi
 				<Form.Group>
 					<Form.Label>應付金額 : {`${form_data.money}`}</Form.Label>
 				</Form.Group>
-				<Form.Group>
+				{/* <Form.Group>
 					<Form.Label>出發地 : {`${form_data.destination_lon}`}</Form.Label>
 				</Form.Group>
 				<Form.Group>
 					<Form.Label>目的地 : {`${form_data.destination_lat}`}</Form.Label>
-				</Form.Group>
+				</Form.Group> */}
 				<Button variant="primary" onClick={onSubmit} block>
 					完成訂單 並付款
 				</Button>
-			
+				
 			</Form>
 		</React.Fragment>
 	);

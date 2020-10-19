@@ -4,22 +4,6 @@ import Announce from '../contracts/Announce.json'
 import announceManager from '../contracts/AnnounceManager.json'
 import TrafficTransaction from '../contracts/TrafficTransaction.json'
 
-// //取得使用者所有貼文
-// export const get_all_user_announce= async (Announce) => {
-// 	let result = [];
-// 	let all_traffic_data = await Announce.methods.get_all_user().call();
-
-// 	for (let i = 0; i < all_traffic_data[1].length; i++) {
-// 		let traffic_id = bytes32_to_string(all_traffic_data[0][i]);
-// 		let traffic_addr = all_traffic_data[1][i];
-// 		result.push({
-// 			traffic_id,
-// 			traffic_addr,
-// 		});
-// 	}
-// 	return result;
-// };
-
 //取得所有貼文
 export const get_all_announce_info= async (announceManager) => {
 	let result = [];
@@ -39,9 +23,11 @@ export const get_all_announce_info= async (announceManager) => {
 		let people = parseInt(traffic_data[3]);
 		let people_count = parseInt(traffic_data[4]);
 		let money = parseInt(traffic_data[5]);
-		let destination_lon = bytes32_to_string(traffic_data_destination[0]);
-		let destination_lat = bytes32_to_string(traffic_data_destination[1]);
-		let u = traffic_data_destination[2];
+		let departure_lon = bytes32_to_string(traffic_data_destination[0]);
+		let departure_lat = bytes32_to_string(traffic_data_destination[1]);
+		let destination_lon = bytes32_to_string(traffic_data_destination[2]);
+		let destination_lat = bytes32_to_string(traffic_data_destination[3]);
+		let u = traffic_data_destination[4];
 		result.push({
 			traffic_id,
 			traffic_addr,
@@ -53,6 +39,8 @@ export const get_all_announce_info= async (announceManager) => {
 			people,
 			people_count,
 			traffic,
+			departure_lon,
+			departure_lat,
 			destination_lon,
 			destination_lat,
 			u
@@ -61,43 +49,6 @@ export const get_all_announce_info= async (announceManager) => {
 	return result;
 };
 
-//取得所有使用者相關貼文
-// export const get_user_all_announce_info = async(announceManager, user_addr) => {
-// 	let result = [];
-// 	let user_announce_id_list = await announceManager.methods.get_user_all_announce(user_addr).call();
-
-// 	for (let i = 0; i < user_announce_id_list.length; i++) {
-
-// 		let announce_id = bytes32_to_string(user_announce_id_list[i]);
-// 		let announc_addr = all_traffic_data[i]; //ownable addr
-// 		let announce_data = await announceManager.methods.get_announce(user_announce_id_list[i]).call();
-// 		let announce_data_destination = await announceManager.methods.get_announce_destination(user_announce_id_list[i]).call();
-// 		//let announce =  announce_data[0];
-// 		let name =  bytes32_to_string(announce_data[0]);
-// 		let dates = parseInt(announce_data[1]);
-// 		let traffic = bytes32_to_string(announce_data[2]);
-// 		let people = parseInt(announce_data[3]);
-// 		let people_count = parseInt(announce_data[4]);
-// 		let money = parseInt(announce_data[5]);
-// 		let destination_lon = bytes32_to_string(announce_data_destination[0]);
-// 		let destination_lat = bytes32_to_string(announce_data_destination[1]);
-// 		let u = announce_data_destination[2];
-// 		result.push({
-// 			announce_id,
-// 			announc_addr,
-// 			name,
-// 			dates,
-// 			money,
-// 			people,
-// 			people_count,
-// 			traffic,
-// 			destination_lon,
-// 			destination_lat,
-// 			u
-// 		});
-// 	}
-// 	return result;
-// }
 export const get_user_all_announce_info = async(announceManager, user_addr) => {
 	let result = [];
 	let user_announce_id_list = await announceManager.methods.get_user_all_announce(user_addr).call();
@@ -115,9 +66,11 @@ export const get_user_all_announce_info = async(announceManager, user_addr) => {
 		let people = parseInt(announce_data[3]);
 		let people_count = parseInt(announce_data[4]);
 		let money = parseInt(announce_data[5]);
-		let destination_lon = bytes32_to_string(announce_data_destination[0]);
-		let destination_lat = bytes32_to_string(announce_data_destination[1]);
-		let u = announce_data_destination[2];
+		let departure_lon = bytes32_to_string(announce_data_destination[0]);
+		let departure_lat = bytes32_to_string(announce_data_destination[1]);
+		let destination_lon = bytes32_to_string(announce_data_destination[2]);
+		let destination_lat = bytes32_to_string(announce_data_destination[3]);
+		let u = announce_data_destination[4];
 		let total_money = announce_data_total_money;
 		result.push({
 			announce_id,
@@ -130,6 +83,8 @@ export const get_user_all_announce_info = async(announceManager, user_addr) => {
 			people,
 			people_count,
 			traffic,
+			departure_lon,
+			departure_lat,
 			destination_lon,
 			destination_lat,
 			u,
@@ -175,9 +130,11 @@ export const get_user_all_announce_info_paymoney = async(announceManager) => {
 		let people = parseInt(traffic_data[3]);
 		let people_count = parseInt(traffic_data[4]);
 		let money = parseInt(traffic_data[5]);
-		let destination_lon = bytes32_to_string(traffic_data_destination[0]);
-		let destination_lat = bytes32_to_string(traffic_data_destination[1]);
-		let u = traffic_data_destination[2];
+		let departure_lon = bytes32_to_string(traffic_data_destination[0]);
+		let departure_lat = bytes32_to_string(traffic_data_destination[1]);
+		let destination_lon = bytes32_to_string(traffic_data_destination[2]);
+		let destination_lat = bytes32_to_string(traffic_data_destination[3]);
+		let u = traffic_data_destination[4];
 		let total_money = announce_data_total_money;
 		result.push({
 			traffic_id,
@@ -190,6 +147,8 @@ export const get_user_all_announce_info_paymoney = async(announceManager) => {
 			people,
 			people_count,
 			traffic,
+			departure_lon,
+			departure_lat,
 			destination_lon,
 			destination_lat,
 			u,

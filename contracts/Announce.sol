@@ -5,6 +5,10 @@ import "./UserAccount.sol";
 contract Announce {
     bytes32 private name;
     uint256 private dates;
+    bytes32 private departure;
+    bytes32 private departure_lon;
+    bytes32 private departure_lat;
+    bytes32 private destination;
     bytes32 private destination_lon;
     bytes32 private destination_lat;
     bytes32 private traffic;
@@ -21,6 +25,10 @@ contract Announce {
     constructor(
         bytes32 _name,
         uint256 _dates,
+        // bytes32 _departure,
+        bytes32 _departure_lon,
+        bytes32 _departure_lat,
+        // bytes32 _destination,
         bytes32 _destination_lon,
         bytes32 _destination_lat,
         bytes32 _traffic,
@@ -31,8 +39,8 @@ contract Announce {
         // require(_owner != address(0x0), "Need owner");
         require(_name.length != 0, "Need name");
         //require(_dates.length != 0, "Need dates");
-        require(_destination_lon.length != 0, "Need destination");
-        require(_destination_lat.length != 0, "Need destination");
+        // require(_destination_lon.length != 0, "Need destination");
+        // require(_destination_lat.length != 0, "Need destination");
         require(_traffic.length != 0, "Need traffic");
         //require(_people.length != 0, "Need people");
         // require(_money.length != 0, "Need money");
@@ -40,6 +48,10 @@ contract Announce {
         // owner = _owner;
         name = _name;
         dates = _dates;
+        // departure = _departure;
+        departure_lon = _departure_lon;
+        departure_lat = _departure_lat;
+        // destination = _destination;
         destination_lon = _destination_lon;
         destination_lat = _destination_lat;
         traffic = _traffic;
@@ -64,6 +76,14 @@ contract Announce {
     function set_dates(uint256 _dates) public {
        dates = _dates;
     }
+    
+     function get_destination()  public view returns (bytes32 _destination) {
+        return destination;
+    }
+
+    function set_destination(bytes32 _destination) public {
+        destination = _destination;
+    }
 
     function get_destination_lon()  public view returns (bytes32 _destination_lon) {
         return destination_lon;
@@ -79,6 +99,30 @@ contract Announce {
 
     function set_destination_lat(bytes32 _destination_lat) public {
         destination_lat = _destination_lat;
+    }
+    
+     function get_departure()  public view returns (bytes32 _departure) {
+        return departure;
+    }
+
+    function set_departure(bytes32 _departure) public {
+        departure = _departure;
+    }
+
+    function get_departure_lon()  public view returns (bytes32 _departure_lon) {
+        return departure_lon;
+    }
+
+    function set_departure_lon(bytes32 _departure_lon) public {
+        departure_lon = _departure_lon;
+    }
+    
+     function get_departure_lat()  public view returns (bytes32 _departure_lat) {
+        return departure_lat;
+    }
+
+    function set_departure_lat(bytes32 _departure_lat) public {
+        departure_lat = _departure_lat;
     }
 
     function get_traffic() public view returns (bytes32 _traffic) {
@@ -159,12 +203,14 @@ contract Announce {
         total_money += money; //增加訂單總金額
     }
     
+    function get_total_money() public view returns (uint256) {
+        return total_money;
+    }
+    
     function announce_compileted() public {
         UserAccount uc = UserAccount(User(u).get_account());
         uc.set_balance(uc.get_balance() + total_money); //增加使用者帳戶餘額
     }
   
-        function get_total_money() public view returns (uint256) {
-        return total_money;
-    }
+    
 }

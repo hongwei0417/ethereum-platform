@@ -25,16 +25,13 @@ function TrafficCard({ name, money, onSubmit, onClick }) {
 				<div className="review-container mb-1">
 					<div className="score">{random_score}</div>
 					<div className="d-flex flex-column ml-1">
+						<span className="review-text">發布者評論</span>
 						<span className="review-text">很讚</span>
 						<span className="review-count">{`${random_review}篇評鑑`}</span>
 					</div>
 				</div>
-				<div className="wifi mb-1">
-					<i className="fas fa-wifi mr-1"></i>Wi-Fi
-				</div>
 				<div className="bottom-right-container mb-2">
 					<span className="price">{`NT$${money}`}</span>
-					<span className="price-msg">每晚低至</span>
 					<a className="order-btn" onClick={onSubmit}>
 						立即預定
 					</a>
