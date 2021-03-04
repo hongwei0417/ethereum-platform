@@ -127,12 +127,14 @@ export function Account() {
 							} 元`}</ListGroup.Item>
 							<ListGroup.Item>{`更新時間： ${
 								account.update_date
-									? moment(account.update_date).toISOString()
+									? // ? moment(account.update_date).toISOString()
+									  moment("2021-02-15").toISOString()
 									: "---"
 							}`}</ListGroup.Item>
 							<ListGroup.Item>{`創立時間： ${
 								account.create_date
-									? moment(account.create_date).toISOString()
+									? // ? moment(account.create_date).toISOString()
+									  moment("2021-02-15").toISOString()
 									: "---"
 							}`}</ListGroup.Item>
 						</ListGroup>

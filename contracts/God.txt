@@ -196,7 +196,7 @@ import "./UserTransaction.sol";
 import "github.com/oraclize/ethereum-api/provableAPI.sol";
 ...
 
-contract UserTransaction is usingProvable {
+contract RoomTransaction is usingProvable {
     address constant private traveler_addr;
     address constant private hotelier_addr;
     address private room_addr;
