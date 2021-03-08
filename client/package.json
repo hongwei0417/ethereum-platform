@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "ipfs-http-client": "^49.0.2",
     "leaflet": "^1.7.1",
     "moment": "^2.29.0",
     "node-sass": "^4.14.1",
@@ -29,7 +30,9 @@
     "compile": "truffle compile",
     "deploy": "truffle deploy",
     "networks": "truffle networks",
-    "reset": "truffle networks --clean"
+    "reset": "truffle networks --clean",
+    "eth": "node ETH.js",
+    "ipfs": "node IPFS.js"
   },
   "eslintConfig": {
     "extends": "react-app"
