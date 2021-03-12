@@ -49,7 +49,7 @@ module.exports = {
 			// port: 7545, // Standard Ethereum port (default: none)
 			// network_id: "*", // Any network (default: none)
 			port: 8545, // Standard Ethereum port (default: none)
-			network_id: "5777", // Any network (default: none)
+			network_id: "1234", // Any network (default: none)
 		},
 		// Another network with more advanced options...
 		// advanced: {
@@ -86,15 +86,16 @@ module.exports = {
 	// Configure your compilers
 	compilers: {
 		solc: {
-			version: "0.6.6", // Fetch exact version from solc-bin (default: truffle's version)
+			version: "0.5.5", // Fetch exact version from solc-bin (default: truffle's version)
 			// docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
-			// settings: {          // See the solidity docs for advice about optimization and evmVersion
-			//  optimizer: {
-			//    enabled: false,
-			//    runs: 200
-			//  },
-			//  evmVersion: "byzantium"
-			// }
+			settings: {
+				// See the solidity docs for advice about optimization and evmVersion
+				optimizer: {
+					enabled: true,
+					runs: 200,
+				},
+				//  evmVersion: "byzantium"
+			},
 		},
 	},
 };
