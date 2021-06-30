@@ -7,7 +7,7 @@ import "./AccountManager.sol";
 import "./TransactionManager.sol";
 import "./UserAccount.sol";
 import "./Tool.sol";
-import "github.com/oraclize/ethereum-api/provableAPI.sol";
+import "./provableAPI.sol";
 
 //實作 Transaction
 contract RoomTransaction is usingProvable {

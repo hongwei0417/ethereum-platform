@@ -1,5 +1,6 @@
 import Web3 from "web3";
 import moment from "moment";
+import xlsx from "xlsx";
 import AccountManager from "../client/src/contracts/AccountManager.json";
 import Auth from "../client/src/contracts/Auth.json";
 import CouponManager from "../client/src/contracts/CouponManager.json";
@@ -25,7 +26,7 @@ const newUser_path = `${__dirname}/result/newUser.json`;
 const newRoom_path = `${__dirname}/result/newRoom.json`;
 const booking_path = `${__dirname}/result/booking.json`;
 const rating_path = `${__dirname}/result/rating.json`;
-const user_num = 10;
+const user_num = 40;
 const user_email = [
 	"a@gmail.com",
 	"ab@gmail.com",
@@ -47,6 +48,29 @@ const user_email = [
 	"ccc1@gmail.com",
 	"ccc12@gmail.com",
 	"ccc123@gmail.com",
+	"ddd123@gmail.com",
+	"ddd1234@gmail.com",
+	"ddd12345@gmail.com",
+	"eee1@gmail.com",
+	"eee12@gmail.com",
+	"eee123@gmail.com",
+	"eee1234@gmail.com",
+	"eee12345@gmail.com",
+	"abcde1@gmail.com",
+	"abcde12@gmail.com",
+	"abcde123@gmail.com",
+	"abcde1234@gmail.com",
+	"abcde12345@gmail.com",
+	"abcdef1@gmail.com",
+	"abcdef12@gmail.com",
+	"abcdef123@gmail.com",
+	"abcdef1234@gmail.com",
+	"abcdef12345@gmail.com",
+	"abcdefg1@gmail.com",
+	"abcdefg12@gmail.com",
+	"abcdefg123@gmail.com",
+	"abcdefg1234@gmail.com",
+	"abcdefg12345@gmail.com",
 ];
 const newUser_result = [];
 const newRoom_result = [];
@@ -103,13 +127,16 @@ async function newUser(accounts, index) {
 					gas: 6000000,
 				});
 
-				const diff = moment().diff(start_time, "millisecond");
+				const end_time = moment();
+				const diff = end_time.diff(start_time, "millisecond");
 				newUser_result.push({
 					index: `user-${index + 1}`,
 					uid: uid,
 					key: result5.events.show_BC_key.returnValues.key,
 					user_addr: result6[0],
 					diff: diff,
+					start: start_time.toLocaleString(),
+					end: end_time.toLocaleString(),
 				});
 			}
 		}
@@ -180,13 +207,16 @@ async function newRoom(accounts, index) {
 				gas: 6000000,
 			});
 
-			const diff = moment().diff(start_time, "millisecond");
+			const end_time = moment();
+			const diff = end_time.diff(start_time, "millisecond");
 			newRoom_result.push({
 				index: `user-${index + 1}`,
 				uid: uid,
 				room_id: result4[0][0],
 				room_addr: result4[1][0],
 				diff: diff,
+				start: start_time.toLocaleString(),
+				end: end_time.toLocaleString(),
 			});
 		}
 	} catch (error) {
@@ -293,7 +323,8 @@ async function booking(accounts, T_index, H_index) {
 		});
 		status = result7[0];
 	}
-	const diff = moment().diff(start_time, "millisecond");
+	const end_time = moment();
+	const diff = end_time.diff(start_time, "millisecond");
 	booking_result.push({
 		traveler_index: `user-${T_index + 1}`,
 		hotelier_index: `user-${H_index + 1}`,
@@ -302,6 +333,8 @@ async function booking(accounts, T_index, H_index) {
 		txn_addr: txn_addr,
 		CID: cid.toString(),
 		diff: diff,
+		start: start_time.toLocaleString(),
+		end: end_time.toLocaleString(),
 	});
 }
 
@@ -450,7 +483,8 @@ async function rating(accounts, T_index, H_index) {
 		gas: 6000000,
 	});
 
-	const diff = moment().diff(start_time, "millisecond");
+	const end_time = moment();
+	const diff = end_time.diff(start_time, "millisecond");
 	rating_result.push({
 		traveler_index: `user-${T_index + 1}`,
 		hotelier_index: `user-${H_index + 1}`,
@@ -461,6 +495,8 @@ async function rating(accounts, T_index, H_index) {
 		traveler_rating: [score2, calculate_score2],
 		hotelier_rating: [score2, calculate_score3],
 		diff: diff,
+		start: start_time.toLocaleString(),
+		end: end_time.toLocaleString(),
 	});
 }
 
@@ -470,6 +506,10 @@ async function main() {
 	const promises2 = [];
 	const promises3 = [];
 	const promises4 = [];
+	const workBook = {
+		SheetNames: ["創建用戶", "創建房間", "雙方交易", "交易完成評價"],
+		Sheets: {},
+	};
 
 	//1. 創建用戶程序
 	console.log("-----------------------\r\n創建用戶程序開始!");
@@ -481,6 +521,8 @@ async function main() {
 		if (err) return console.log(err);
 		console.log(`全部共${user_num}位使用者創建程序完成!`);
 	});
+	const jsonWorkSheet1 = xlsx.utils.json_to_sheet(newUser_result);
+	workBook.Sheets["創建用戶"] = jsonWorkSheet1;
 
 	//2. 創建房間程序
 	console.log("-----------------------\r\n創建房間程序開始!");
@@ -496,6 +538,8 @@ async function main() {
 		if (err) return console.log(err);
 		console.log(`全部共${n2}位民宿業者程序完成!`);
 	});
+	const jsonWorkSheet2 = xlsx.utils.json_to_sheet(newRoom_result);
+	workBook.Sheets["創建房間"] = jsonWorkSheet2;
 
 	//3. 雙方進行交易
 	console.log("-----------------------\r\n雙方交易程序開始!");
@@ -509,6 +553,8 @@ async function main() {
 		if (err) return console.log(err);
 		console.log(`全部共${n3}對交易完成!`);
 	});
+	const jsonWorkSheet3 = xlsx.utils.json_to_sheet(booking_result);
+	workBook.Sheets["雙方交易"] = jsonWorkSheet3;
 
 	//4. 雙方評價
 	console.log("-----------------------\r\n評價程序開始!");
@@ -522,6 +568,11 @@ async function main() {
 		if (err) return console.log(err);
 		console.log(`全部共${n4}對互評完成!`);
 	});
+	const jsonWorkSheet4 = xlsx.utils.json_to_sheet(rating_result);
+	workBook.Sheets["交易完成評價"] = jsonWorkSheet4;
+
+	//寫入csv
+	xlsx.writeFile(workBook, `./${user_num}人測試結果.xlsx`);
 }
 
 main();
